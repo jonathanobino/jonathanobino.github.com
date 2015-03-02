@@ -35,7 +35,7 @@
 		 	$scope.newCompany.recensioni=[];
 		 	ref.push($scope.newCompany);
 		 	$scope.newCompany={};
-		 	$location.path('/#')
+		 	$location.path('/#/')
 		 }
 		 
 		
