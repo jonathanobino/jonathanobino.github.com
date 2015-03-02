@@ -1,7 +1,7 @@
 <div class="full gradient-bkg">
 <a ng-href="#/"><h1 class="main-title" id="title" >Rate My Customer</h1></a>
 <input type="text" class="input-main" placeholder="Search your customer..." ng-model="nomec">
-<ul ng-show="nomec.length > 0 " class="customer-list" ng-controller="viewCompany">
+<ul ng-if="nomec.length > 0 " class="customer-list" ng-controller="viewCompany">
 <li ng-repeat="azienda in data | filter:nomec">
 		<a ng-href="#view-comment/{{azienda.$id}}">{{azienda.nome}}
 		{{azienda.luogo}}
