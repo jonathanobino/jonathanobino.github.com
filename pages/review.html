@@ -1,0 +1,23 @@
+<div class="gradient-bkg full-scroll">
+	<section class="review-head"><a ng-href="#/"><h1 class="main-title little" >Rate My Customer</h1></a>
+<h1 class="company-name">{{aziendaView.nome}}</h1>
+<p class="center"><small>{{aziendaView.luogo}} - {{aziendaView.PIVA}}</small></p></section>
+<section class="comment-section">
+<ul class="comment-list no-scroll">
+	<li ng-repeat="recensione in aziendaView.recensioni">
+		<p>{{recensione.voto}}</p>
+		<p><a ng-href="{{recensione.link}}">{{recensione.progetto}}</a></p>
+		<p>{{recensione.descrizione}}</p>
+		<hr>
+	</li>
+</ul>
+<button class="submit-border" ng-hide="showInsertReview" ng-click="showInsertReview=true">Insert Review</button>
+<form class="bottom" ng-show="showInsertReview" ng-submit="insertReview()">
+<input type="text" class="input-main input-insert bkg-white" placeholder="Project" ng-model="newReview.progetto">
+<input type="text" class="input-main input-insert bkg-white" placeholder="Link" ng-model="newReview.link">
+<input type="text" class="input-main input-insert bkg-white" placeholder="Review" ng-model="newReview.descrizione">
+<input type="text" class="input-main input-insert bkg-white" placeholder="Rating" ng-model="newReview.voto">
+<input type="submit" placeholder="Insert" class="submit-insert" >
+</form>
+</section>
+</div>

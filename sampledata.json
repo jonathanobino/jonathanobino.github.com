@@ -1,0 +1,34 @@
+{
+	"aziende":[{
+			"nome":"Apple",
+			"luogo":"Cupertino, CA",
+			"PIVA":"00000",
+			"recensioni":[{
+				"voto":"4",
+				"progetto":"Main Web Site",
+				"descrizione":"Awesome collaboration",
+				"link":"http://apple.com"
+				}]},
+			{
+			"nome":"Microsoft",
+			"luogo":"Redmond, WA",
+			"PIVA":"11111",
+			"recensioni":[{
+				"voto":"4",
+				"progetto":"Main Web Site",
+				"descrizione":"Awesome collaboration",
+				"link":"http://microsoft.com"
+				}]
+			},
+			{
+			"nome":"Digigraf",
+			"luogo":"Udine, IT",
+			"PIVA":"22222",
+			"recensioni":[{
+				"voto":"2",
+				"progetto":"Company web site",
+				"descrizione":"Reject every purpose, not professional people",
+				"link":"http://digigrafonline.biz"
+				}]
+			}]
+}

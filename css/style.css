@@ -1,0 +1,304 @@
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
+
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	text-decoration: none;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+.gradient-bkg{
+	background-size: cover;
+	background: -webkit-linear-gradient(right top, DeepSkyBlue, lightgreen);
+	/*background-color: #5cc1af;*/
+	/*background-color: #111;*/
+	/*background: green;
+	-webkit-animation: changebkg 20s linear 0s infinite alternate;
+	   -moz-animation: changebkg 20s linear 0s infinite alternate;
+	     -o-animation: changebkg 20s linear 0s infinite alternate;
+	        animation: changebkg 20s linear 0s infinite alternate;*/
+	margin-top: -1px;
+	padding-top: 1px;
+}
+*{
+	transition: all .5s;
+}
+
+/*@-webkit-keyframes changebkg 
+	{ 
+	25% {background:yellow;} 
+	50%{background: blue;} 
+	75%{background:darkblue;} 
+	to { background: red; }  }
+	   
+    @-moz-keyframes   changebkg 
+	   { 
+	   25% {background:yellow;} 
+	   50%{background: blue;} 
+	   75%{background:darkblue;} 
+	   to { background: red; }  }
+    @-o-keyframes   changebkg 
+	   { 
+	   25% {background:yellow;} 
+	   50%{background: blue;} 
+	   75%{background:darkblue;} 
+	   to { background: red; }  }
+    @keyframes   changebkg 
+        { 
+       25% {background:yellow;} 
+       50%{background: blue;} 
+       75%{background:darkblue;} 
+       to { background: red; }  
+       }*/
+
+.full{
+	width: 100vw;
+	height: 100vh;
+	margin: 0px;
+	padding: 0px;
+	clear: both;
+	margin-top: -1px;
+	padding-top: 1px;
+	overflow-x: hidden;
+}
+
+.input-main{
+	padding: 50px;
+	width: 70%;
+	font-size: 4rem;
+	font-weight: 200;
+	font-family: sans-serif;
+	margin: auto;
+	display: block;
+	/*background-color: rgba(255,255,255,0.3);*/
+	background-color: transparent;
+	color: white;
+	
+	border: 0px;
+	border-bottom: 1px solid white;
+	padding-bottom: 15px;
+	box-sizing:border-box;
+	margin: 0 auto;
+	-webkit-appearance: none;
+    -webkit-border-radius:0; 
+}
+
+input:focus{
+	outline: none;
+}
+
+.input-insert{
+	padding: 20px;
+	font-size: 3rem;
+	-webkit-appearance: none;
+    -webkit-border-radius:0; 
+}
+
+.submit-insert{
+	display: block;
+	padding: 20px;
+	font-size: 4rem;
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+	background-color: #00BFFF;
+	width: 70%;
+	border: none;
+	-webkit-appearance: none;
+    -webkit-border-radius:0; 
+    border-radius:0;
+}
+
+.submit-border{
+	border: 2px solid white;
+	border-radius: 5px;
+	color: white;
+	background-color: transparent;
+	font-size: 2rem;
+	display: block;
+	padding: 10px;
+	transition: all .5s;
+	margin: 50px auto;
+	opacity: 1;
+	text-align: center;
+	-webkit-appearance: none;
+}
+
+
+.submit-border:hover{
+	background-color: white;
+	color: DeepSkyBlue ;
+}
+
+
+h1{
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 3rem;
+}
+
+h2{
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 2.5rem;
+}
+p{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 2rem;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+
+p small{
+	font-size: 1.2rem;
+	color: #0E464E;
+}
+
+.center{
+	text-align: center;
+	margin-top: .5rem;
+}
+
+.main-title{
+	font-size: 4rem;
+	font-weight: 300;
+	color: white;
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-family: 'Pacifico', cursive;
+}
+
+#title{
+	margin-top: 15vh;
+	margin-bottom: 10vh;
+	transform: rotate(-5deg);
+	-webkit-transform: -webkit-rotate(-5deg);
+}
+
+.customer-list{
+	list-style: none;
+	max-height: 200px;
+	min-height: 200px;
+	overflow: scroll;
+	list-style-position: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+.customer-list li{
+	width: 70%;
+	background-color: rgba(255,255,255,0.5);
+	font-size: 2rem;
+	padding: 10px;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	color: white;
+	padding-left: 50px;
+	margin: 0 auto;
+}
+
+.comment-list{
+	list-style: none;
+	list-style-position: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+.comment-list li{
+	width: 70%;
+	background-color: rgba(255,255,255,0.5);
+	font-size: 2rem;
+	padding: 10px;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	color: white;
+	padding-left: 50px;
+	margin: 0 auto;
+}
+
+.little{
+	text-align: left;
+	font-size: 1.5rem;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+}
+
+.company-name{
+	font-size: 4rem;
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	margin-top: 1rem;
+	margin-bottom: 0rem;
+
+}
+.bottom{
+	margin-top: 10vh;
+	bottom: 0px;
+	width: 100%;
+}
+
+.full-scroll{
+	min-height: 100vh;
+	overflow: scroll;
+}
+
+.bkg-white{
+	background-color: rgba(255,255,255,0.8);
+}
+
+
+
+@media (max-width: 600px){
+	html{
+		font-size: 60%;
+	}
+	.input-main{
+		padding: 30px;
+		font-size: 2.5rem;
+		background-color: rgba(255,255,255,0.3);
+		border: none;
+	}
+
+	.input-insert{
+		font-size: 2rem;
+		padding: 10px;
+	}
+
+	p{
+		font-size: 1.2rem;
+	}
+
+	.customer-list li{
+		width: 100%;
+	}
+
+	.comment-list li{
+	width: 100%;
+	}
+	.input-main{
+	width: 100%;
+	}
+	.submit-insert{
+	width: 100%;
+	}
+}
+
+@media  (min-width: 600px) and (max-width: 800px){
+	html{
+		font-size: 70%;
+	}
+	.input-main{
+		padding: 30px;
+		font-size: 2.5rem;
+	}
+}
