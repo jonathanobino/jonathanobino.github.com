@@ -23,7 +23,7 @@
 
 	})
 
-	.controller('ConnectionData', function($scope,$firebase){
+	.controller('ConnectionData', function($scope,$firebase,$location){
 		var url="https://radiant-fire-9839.firebaseio.com/aziende";
 		var ref= new Firebase(url);
 		 $scope.notfound=false;
@@ -35,7 +35,7 @@
 		 	$scope.newCompany.recensioni=[];
 		 	ref.push($scope.newCompany);
 		 	$scope.newCompany={};
-		 	$window.location.href = "#/";
+		 	$location.path('/#')
 		 }
 		 
 		
