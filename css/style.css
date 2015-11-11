@@ -66,8 +66,9 @@ a{
 	background-size:cover !important;
 	background-repeat: no-repeat !important;
 	display: flex;
+	color: white;
 	justify-content: center;
-	align-content: center;
+	align-items: center;
 }
 
 .input-main{
