@@ -26,9 +26,6 @@ a{
 	margin-top: -1px;
 	padding-top: 1px;
 }
-*{
-	transition: all .5s;
-}
 
 /*@-webkit-keyframes changebkg 
 	{ 
@@ -66,6 +63,11 @@ a{
 	margin-top: -1px;
 	padding-top: 1px;
 	overflow-x: hidden;
+	background-size:cover !important;
+	background-repeat: no-repeat !important;
+	display: flex;
+	justify-content: center;
+	align-content: center;
 }
 
 .input-main{
