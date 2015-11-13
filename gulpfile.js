@@ -14,5 +14,5 @@ gulp.task('sass',function(){
 })
 
 gulp.task('watch:sass',function(){
-	gulp.watch(path.join(__dirname,'sass/*.scss', ['sass']));
+	gulp.watch(path.join(__dirname,'scss/*.scss'), ['sass']);
 })

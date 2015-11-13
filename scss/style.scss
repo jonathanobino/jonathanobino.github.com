@@ -133,13 +133,27 @@ input:focus{
 	margin: 10px auto;
 }
 
-.parallax{
-	min-height: 100vh;
-	width: 100%;
-	background-repeat: no-repeat !important;
-	transform: scale(2,2);
+.wrapper{
 	overflow:hidden;
+	position: relative;
+	min-height: 100vh;
+	min-width: 100vw;
+	.parallax{
+		height:110vh;
+		width:110vw;
+		left:-5vw;
+		background-size:cover !important;
+		position:absolute;
+		background-repeat: no-repeat !important;
+		background-position: center center !important;
+		top: 0;
+	}
+	*:not(.parallax){
+		position: relative;
+	}
 }
+
+
 
 
 h1{

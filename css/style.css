@@ -2455,14 +2455,22 @@ input:focus {
   display: block;
   margin: 10px auto; }
 
-.parallax {
+.wrapper {
+  overflow: hidden;
+  position: relative;
   min-height: 100vh;
-  width: 100%;
-  background-repeat: no-repeat !important;
-  -webkit-transform: scale(2, 2);
-      -ms-transform: scale(2, 2);
-          transform: scale(2, 2);
-  overflow: hidden; }
+  min-width: 100vw; }
+  .wrapper .parallax {
+    height: 110vh;
+    width: 110vw;
+    left: -5vw;
+    background-size: cover !important;
+    position: absolute;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    top: 0; }
+  .wrapper *:not(.parallax) {
+    position: relative; }
 
 h1 {
   text-align: center;
