@@ -2,6 +2,7 @@ import React from 'react';
 import FullScreen from '../components/fullScreenHeader';
 import ContactForm from '../components/contactForm';
 import Parallax from '../components/parallax';
+import Footer from '../components/footer';
 import { Link } from 'react-router'
 
 const Head = React.createClass({
