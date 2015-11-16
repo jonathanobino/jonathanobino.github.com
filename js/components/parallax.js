@@ -6,9 +6,11 @@ const Parallax = React.createClass({
 		return (<div className="wrapper">
 				 <div style={{background:this.props.background}} className="parallax">
 				 </div> 
-				 <div className="container">
-				 	{this.props.children}
-				 </div>
+					 <div className="container">
+						 <div className="content">
+						 {this.props.children}
+						 </div>
+					 </div>
 				</div>)
 	},
 	componentDidMount:function(){

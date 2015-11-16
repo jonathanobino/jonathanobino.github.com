@@ -17,9 +17,10 @@ const Head = React.createClass({
 const Home = React.createClass({
 	render: function(){
 		return (<div>
-				<Head name="Jonathan"/>
-				<Parallax background="url(http://marshall.org/wp-content/themes/marshall/img/featured-space-policy.jpg)">
-				<h1> Hello from parallax </h1>
+				<Parallax background="url(http://wallpaper-download.net/wallpapers/nature-wallpapers-nature-landscape-background-wallpaper-34982.jpg)">
+				<img src="/images/logo.png"/>
+				<h3> Jonathan Obino </h3>
+				<img src="/images/scroll.svg" className="scroll small"/>
 				</Parallax>
 				<ContactForm address="info@jonathanobino.xyz"/>
 				</div>)

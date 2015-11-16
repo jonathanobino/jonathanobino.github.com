@@ -23,7 +23,7 @@ const ContactForm = React.createClass({
 										<h2> Sended! </h2>
 									</div>
 								</div>)
-					
+
 				}else if(this.state.errorSending){
 					toRender = (<div className="row">
 									<div className="medium-6 columns medium-centered text-center">
@@ -32,6 +32,11 @@ const ContactForm = React.createClass({
 								</div>)
 				}else {
 				toRender =      <div>
+									<div className="row">
+										<div className="medium-6 columns medium-centered text-center">
+										<h2>Contact Me</h2>
+										</div>
+									</div>
 									<div className="row">
 										<div className="medium-6 columns">
 											<input type="text" ref="name" placeholder="Nome"/>

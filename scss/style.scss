@@ -1,5 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Pacifico);
-@import url(http://fonts.googleapis.com/css?family=Oswald);
+// @import url(http://fonts.googleapis.com/css?family=Pacifico);
+// @import url(http://fonts.googleapis.com/css?family=Oswald);
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 @import '_normalize.scss';
@@ -25,11 +25,11 @@ a{
 	color: $blue;
 }
 
-*{
-	color: white;
-	font-family: "Gill Sans",sans-serif;
-	font-weight: 100;
-}
+// *{
+// 	color: white;
+// 	font-family: "Gill Sans",sans-serif;
+// 	font-weight: 100;
+// }
 
 .fa-bars{
 	font-size: 3rem;
@@ -52,6 +52,11 @@ a{
 	max-width: 800px;
 	display: block;
 	margin: 0 auto;
+	h2 {
+		color:rgba($white,0.8);
+		font-size: 2rem;
+		font-family: 'Lato', sans-serif;
+	}
 	input{
 		width: 100%;
 		color:$brown;
@@ -177,6 +182,24 @@ a{
 		height: 100%;
 		width: 100%;
 		background: rgba($green,0.8);
+		.content{
+			width: 500px;
+			display: block;
+			height: 500px;
+			margin: calc(50vh - 250px) auto;
+			text-align: center;
+			h3{
+				font-family: 'Lato', sans-serif;
+			}
+			img{
+				width: 300px;
+				margin: auto;
+				&.small.scroll{
+					width: 30px;
+					bottom:-150px;
+				}
+			}
+		}
 	}
 	*:not(.parallax){
 		position: relative;
