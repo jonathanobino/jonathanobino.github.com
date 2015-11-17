@@ -29,7 +29,8 @@ const Parallax = React.createClass({
 		window.addEventListener('scroll',event => {
 
 			let coordinates = parallax.getBoundingClientRect();
-			if(coordinates.top < (window.innerHeight - 50)){
+			console.log(parallax.style);
+			if(coordinates.top < (window.innerHeight - 50) && coordinates.bottom > 0){
 				requestAnimFrame(()=>{
 					parallax.style.top = (coordinates.top / 2)*(-1) + "px";
 				})

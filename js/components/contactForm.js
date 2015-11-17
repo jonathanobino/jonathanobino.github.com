@@ -14,13 +14,13 @@ const ContactForm = React.createClass({
 		if(this.state.isSending){
 					toRender = (<div className="row">
 									<div className="medium-6 columns medium-centered text-center">
-										<h2> Sending! </h2>
+										<h2> <i className="fa fa-circle-o-notch fa-spin fa-2"></i> </h2>
 									</div>
 								</div>)
 				}else if(this.state.successfulSended){
 					toRender = (<div className="row">
 									<div className="medium-6 columns medium-centered text-center">
-										<h2> Sended! </h2>
+										<h2> Thank you! I'll be in touch <i className="fa fa-thumbs-o-up"></i></h2>
 									</div>
 								</div>)
 

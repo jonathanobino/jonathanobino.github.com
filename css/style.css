@@ -2349,7 +2349,23 @@ a {
 
 .footer {
   min-height: 50vh;
-  background: #70B77E; }
+  background: rgba(255, 99, 71, 0.7); }
+  .footer ul.inline-list {
+    margin: 0 auto;
+    width: 270px;
+    position: relative;
+    top: 150px; }
+    .footer ul.inline-list li {
+      text-align: center;
+      margin-left: 50px; }
+      .footer ul.inline-list li:first-child {
+        margin-left: 0; }
+  .footer .fa {
+    color: white;
+    -webkit-transition: .5s all;
+    transition: .5s all; }
+    .footer .fa:hover {
+      color: black; }
 
 .full {
   height: 100vh;
@@ -2366,7 +2382,8 @@ a {
   .contactForm h2 {
     color: rgba(255, 255, 255, 0.8);
     font-size: 2rem;
-    font-family: 'Lato', sans-serif; }
+    font-family: 'Lato', sans-serif;
+    font-weight: 300; }
   .contactForm input {
     width: 100%;
     color: #B89E97;
@@ -2374,7 +2391,9 @@ a {
     border: 0px solid transparent;
     border-bottom: 1px solid rgba(255, 255, 255, 0.7);
     font-size: 1.5rem;
-    padding: 15px; }
+    padding: 15px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100; }
     .contactForm input:focus, .contactForm input:active {
       outline-color: transparent;
       outline-style: none; }
@@ -2388,7 +2407,9 @@ a {
     border-bottom: 1px solid rgba(255, 255, 255, 0.7);
     font-size: 1.5rem;
     padding: 15px;
-    max-width: 100%; }
+    max-width: 100%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100; }
     .contactForm textarea:focus, .contactForm textarea:active {
       outline-color: transparent;
       outline-style: none; }
@@ -2477,12 +2498,13 @@ a {
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(112, 183, 126, 0.8); }
+    background: -webkit-linear-gradient(right, rgba(16, 152, 247, 0.3), rgba(112, 183, 126, 0.5));
+    background: linear-gradient(to left, rgba(16, 152, 247, 0.3), rgba(112, 183, 126, 0.5)); }
     .wrapper .container .content {
-      width: 500px;
+      width: 300px;
       display: block;
-      height: 500px;
-      margin: calc(50vh - 250px) auto;
+      height: 300px;
+      margin: calc(50vh - 150px) auto;
       text-align: center; }
       .wrapper .container .content h3 {
         font-family: 'Lato', sans-serif; }
@@ -2490,7 +2512,10 @@ a {
         width: 300px;
         margin: auto; }
         .wrapper .container .content img.small.scroll {
-          width: 30px;
-          bottom: -150px; }
+          width: 20px;
+          bottom: -100px;
+          left: calc(50% - 10px);
+          position: absolute;
+          color: #70B77E; }
   .wrapper *:not(.parallax) {
     position: relative; }
