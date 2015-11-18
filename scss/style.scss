@@ -8,9 +8,11 @@
 $black: #262322;
 $green: #70B77E;
 $lightgreen: #7ABBA2;
+$footerGreen:#5BBA6F;
 $blue: #1098F7;
 $white: #ffffff;
 $brown: #B89E97;
+$red:#F46036;
 
 body{
 	margin: 0;
@@ -32,7 +34,8 @@ a{
 
 .footer{
 	min-height: 50vh;
-	background:rgba(tomato,0.7);
+	// background:darken($green,20);
+	background: $footerGreen;
 	ul.inline-list{
 		margin: 0 auto;
 		width: 270px;
@@ -133,8 +136,8 @@ a{
 		background-color: transparent;
 		transition: .5s all;
 		&:hover{
-			color: $green;
-			background-color: rgba($blue,0.8);
+			color: darken($green,10);
+			background-color: rgba(darken($blue,15),0.9);
 			border-color: $blue;
 		}
 	}

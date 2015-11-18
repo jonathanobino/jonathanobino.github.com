@@ -2349,7 +2349,7 @@ a {
 
 .footer {
   min-height: 50vh;
-  background: rgba(255, 99, 71, 0.7); }
+  background: #5BBA6F; }
   .footer ul.inline-list {
     margin: 0 auto;
     width: 270px;
@@ -2428,8 +2428,8 @@ a {
     -webkit-transition: .5s all;
     transition: .5s all; }
     .contactForm .sendForm:hover {
-      color: #70B77E;
-      background-color: rgba(16, 152, 247, 0.8);
+      color: #52a262;
+      background-color: rgba(6, 109, 180, 0.9);
       border-color: #1098F7; }
 
 .columns.fullwidth {

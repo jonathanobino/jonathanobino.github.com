@@ -6,7 +6,6 @@ var path = require('path');
 gulp.task('sass',function(){
 	var src = path.join(__dirname,'scss/*.scss');
 	var dest = path.join(__dirname,'css/');
-	console.log(src,dest);
 	return gulp.src(src)
 	.pipe(sass().on('error',sass.logError))
 	.pipe(autoprefix())
