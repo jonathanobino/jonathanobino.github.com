@@ -5,8 +5,8 @@ import Home from './pages/home';
 import Blog from './pages/blog';
 import About from './pages/about';
 import ErrHandler from './pages/errHandler';
-import { Router, Route, Link, IndexRoute } from 'react-router'
-import { createHistory, useBasename } from 'history'
+import { Router, Route, Link, IndexRoute } from 'react-router';
+import { createHistory, useBasename } from 'history';
 
 
 render(
@@ -17,5 +17,6 @@ render(
 			    <Route path="about" component={About}/>
 			    <Route path="*" component={ErrHandler}/>
 		    </Route>
-		</Router>),document.getElementById('app'));
+		</Router>),
+	document.getElementById('app'));
 

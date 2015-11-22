@@ -16,9 +16,7 @@ const Home = React.createClass({
 		return	(<div>
 					<div className="offCanvas"></div>
 					<div className="mainWrapper">
-
 					{this.props.children}
-
 					</div>
 				</div>);
 	},

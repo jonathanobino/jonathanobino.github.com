@@ -2343,29 +2343,63 @@ a {
   font-weight: 300;
   color: #1098F7; }
 
+h2 {
+  font-size: 2rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300; }
+
 .fa-bars {
   font-size: 3rem;
   color: #70B77E; }
 
 .footer {
   min-height: 50vh;
-  background: #5BBA6F; }
+  background: #5BBA6F;
+  padding-top: 20vh;
+  padding-bottom: 10vh; }
   .footer ul.inline-list {
-    margin: 0 auto;
-    width: 270px;
-    position: relative;
-    top: 150px; }
+    margin: 0 auto 30px;
+    width: 270px; }
     .footer ul.inline-list li {
       text-align: center;
       margin-left: 50px; }
       .footer ul.inline-list li:first-child {
         margin-left: 0; }
+  .footer p {
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300; }
   .footer .fa {
     color: white;
     -webkit-transition: .5s all;
     transition: .5s all; }
     .footer .fa:hover {
       color: black; }
+  .footer .credits .heart {
+    color: red; }
+  .footer .credits img {
+    max-height: 20px; }
+
+ul.inline-list.same-height-child {
+  width: 83%;
+  margin: 60px auto; }
+  ul.inline-list.same-height-child li {
+    margin: 10px; }
+    @media (max-width: 990px) {
+      ul.inline-list.same-height-child li {
+        width: 21%;
+        margin: 11px; } }
+    ul.inline-list.same-height-child li img {
+      width: auto;
+      height: 50px; }
+
+.columns.same-min-height {
+  min-height: 300px; }
+
+.panel {
+  padding-top: 50px;
+  min-height: 50vh;
+  margin-top: -1px; }
 
 .full {
   height: 100vh;
@@ -2373,64 +2407,202 @@ a {
   background-size: cover !important;
   background-position: center center !important; }
 
-.contactForm {
-  min-height: 300px;
-  padding: 50px 0;
-  max-width: 800px;
-  display: block;
-  margin: 0 auto; }
-  .contactForm h2 {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 2rem;
-    font-family: 'Lato', sans-serif;
-    font-weight: 300; }
-  .contactForm input {
-    width: 100%;
-    color: #B89E97;
-    background: transparent;
-    border: 0px solid transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
-    font-size: 1.5rem;
-    padding: 15px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 100; }
-    .contactForm input:focus, .contactForm input:active {
-      outline-color: transparent;
-      outline-style: none; }
-  .contactForm textarea {
-    width: 100%;
-    display: block;
-    margin: 10px auto;
-    color: #B89E97;
-    background: transparent;
-    border: 0px solid transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
-    font-size: 1.5rem;
-    padding: 15px;
-    max-width: 100%;
-    font-family: 'Lato', sans-serif;
-    font-weight: 100; }
-    .contactForm textarea:focus, .contactForm textarea:active {
-      outline-color: transparent;
-      outline-style: none; }
-  .contactForm .sendForm {
-    width: 100%;
+.contactFormWrapper {
+  position: relative;
+  overflow: hidden; }
+  .contactFormWrapper .message {
+    position: absolute;
+    -webkit-transition: all 2s, width 1s 3s, height 1s 3s, padding .7s 1.5s;
+    transition: all 2s, width 1s 3s, height 1s 3s, padding .7s 1.5s;
+    z-index: 9;
+    bottom: -100%;
+    left: calc(50% - 150px);
+    background-color: #1098F7;
+    border-radius: 100%;
     text-align: center;
+    padding-top: 130px; }
+    .contactFormWrapper .message h2 {
+      color: white; }
+    .contactFormWrapper .message.show {
+      width: 100%;
+      height: 100%;
+      padding-top: 250px;
+      border-radius: 0;
+      bottom: 0;
+      left: 0;
+      -webkit-animation: bounceIn 1.5s cubic-bezier(0.6, -0.28, 0.74, 0.05) 0s 1;
+              animation: bounceIn 1.5s cubic-bezier(0.6, -0.28, 0.74, 0.05) 0s 1; }
+  .contactFormWrapper .contactForm {
+    min-height: 300px;
+    padding: 50px 0;
+    max-width: 800px;
     display: block;
-    margin: 35px auto;
-    border: 2px solid #70B77E;
-    padding: 10px;
-    border-radius: 2px;
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #1098F7;
-    background-color: transparent;
-    -webkit-transition: .5s all;
-    transition: .5s all; }
-    .contactForm .sendForm:hover {
-      color: #52a262;
-      background-color: rgba(6, 109, 180, 0.9);
-      border-color: #1098F7; }
+    margin: 0 auto;
+    position: relative; }
+    .contactFormWrapper .contactForm h2 {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 2rem;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300; }
+    .contactFormWrapper .contactForm input {
+      width: 100%;
+      color: #B89E97;
+      background: transparent;
+      border: 0px solid transparent;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+      font-size: 1.5rem;
+      padding: 15px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 100; }
+      .contactFormWrapper .contactForm input:focus, .contactFormWrapper .contactForm input:active {
+        outline-color: transparent;
+        outline-style: none; }
+    .contactFormWrapper .contactForm textarea {
+      width: 100%;
+      display: block;
+      margin: 10px auto;
+      color: #B89E97;
+      background: transparent;
+      border: 0px solid transparent;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+      font-size: 1.5rem;
+      padding: 15px;
+      max-width: 100%;
+      font-family: 'Lato', sans-serif;
+      font-weight: 100; }
+      .contactFormWrapper .contactForm textarea:focus, .contactFormWrapper .contactForm textarea:active {
+        outline-color: transparent;
+        outline-style: none; }
+    .contactFormWrapper .contactForm .sendForm {
+      width: 100%;
+      text-align: center;
+      display: block;
+      margin: 35px auto;
+      border: 2px solid #70B77E;
+      padding: 10px;
+      border-radius: 2px;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #1098F7;
+      background-color: transparent;
+      -webkit-transition: .5s all;
+      transition: .5s all; }
+      .contactFormWrapper .contactForm .sendForm:disabled {
+        cursor: not-allowed; }
+      .contactFormWrapper .contactForm .sendForm:hover {
+        color: #52a262;
+        background-color: rgba(6, 109, 180, 0.9);
+        border-color: #1098F7; }
+
+@-webkit-keyframes bounceIn {
+  0% {
+    border-radius: 100%;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    bottom: 30%;
+    left: calc(50% - 150px); }
+  20% {
+    -webkit-transform: scale(0.8, 0.8);
+            transform: scale(0.8, 0.8);
+    width: 300px;
+    height: 300px;
+    border-radius: 100%; }
+  25% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    width: 300px;
+    height: 300px;
+    border-radius: 100%; }
+  35% {
+    -webkit-transform: scale(0.9, 0.9);
+            transform: scale(0.9, 0.9);
+    width: 300px;
+    height: 300px;
+    border-radius: 100%; }
+  50% {
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+    width: 300px;
+    height: 300px;
+    border-radius: 100%; }
+  60% {
+    -webkit-transform: scale(0.9, 0.9);
+            transform: scale(0.9, 0.9);
+    width: 300px;
+    height: 300px;
+    border-radius: 100%; }
+  70% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    bottom: 30%;
+    left: calc(50% - 150px); }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    bottom: 0;
+    left: 0; } }
+
+@keyframes bounceIn {
+  0% {
+    border-radius: 100%;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    bottom: 30%;
+    left: calc(50% - 150px); }
+  20% {
+    -webkit-transform: scale(0.8, 0.8);
+            transform: scale(0.8, 0.8);
+    width: 300px;
+    height: 300px;
+    border-radius: 100%; }
+  25% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    width: 300px;
+    height: 300px;
+    border-radius: 100%; }
+  35% {
+    -webkit-transform: scale(0.9, 0.9);
+            transform: scale(0.9, 0.9);
+    width: 300px;
+    height: 300px;
+    border-radius: 100%; }
+  50% {
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+    width: 300px;
+    height: 300px;
+    border-radius: 100%; }
+  60% {
+    -webkit-transform: scale(0.9, 0.9);
+            transform: scale(0.9, 0.9);
+    width: 300px;
+    height: 300px;
+    border-radius: 100%; }
+  70% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    bottom: 30%;
+    left: calc(50% - 150px); }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    bottom: 0;
+    left: 0; } }
 
 .columns.fullwidth {
   padding: 0px !important;
