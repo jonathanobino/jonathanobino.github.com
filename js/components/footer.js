@@ -19,7 +19,7 @@ const Footer = React.createClass({
 			<p className="text-center">
 				© Jonathan Obino {this.state.year}
 			</p>
-			<p className="text-center credits">Made with <span className="heart">&#10084;</span> and <img src="http://svgporn.com/logos/react.svg"/></p>
+			<p className="text-center credits">Made with <span className="fa fa-heart heart"></span> and <img src="http://svgporn.com/logos/react.svg"/></p>
 			</div>
 			)
 	}
