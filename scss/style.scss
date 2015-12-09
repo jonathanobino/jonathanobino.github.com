@@ -20,6 +20,10 @@ body{
 	background-color: $black;
 }
 
+#seo{
+	display: none;
+}
+
 a{
 	text-decoration: none;
 	font-family: 'Lato', sans-serif;
@@ -39,6 +43,20 @@ h2{
 	color: $green;
 }
 
+ul.inline-list{
+	margin: 0 auto 30px;
+	width: 270px;
+	list-style: none;
+	li{
+		display: inline-block;
+		text-align: center;
+		margin-left: 50px;
+		&:first-child{
+			margin-left: 0;
+		}
+	}
+}
+
 .footer{
 	min-height: 50vh;
 	background: $footerGreen;
@@ -47,7 +65,9 @@ h2{
 	ul.inline-list{
 		margin: 0 auto 30px;
 		width: 270px;
+		list-style: none;
 		li{
+			display: inline-block;
 			text-align: center;
 			margin-left: 50px;
 			&:first-child{
@@ -174,10 +194,14 @@ ul.inline-list{
 			padding: 15px;
 			font-family: 'Lato', sans-serif;
 			font-weight: 100;
+			box-shadow: none;
+			transition:.5s all;
 			&:focus,
 			&:active {
 			  outline-color: transparent ;
+			  box-shadow: none;
 			  outline-style: none ;
+			  // background: rgba($green,0.1);
 			}
 		}
 		textarea{
@@ -193,10 +217,14 @@ ul.inline-list{
 			max-width: 100%;
 			font-family: 'Lato', sans-serif;
 			font-weight: 100;
+			box-shadow: none;
+			transition:.5s all;
 			&:focus,
 			&:active {
+			  box-shadow: none;
 			  outline-color: transparent ;
 			  outline-style: none ;
+			  // background: rgba($green,0.1);
 			}
 		}
 		.sendForm{
