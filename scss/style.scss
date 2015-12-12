@@ -1,9 +1,8 @@
-// @import url(http://fonts.googleapis.com/css?family=Pacifico);
-// @import url(http://fonts.googleapis.com/css?family=Oswald);
-@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 @import '_normalize.scss';
 @import '_foundation.min.scss';
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
 
 $black: #262322;
 $green: #70B77E;
@@ -30,7 +29,8 @@ a{
 
 h2{
 	font-size: 2rem;
-	font-family: 'Lato', sans-serif;
+	// font-family: 'Lato', sans-serif;
+	font-family: 'Playfair Display',serif;
 	font-weight: 300;
 }
 
@@ -66,18 +66,6 @@ h2{
 		&:hover{
 			color: black;
 		}
-		// &.fa-twitter:hover{
-		// 	color:$blue;
-		// }
-		// &.fa-github:hover{
-		// 	color:black;
-		// }
-		// &.fa-codepen:hover{
-		// 	color:black;
-		// }
-		// &.fa-linkedin:hover{
-		// 	color:#006fa6;
-		// }
 	}
 	.credits{
 		.heart{
@@ -91,17 +79,26 @@ h2{
 
 ul.inline-list{
 	&.same-height-child{
-		width: 83%;
-		margin: 60px auto;
+		width: 100%;
+		margin-left: -0.775rem;
 		li{
 			margin: 10px;
 			@media (max-width: 990px){
-			    width: 21%;
+			    width: 18%;
     			margin: 11px;
+			}
+			@media (max-width: 700px){
+			    width: 20%;
+    			margin: 11px;
+			}
+			@media (max-width: 570px){
+			    width: 40%;
+    			margin: 13px;
 			}
 			img{
 				width: auto;
 				height: 50px;
+				margin: 0 auto;
 			}
 		}
 	}
@@ -302,6 +299,38 @@ ul.inline-list{
 	}
 }
 
+.row.main{
+	padding: 20px 0;
+	h2{
+		font-family: 'Playfair Display',serif;
+		font-weight: 300;
+		color: #aaa;
+		line-height: .9;
+		@media(max-width: 640px){
+			padding-bottom: 30px;
+			font-weight: 400;
+			color: #555;
+		}
+
+	}
+	.text-right{
+		*{
+			@media(max-width: 640px){
+				text-align: center;
+			}
+		}
+	}
+	.columns{
+		p:first-child{
+			padding-top: 0px;
+		}
+		p{
+			line-height: 1.9rem;
+			color: #555;
+		}
+	}
+}
+
 .mainWrapper{
 	transition:.5s all;
 	right: 0px;
@@ -373,6 +402,9 @@ ul.inline-list{
 					left: calc(50% - 10px);
 					position: absolute;
 					color: $green;
+					@media (max-height: 550px){
+					    bottom: -50px;
+					}
 				}
 			}
 		}

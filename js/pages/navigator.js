@@ -24,8 +24,6 @@ const Home = React.createClass({
 		const element = ReactDom.findDOMNode(this);
 		$(element).children('.offCanvas').toggleClass('show');
 		$(element).children('.mainWrapper').toggleClass('show');
-	},
-
-
+	}
 })
 export default Home;

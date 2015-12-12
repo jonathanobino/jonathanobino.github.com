@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -2254,7 +2255,6 @@ blockquote, blockquote p {
   -webkit-transition: left 0.15s ease-out;
   transition: left 0.15s ease-out;
   -webkit-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
 .switch input:checked + label {
@@ -2345,7 +2345,7 @@ a {
 
 h2 {
   font-size: 2rem;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Playfair Display',serif;
   font-weight: 300; }
 
 .fa-bars {
@@ -2381,17 +2381,26 @@ h2 {
     max-height: 20px; }
 
 ul.inline-list.same-height-child {
-  width: 83%;
-  margin: 60px auto; }
+  width: 100%;
+  margin-left: -0.775rem; }
   ul.inline-list.same-height-child li {
     margin: 10px; }
     @media (max-width: 990px) {
       ul.inline-list.same-height-child li {
-        width: 21%;
+        width: 18%;
         margin: 11px; } }
+    @media (max-width: 700px) {
+      ul.inline-list.same-height-child li {
+        width: 20%;
+        margin: 11px; } }
+    @media (max-width: 570px) {
+      ul.inline-list.same-height-child li {
+        width: 40%;
+        margin: 13px; } }
     ul.inline-list.same-height-child li img {
       width: auto;
-      height: 50px; }
+      height: 50px;
+      margin: 0 auto; }
 
 .columns.same-min-height {
   min-height: 300px; }
@@ -2622,6 +2631,27 @@ ul.inline-list.same-height-child {
   .offCanvas.show {
     right: 0; }
 
+.row.main {
+  padding: 20px 0; }
+  .row.main h2 {
+    font-family: 'Playfair Display',serif;
+    font-weight: 300;
+    color: #aaa;
+    line-height: .9; }
+    @media (max-width: 640px) {
+      .row.main h2 {
+        padding-bottom: 30px;
+        font-weight: 400;
+        color: #555; } }
+  @media (max-width: 640px) {
+    .row.main .text-right * {
+      text-align: center; } }
+  .row.main .columns p:first-child {
+    padding-top: 0px; }
+  .row.main .columns p {
+    line-height: 1.9rem;
+    color: #555; }
+
 .mainWrapper {
   -webkit-transition: .5s all;
   transition: .5s all;
@@ -2689,5 +2719,8 @@ ul.inline-list.same-height-child {
           left: calc(50% - 10px);
           position: absolute;
           color: #70B77E; }
+          @media (max-height: 550px) {
+            .wrapper .container .content img.small.scroll {
+              bottom: -50px; } }
   .wrapper *:not(.parallax) {
     position: relative; }

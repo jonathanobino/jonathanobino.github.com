@@ -4,7 +4,9 @@
   "description": "Website development with react",
   "main": "index.html",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "development": "webpack-dev-server",
+    "watch:scss":"gulp watch:sass"
   },
   "repository": {
     "type": "git",
@@ -27,7 +29,6 @@
     "continuation-local-storage": "^3.1.4",
     "history": "^1.13.0",
     "jquery": "^2.1.4",
-    "particles.js": "^2.0.0",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
     "react-router": "^1.0.0",
