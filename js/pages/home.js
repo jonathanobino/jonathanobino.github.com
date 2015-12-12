@@ -63,14 +63,14 @@ const WhoAmI = React.createClass({
 					<div className="medium-2 large-2 columns text-right"><h2>What I Use</h2></div>
 					<div className="medium-10 large-10 columns">
 						<ul className="inline-list same-height-child">
-							<li><img src="http://svgporn.com/logos/html-5.svg"/></li>
-							<li><img src="http://svgporn.com/logos/sass.svg"/></li>
-							<li><img src="http://svgporn.com/logos/angular-icon.svg"/></li>
-							<li><img src="http://svgporn.com/logos/react.svg"/></li>
-							<li><img src="http://svgporn.com/logos/nodejs-icon.svg"/></li>
-							<li><img src="http://svgporn.com/logos/mongodb.svg"/></li>
-							<li><img src="http://svgporn.com/logos/gulp.svg"/></li>
-							<li><img src="http://svgporn.com/logos/express.svg"/></li>
+							<li><img src="http://svgporn.com/logos/html-5.svg" alt="HTML5"/></li>
+							<li><img src="http://svgporn.com/logos/sass.svg" alt="SASS"/></li>
+							<li><img src="http://svgporn.com/logos/angular-icon.svg" alt="Angular"/></li>
+							<li><img src="http://svgporn.com/logos/react.svg" alt="React JS"/></li>
+							<li><img src="http://svgporn.com/logos/nodejs-icon.svg" alt="Node JS"/></li>
+							<li><img src="http://svgporn.com/logos/mongodb.svg" alt="Mongo DB"/></li>
+							<li><img src="http://svgporn.com/logos/gulp.svg" alt="Gulp JS"/></li>
+							<li><img src="http://svgporn.com/logos/express.svg" alt="Express"/></li>
 						</ul>
 					</div>
 				</div>
@@ -78,15 +78,6 @@ const WhoAmI = React.createClass({
 			)
 	}
 });
-
-//<li>html5</li>
-//<li>SASS</li>
-//<li>Angular</li>
-//<li>React</li>
-//<li>Node JS</li>
-//<li>Mongo DB</li>
-//<li>Gulp</li>
-//<li>Express</li>
 
 const Home = React.createClass({
 	render: function(){
