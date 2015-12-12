@@ -2348,6 +2348,9 @@ h2 {
   font-family: 'Lato', sans-serif;
   font-weight: 300; }
 
+#seo {
+  display: none; }
+
 .fa-bars {
   font-size: 3rem;
   color: #70B77E; }
