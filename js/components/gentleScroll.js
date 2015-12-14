@@ -4,21 +4,26 @@ const $ = jQuery;
 
 const GentleScroll = React.createClass({
 	render:function(){
-		return <span onClick={this.clickHandler}>{this.props.children}</span>
+		return <div onClick={this.clickHandler}>{this.props.children}</div>
 	},
 	clickHandler:function(){
-		const targetPosition = $(this.props.target).getBoundingClientRect().top;
+		
+		const targetPosition = document.querySelector(this.props.target).getBoundingClientRect().top + 1;
+		console.log(targetPosition);
+		console.log($(window))
 		if( typeof this.props.beforeScroll == 'function'){
 			this.props.beforeScroll()
 			.then(()=>{
-				$(window).animate({
+				$('html,body').animate({
 					scrollTop:targetPosition
-				},this.props.timing || 300)
+				},this.props.timing || 1000)
 			})
 		} else {
-			$(window).animate({
+			$('html,body').animate({
 				scrollTop:targetPosition
-			},this.props.timing || 300)
+			},this.props.timing || 1000)
 		}
 	}
 })
+
+export default GentleScroll

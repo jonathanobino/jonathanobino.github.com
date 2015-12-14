@@ -1,6 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
+@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -2351,6 +2352,55 @@ h2 {
 #seo {
   display: none; }
 
+.portfolioItem figure {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100%; }
+  @media (max-width: 650px) {
+    .portfolioItem figure {
+      padding-bottom: 50%; } }
+  .portfolioItem figure .squareImage {
+    width: 100%;
+    padding-bottom: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    -webkit-transition: all .8s;
+    transition: all .8s;
+    background-position: center center;
+    -webkit-filter: opacity(20%);
+            filter: opacity(20%); }
+    @media (max-width: 650px) {
+      .portfolioItem figure .squareImage {
+        padding-bottom: 50%; } }
+  .portfolioItem figure figcaption {
+    opacity: 0;
+    -webkit-transition: all .8s;
+    transition: all .8s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: -webkit-linear-gradient(right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)); }
+    .portfolioItem figure figcaption p {
+      width: 100%;
+      font-size: 1.5rem;
+      top: -200px;
+      position: absolute;
+      text-align: center;
+      -webkit-transition: all .6s;
+      transition: all .6s; }
+  .portfolioItem figure:hover .squareImage {
+    -webkit-filter: opacity(100%);
+            filter: opacity(100%); }
+  .portfolioItem figure:hover figcaption {
+    opacity: 1; }
+    .portfolioItem figure:hover figcaption p {
+      top: calc(50% - .75rem); }
+
 .fa-bars {
   font-size: 3rem;
   color: #70B77E; }
@@ -2382,6 +2432,46 @@ h2 {
     color: red; }
   .footer .credits img {
     max-height: 20px; }
+
+.careerItem {
+  padding-bottom: 40px; }
+  .careerItem .imgWrapper {
+    max-height: 150px;
+    max-width: 150px;
+    min-height: 50px;
+    min-width: 150px;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-filter: grayscale(60%);
+            filter: grayscale(60%);
+    -webkit-transition: all .7s;
+    transition: all .7s; }
+    @media (max-width: 650px) {
+      .careerItem .imgWrapper {
+        max-height: 55px;
+        max-width: 55px;
+        min-height: 55px;
+        min-width: 55px; } }
+  .careerItem .description .serif {
+    font-family: 'Playfair Display',serif;
+    font-weight: 300;
+    color: #aaa !important;
+    min-width: 50px;
+    display: inline-block; }
+  .careerItem .description .sans {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+    font-size: .85rem;
+    color: #aaa !important;
+    min-width: 50px;
+    display: inline-block; }
+  .careerItem .description p {
+    margin-bottom: 0;
+    line-height: 1.4 !important; }
+  .careerItem:hover .imgWrapper {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%); }
 
 ul.inline-list.same-height-child {
   width: 100%;
@@ -2636,6 +2726,8 @@ ul.inline-list.same-height-child {
 
 .row.main {
   padding: 20px 0; }
+  .row.main .row {
+    padding-top: 8px; }
   .row.main h2 {
     font-family: 'Playfair Display',serif;
     font-weight: 300;
@@ -2677,6 +2769,12 @@ ul.inline-list.same-height-child {
   .blogpost:hover .content {
     opacity: 1; }
 
+.hide-sm {
+  display: inherit; }
+  @media (max-height: 640px) {
+    .hide-sm {
+      display: none; } }
+
 .wrapper {
   overflow: hidden;
   position: relative;
@@ -2691,8 +2789,10 @@ ul.inline-list.same-height-child {
     background-repeat: no-repeat !important;
     background-position: center center !important;
     top: 0;
-    -webkit-transition: 0.01s ease;
-    transition: 0.01s ease;
+    -webkit-transition: -webkit-transform 0.01s ease;
+    transition: -webkit-transform 0.01s ease;
+    transition: transform 0.01s ease;
+    transition: transform 0.01s ease, -webkit-transform 0.01s ease;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); }
   .wrapper .container {

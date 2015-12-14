@@ -4,7 +4,7 @@
   "description": "Website development with react",
   "main": "index.html",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack -p",
     "development": "webpack-dev-server",
     "watch:scss":"gulp watch:sass"
   },
