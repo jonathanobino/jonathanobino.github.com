@@ -2360,21 +2360,6 @@ h2 {
   @media (max-width: 650px) {
     .portfolioItem figure {
       padding-bottom: 50%; } }
-  .portfolioItem figure .squareImage {
-    width: 100%;
-    padding-bottom: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 0;
-    -webkit-transition: all .8s;
-    transition: all .8s;
-    background-position: center center;
-    -webkit-filter: opacity(20%);
-            filter: opacity(20%); }
-    @media (max-width: 650px) {
-      .portfolioItem figure .squareImage {
-        padding-bottom: 50%; } }
   .portfolioItem figure figcaption {
     opacity: 0;
     -webkit-transition: all .8s;
@@ -2393,6 +2378,29 @@ h2 {
       text-align: center;
       -webkit-transition: all .6s;
       transition: all .6s; }
+    @media (max-width: 650px) {
+      .portfolioItem figure figcaption {
+        opacity: 1; }
+        .portfolioItem figure figcaption p {
+          top: calc(50% - .75rem);
+          font-size: 1.2rem; } }
+  .portfolioItem figure .squareImage {
+    width: 100%;
+    padding-bottom: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    -webkit-transition: all .8s;
+    transition: all .8s;
+    background-position: center center;
+    -webkit-filter: opacity(20%);
+            filter: opacity(20%); }
+    @media (max-width: 650px) {
+      .portfolioItem figure .squareImage {
+        padding-bottom: 50%;
+        -webkit-filter: opacity(100%);
+                filter: opacity(100%); } }
   .portfolioItem figure:hover .squareImage {
     -webkit-filter: opacity(100%);
             filter: opacity(100%); }
@@ -2440,7 +2448,7 @@ h2 {
     max-width: 150px;
     min-height: 50px;
     min-width: 150px;
-    background-position: center center;
+    background-position: top center;
     background-size: contain;
     background-repeat: no-repeat;
     -webkit-filter: grayscale(60%);
@@ -2449,10 +2457,10 @@ h2 {
     transition: all .7s; }
     @media (max-width: 650px) {
       .careerItem .imgWrapper {
-        max-height: 55px;
-        max-width: 55px;
-        min-height: 55px;
-        min-width: 55px; } }
+        max-height: 90px;
+        max-width: 90px;
+        min-height: 40px;
+        min-width: 73px; } }
   .careerItem .description .serif {
     font-family: 'Playfair Display',serif;
     font-weight: 300;

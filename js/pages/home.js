@@ -99,7 +99,9 @@ const WhoAmI = React.createClass({
 						<div className="medium-10 large-10 columns">
 						<p>Hello, my name is Jonathan Obino and I'm a Full Stack Web Developer.<br/>
 						I work with Javascript both in the front end with frameworks and libraries like <strong>Angular</strong> or <strong>React</strong> and I work on the backend with frameworks like <strong>Express</strong> or <strong>Koa</strong>.<br/>
-						I develop mobile applications with <strong>React Native</strong> or with <strong>Ionic</strong> to archeive the best solution with the right tool for the project.
+						I develop mobile applications with <strong>React Native</strong> or with <strong>Ionic</strong> to archeive the best solution with the right tool for the project.<br/>
+						I like to stay up-to-date with the new technology and to experiment with them as soon they are available.<br/>
+						As you can see on my github this website is built using React, bundled with WebPack and written in ES6.
 						</p>
 						</div>
 					</div>

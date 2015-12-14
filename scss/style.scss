@@ -46,20 +46,6 @@ h2{
 		@media(max-width: 650px){
 				padding-bottom: 50%;
 			}
-		.squareImage{
-			width: 100%;
-			padding-bottom: 100%;
-			background-size: cover;
-			background-repeat: no-repeat;
-			position: absolute;
-			top: 0;
-			transition:all .8s;
-			background-position: center center;
-			filter:opacity(20%);
-			@media(max-width: 650px){
-				padding-bottom: 50%;
-			}
-		}
 		figcaption{
 			opacity: 0;
 			transition: all .8s;
@@ -75,6 +61,28 @@ h2{
 				position: absolute;
 				text-align: center;
 				transition: all .6s ;
+			}
+			@media(max-width: 650px){
+					opacity: 1;
+					p{
+						top: calc(50% - .75rem);
+						font-size: 1.2rem;
+					}
+			}
+		}
+		.squareImage{
+			width: 100%;
+			padding-bottom: 100%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			position: absolute;
+			top: 0;
+			transition:all .8s;
+			background-position: center center;
+			filter:opacity(20%);
+			@media(max-width: 650px){
+				padding-bottom: 50%;
+				filter:opacity(100%);
 			}
 		}
 		&:hover{
@@ -140,16 +148,16 @@ h2{
 		max-width: 150px;
 		min-height: 50px;
 		min-width: 150px;
-		background-position: center center;
+		background-position: top center;
 		background-size: contain;
 		background-repeat: no-repeat;
 		filter:grayscale(60%);
 		transition: all .7s;
 		@media(max-width: 650px){
-			max-height: 55px;
-			max-width: 55px;
-			min-height: 55px;
-			min-width: 55px;
+			max-height: 90px;
+			max-width: 90px;
+			min-height: 40px;
+			min-width: 73px;
 		}
 	}
 	.description{
