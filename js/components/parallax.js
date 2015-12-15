@@ -48,22 +48,24 @@ const Parallax = React.createClass({
 					ticking = false;
 				})
 				requestAnimFrame(()=>{
+					//console.log(wrapperCoord.bottom <= secondLimit);
 					if(wrapperCoord.bottom <= secondLimit){
 					let blur = Math.floor(((secondLimit - wrapperCoord.bottom)/30));
 					blur = blur > 4 ? 4 : blur > 0 ? blur : 1 ;
 						if(blur != this.state.blurriness){
-							console.log('set blur:',blur);
+							//console.log('set blur:',blur);
 							parallax.style.webkitFilter = `blur(${blur}px)`;
 							parallax.style.filter = `blur(${blur}px)`;
 							this.setState({blurriness:blur})
 						}
-					} else {
+					} else if(!ticking){
 						if(this.state.blurriness != 0){
+							ticking = true;
 							parallax.style.webkitFilter = '';
 							parallax.style.filter = '';
-							console.log('set blur:',0);
+							//console.log('set blur:',0);
 							this.setState({blurriness:0})
-							
+							ticking = false;
 						}
 					}
 					// if(wrapperCoord.bottom < limit && wrapperCoord.bottom > secondLimit){
@@ -84,13 +86,14 @@ const Parallax = React.createClass({
 					// 	}
 					// }
 				})
-			} else {
+			} else if(!ticking){
 				if(this.state.blurriness != 0){
+					ticking = true;
 					parallax.style.webkitFilter = '';
 					parallax.style.filter = '';
-					console.log('set blur:',0);
+					// console.log('set blur:',0);
 					this.setState({blurriness:0})
-					
+					ticking = false;
 				}
 			}
 		})
