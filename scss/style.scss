@@ -449,6 +449,7 @@ ul.inline-list{
 	transition:.5s all;
 	right: 0px;
 	position: relative;
+	overflow-y:hidden;
 	&.show{
 		right: 500px;
 		position: relative;

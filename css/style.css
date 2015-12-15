@@ -2759,7 +2759,8 @@ ul.inline-list.same-height-child {
   -webkit-transition: .5s all;
   transition: .5s all;
   right: 0px;
-  position: relative; }
+  position: relative;
+  overflow-y: hidden; }
   .mainWrapper.show {
     right: 500px;
     position: relative; }
