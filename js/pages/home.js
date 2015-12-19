@@ -144,8 +144,8 @@ const Home = React.createClass({
 	render: function(){
 		return (<div>
 				<Parallax background="url(/images/background.jpg)">
-				<img src="/images/logo.png"/>
-				<GentleScroll target="main"><img src="/images/scroll.svg" className="scroll small"/></GentleScroll>
+				<img src="/images/logo.png" alt="logo"/>
+				<GentleScroll target="main"><img src="/images/scroll.svg" className="scroll small" alt="scroll"/></GentleScroll>
 				</Parallax>
 				<WhoAmI/>
 				<ContactForm address="info@jonathanobino.xyz"/>
