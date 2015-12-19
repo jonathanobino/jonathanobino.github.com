@@ -53,10 +53,6 @@ const WhoAmI = React.createClass({
 	getInitialState:function(){
 		return {
 			portfolio:[{
-				link:'http://www.digigrafonline.it',
-				description:'Digigraf',
-				imageSrc:'/images/digigraf.png'
-			},{
 				link:'http://ratemyc.herokuapp.com',
 				description:'Rate My Customer',
 				imageSrc:'/images/ratemy.png'
@@ -64,6 +60,10 @@ const WhoAmI = React.createClass({
 				link:'https://github.com/jonathanobino/kiko-hack',
 				description:'Kiko Experience (hackathon app)',
 				imageSrc:'/images/kiko.png'
+			},{
+				link:'http://www.digigrafonline.it',
+				description:'Digigraf',
+				imageSrc:'/images/digigraf.png'
 			}],
 			places:[{
 				description:{

@@ -2444,15 +2444,15 @@ h2 {
 .careerItem {
   padding-bottom: 40px; }
   .careerItem .imgWrapper {
-    max-height: 150px;
+    max-height: 50px;
     max-width: 150px;
     min-height: 50px;
     min-width: 150px;
     background-position: top center;
     background-size: contain;
     background-repeat: no-repeat;
-    -webkit-filter: grayscale(60%);
-            filter: grayscale(60%);
+    -webkit-filter: grayscale(80%);
+            filter: grayscale(80%);
     -webkit-transition: all .7s;
     transition: all .7s; }
     @media (max-width: 650px) {
