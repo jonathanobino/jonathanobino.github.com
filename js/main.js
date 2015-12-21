@@ -9,14 +9,16 @@ import { Router, Route, Link, IndexRoute } from 'react-router';
 import { createHistory, useBasename } from 'history';
 
 
-render(
-	(<Router>
-			<Route path="/" component={Navigator}>
-				<IndexRoute component={Home}/>
-				<Route path="blog" component={Blog}/>
-			    <Route path="about" component={About}/>
-			    <Route path="*" component={ErrHandler}/>
-		    </Route>
-		</Router>),
-	document.getElementById('app'));
+// render(
+// 	(<Router>
+// 			<Route path="/" component={Navigator}>
+// 				<IndexRoute component={Home}/>
+// 				<Route path="blog" component={Blog}/>
+// 			    <Route path="about" component={About}/>
+// 			    <Route path="*" component={ErrHandler}/>
+// 		    </Route>
+// 		</Router>),
+// 	document.getElementById('app'));
+
+render(<Home/>,document.getElementById('app'))
 

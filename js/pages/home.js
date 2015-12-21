@@ -100,7 +100,7 @@ const WhoAmI = React.createClass({
 						I work with Javascript both in the front end with frameworks and libraries like <strong>Angular</strong> or <strong>React</strong> and I work on the backend with frameworks like <strong>Express</strong> or <strong>Koa</strong>.<br/>
 						I develop mobile applications with <strong>React Native</strong> or with <strong>Ionic</strong> to archeive the best solution with the right tool for the project.<br/>
 						I like to stay up-to-date with the new technology and to experiment with them as soon they are available.<br/>
-						As you can see on my github this website is built using React, bundled with WebPack and written in ES6.
+						As you can see on my github<a href="https://github.com/jonathanobino/jonathanobino.github.com" target="_blank"> this website is built using React</a>, bundled with WebPack and written in ES6.
 						</p>
 						</div>
 					</div>

@@ -24,7 +24,13 @@ a{
 	text-decoration: none;
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
-	color: $blue;
+	color: rgba($blue,0.5);
+	border-bottom: 2px solid rgba($blue,0.1);
+	transition: all .5s;
+	&:hover{
+		color: rgba($blue,0.5);
+		border-bottom: 2px solid rgba($blue,0.3);
+	}
 }
 
 
