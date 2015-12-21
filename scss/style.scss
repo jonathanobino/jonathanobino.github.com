@@ -60,7 +60,7 @@ h2{
 				top: -200px;
 				position: absolute;
 				text-align: center;
-				transition: all .6s ;
+				transition: all .6s;
 			}
 			@media(max-width: 650px){
 					opacity: 1;
@@ -496,7 +496,7 @@ ul.inline-list{
 		background-position: center center !important;
 		top: 0;
 		// transition: transform 0.01s ease, filter 0.3s linear;
-		transition: transform 0.01s ease;
+		transition: transform 0.001s ease;
 		transform: translate3d(0, 0, 0);
 		// filter:blur(0px);
 		// &.first{

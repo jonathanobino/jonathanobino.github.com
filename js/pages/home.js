@@ -29,7 +29,6 @@ const Technology = React.createClass({
 	}
 })
 
-
 const What = React.createClass({
 	render: function(){
 		return (<Panel background="#F0F0F0" isRow="true">

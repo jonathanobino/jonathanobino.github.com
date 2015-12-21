@@ -28,12 +28,12 @@ const ContactForm = React.createClass({
 					<div className="contactForm">
 						<div className="row">
 							<div className="medium-6 columns medium-centered text-center">
-							<h2>Contact Me</h2>
+							<h2>Let's get in touch!</h2>
 							</div>
 						</div>
 						<div className="row">
 							<div className="medium-6 columns">
-								<input type="text" ref="name" placeholder="Nome"/>
+								<input type="text" ref="name" placeholder="Name"/>
 							</div>
 							<div className="medium-6 columns">
 								<input type="email" ref="email" placeholder="Email" onChange={this.handleCanSend}/>
@@ -41,10 +41,10 @@ const ContactForm = React.createClass({
 						</div>
 						<div className="row">
 							<div className="medium-12 columns">
-								<textarea ref="text" placeholder="Messaggio" rows="5" onChange={this.handleCanSend}/>
+								<textarea ref="text" placeholder="Message" rows="5" onChange={this.handleCanSend}/>
 							</div>
 							<div className="medium-12 columns">
-							<button className="button sendForm" onClick={this.sendEmail} ref="send" disabled={this.state.btnDisabled}>Invia</button>
+							<button className="button sendForm" onClick={this.sendEmail} ref="send" disabled={this.state.btnDisabled}>Send</button>
 							</div>
 						</div>
 					</div>

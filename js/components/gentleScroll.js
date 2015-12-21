@@ -8,7 +8,7 @@ const GentleScroll = React.createClass({
 	},
 	clickHandler:function(){
 		
-		const targetPosition = document.querySelector(this.props.target).getBoundingClientRect().top + 1;
+		const targetPosition = $(this.props.target).offset().top +1;
 		if( typeof this.props.beforeScroll == 'function'){
 			this.props.beforeScroll()
 			.then(()=>{

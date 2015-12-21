@@ -27,8 +27,8 @@ const Parallax = React.createClass({
 				</div>)
 	},
 	componentDidMount:function(){
-		let wrapper = ReactDom.findDOMNode(this);
-		let parallax = wrapper.querySelector('.parallax');
+		const wrapper = ReactDom.findDOMNode(this);
+		const parallax = wrapper.querySelector('.parallax');
 		const secondLimit = window.innerHeight / 4;
 		let ticking = false;
 		window.addEventListener('scroll',event => {
