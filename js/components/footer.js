@@ -15,6 +15,7 @@ const Footer = React.createClass({
 				<li><a href="https://github.com/jonathanobino" target="_blank"><i className="fa fa-github fa-2x"></i></a></li>
 				<li><a href="http://codepen.io/jonathanobino" target="_blank"><i className="fa fa-codepen fa-2x"></i></a></li>
 				<li><a href="https://it.linkedin.com/in/jonathanobino" target="_blank"><i className="fa fa-linkedin fa-2x"></i></a></li>
+				<li><a href="https://medium.com/@threobin" target="_blank"><i className="fa fa-medium fa-2x"></i></a></li>
 			</ul>
 			<p className="text-center">
 				© Jonathan Obino {this.state.year}

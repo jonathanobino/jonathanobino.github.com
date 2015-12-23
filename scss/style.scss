@@ -1,6 +1,6 @@
 @import '_normalize.scss';
 @import '_foundation.min.scss';
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
 @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400);
@@ -117,10 +117,14 @@ h2{
 	padding-bottom: 10vh;
 	ul.inline-list{
 		margin: 0 auto 30px;
-		width: 270px;
+		width: 350px;
 		li{
 			text-align: center;
 			margin-left: 50px;
+			a{
+				text-decoration: none;
+				border: none;
+			}
 			&:first-child{
 				margin-left: 0;
 			}

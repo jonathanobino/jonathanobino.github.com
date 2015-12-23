@@ -4,9 +4,10 @@
   "description": "Website development with react",
   "main": "index.html",
   "scripts": {
-    "build": "webpack -p",
+    "build": "webpack",
     "development": "webpack-dev-server",
-    "watch:scss": "gulp watch:sass"
+    "watch:scss": "gulp watch:sass",
+    "gulp": "gulp"
   },
   "repository": {
     "type": "git",
