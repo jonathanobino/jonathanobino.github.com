@@ -497,16 +497,14 @@ ul.inline-list{
 	min-height: 100vh;
 	min-width: 100vw;
 	.parallax{
-		height:110vh;
-		width:110vw;
-		left:-5vw;
+		height:100vh;
+		width:100vw;
 		background-size:cover !important;
-		position:absolute;
 		background-repeat: no-repeat !important;
 		background-position: center center !important;
 		top: 0;
 		// transition: transform 0.01s ease, filter 0.3s linear;
-		transition: transform 0.001s ease;
+		transition: transform 0.01s ease-out;
 		transform: translate3d(0, 0, 0);
 		// filter:blur(0px);
 		// &.first{

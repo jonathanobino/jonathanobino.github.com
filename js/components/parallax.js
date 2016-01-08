@@ -1,23 +1,20 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-const requestAnimFrame = (function(){
-		       return  window.requestAnimationFrame       ||
-		           window.webkitRequestAnimationFrame ||
-		           window.msRequestAnimationFrame ||
-		           window.oRequestAnimationFrame ||
-		           window.mozRequestAnimationFrame
-		   })();
-
 const Parallax = React.createClass({
-	getInitialState:function(){
+	getInitialState(){
 		return {
-			blurriness:0
+			blurriness:0,
+			translate:0
 		}
 	},
-	render:function(){
+	render(){
+		const style ={
+			background:this.props.background,
+			transform:`translate3d(0px,${this.state.translate}px,0px)`
+		}
 		return (<div className="wrapper">
-				 <div style={{background:this.props.background}} className="parallax">
+				 <div style={style} className="parallax">
 				 </div> 
 					 <div className="container">
 						 <div className="content">
@@ -26,24 +23,17 @@ const Parallax = React.createClass({
 					 </div>
 				</div>)
 	},
-	componentDidMount:function(){
+	componentDidMount(){
 		const wrapper = ReactDom.findDOMNode(this);
-		const parallax = wrapper.querySelector('.parallax');
-		const secondLimit = window.innerHeight / 4;
-		let ticking = false;
+		// const parallax = wrapper.querySelector('.parallax');
 		window.addEventListener('scroll',event => {
-			let coordinates = parallax.getBoundingClientRect();
+			// let coordinates = parallax.getBoundingClientRect();
 			let wrapperCoord = wrapper.getBoundingClientRect();
-			if(wrapperCoord.bottom > 0 && !ticking){
-				ticking = true;
-				requestAnimFrame(()=>{
-					let translate = `translate3d(0px,${Math.round((window.pageYOffset / 2))}px,0px)`;
-					parallax.style.transform = translate;
-					parallax.style.webkitTranform = translate;
-					parallax.style.mozTranform = translate;
-					parallax.style.msTranform = translate;
-					parallax.style.oTranform = translate;
-					ticking = false;
+			
+			if(wrapperCoord.bottom > -50){
+				const translate = ~~((wrapperCoord.top * -1)/3);
+				window.requestAnimationFrame(()=>{
+					this.setState({translate})	
 				})
 				// requestAnimFrame(()=>{
 				// 	if(wrapperCoord.bottom <= secondLimit){
