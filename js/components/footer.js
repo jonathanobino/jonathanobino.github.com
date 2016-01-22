@@ -18,7 +18,9 @@ const Footer = React.createClass({
 				<li><a href="https://medium.com/@threobin" target="_blank"><i className="fa fa-medium fa-2x"></i></a></li>
 			</ul>
 			<p className="text-center">
-				© Jonathan Obino {this.state.year}
+				Jonathan Obino © {this.state.year}
+			<br/>
+				P.IVA: 01771730932
 			</p>
 			<p className="text-center credits">Made with <span className="fa fa-heart heart"></span> and <img src="http://svgporn.com/logos/react.svg" alt="React JS"/></p>
 			</div>
