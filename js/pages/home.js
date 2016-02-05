@@ -8,27 +8,51 @@ import Footer from '../components/footer';
 import Panel from '../components/panelSection';
 import GentleScroll from '../components/gentleScroll';
 import { Link } from 'react-router'
+import superagent from 'superagent';
+import xml2js from 'xml2js';
+
+const parser = new xml2js.Parser();
 
 const Codepen = React.createClass({
 	getInitialState(){
 		return {
-			pens:['//codepen.io/jonathanobino/embed/preview/obwBEz/?height=268&theme-id=0&default-tab=result',
+			pens:['//codepen.io/jonathanobino/embed/preview/obwBEz/?height=500&theme-id=0&default-tab=result',
+				  '//codepen.io/jonathanobino/embed/preview/MaQNgY/?height=500&theme-id=0&default-tab=result',
+				  '//codepen.io/jonathanobino/embed/preview/obwBEz/?height=500&theme-id=0&default-tab=result',
 				  '//codepen.io/jonathanobino/embed/preview/MaQNgY/?height=268&theme-id=0&default-tab=result']
 		}
 	},
 	render(){
-		return (
-				<div className="row main">
-						<div className="medium-2 large-2 columns text-right"><h2>Last Pens</h2></div>
-						
-						{this.state.pens.map((elem,index) =>{
-							return <div className="medium-5 large-5 columns" key={index}>
-							 <iframe height='268' scrolling='no' src={elem} frameBorder='no' allowTransparency='true' allowFullScreen='true' style={{width: '100%'}} >
-								</iframe>
-								</div>
-						})}
-				</div>
+		return ( <div className="row main">
+							<div className="medium-2 large-2 columns text-right"><h2>Popular Pens</h2></div>
+							<div className="medium-10 large-10 columns">
+							{this.state.pens.map((elem,index) =>{
+								return <div className="medium-6 large-6 columns" key={index}>
+								 <iframe height='268' scrolling='no' src={elem} frameBorder='no' allowTransparency='true' allowFullScreen='true' style={{width: '100%'}} >
+									</iframe>
+									</div>
+							})}
+							</div>
+				 </div>
 			)
+	},
+	componentDidMount(){
+
+		const self = this;
+		superagent.get('http://crossorigin.me/http://codepen.io/jonathanobino/popular/feed/')
+		.end((err,result)=>{
+			parser.parseString(result.text, function (err, result) {
+
+				if(!err){
+					let done = result.rss.channel[0].item.map(elem=>{
+						return '//codepen.io/jonathanobino/embed/preview/'+elem.link[0].split('/').pop()+'/?height=268&theme-id=0&default-tab=result';
+					}).slice(0,4);
+					self.setState({
+						pens:done
+					})
+				}
+		    });
+		})
 	}
 })
 
