@@ -18,7 +18,7 @@ const ContactForm = React.createClass({
 			message =  <h2> Thank you! I'll be in touch shortly! <i className="fa fa-thumbs-o-up"></i></h2>;
 
 		}else if(this.state.errorSending){
-			message = <h2> Hey! An error has occoured! Please try to refresh the page and send it again. </h2>
+			message = <h2> Hey! An error has occoured! Please try to refresh the page and send it again.</h2>
 		}
 
 		return (<div className="contactFormWrapper">

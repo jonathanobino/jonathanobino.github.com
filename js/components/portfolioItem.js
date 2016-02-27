@@ -1,20 +1,17 @@
 import React from 'react';
-// import { Link } from 'react-router'
 
-const PortfolioItem = React.createClass({
-	render: function(){
+const PortfolioItem = ({item})=>{
 		return (
 				<div className='portfolioItem'>
-					<a href={this.props.item.link} target="_blank">
+					<a href={item.link} target="_blank">
 						<figure>
 							
-							<div className="squareImage" style={{backgroundImage:`url(${this.props.item.imageSrc})`}}></div>
-							<figcaption><p>{this.props.item.description}</p></figcaption>
+							<div className="squareImage" style={{backgroundImage:`url(${item.imageSrc})`}}></div>
+							<figcaption><p>{item.description}</p></figcaption>
 						</figure>
 					</a>
 				</div>
 			)
-	}
-})
+}
 
 export default PortfolioItem;

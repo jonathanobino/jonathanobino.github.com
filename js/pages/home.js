@@ -7,51 +7,58 @@ import CareerItem from '../components/careerItem';
 import Footer from '../components/footer';
 import Panel from '../components/panelSection';
 import GentleScroll from '../components/gentleScroll';
-import { Link } from 'react-router'
 import superagent from 'superagent';
-import xml2js from 'xml2js';
-
-const parser = new xml2js.Parser();
 
 const Codepen = React.createClass({
 	getInitialState(){
 		return {
-			pens:['//codepen.io/jonathanobino/embed/preview/obwBEz/?height=500&theme-id=0&default-tab=result',
-				  '//codepen.io/jonathanobino/embed/preview/MaQNgY/?height=500&theme-id=0&default-tab=result',
-				  '//codepen.io/jonathanobino/embed/preview/obwBEz/?height=500&theme-id=0&default-tab=result',
-				  '//codepen.io/jonathanobino/embed/preview/MaQNgY/?height=268&theme-id=0&default-tab=result']
+			pens: [{
+				id: 'obwBEz1',
+				link: '//codepen.io/jonathanobino/embed/preview/obwBEz/?height=500&theme-id=0&default-tab=result'
+			}, {
+				id: 'MaQNgY1',
+				link: '//codepen.io/jonathanobino/embed/preview/MaQNgY/?height=500&theme-id=0&default-tab=result'
+			}, {
+				id: 'obwBEz2',
+				link: '//codepen.io/jonathanobino/embed/preview/obwBEz/?height=500&theme-id=0&default-tab=result'
+			}, {
+				id: 'MaQNgY2',
+				link: '//codepen.io/jonathanobino/embed/preview/MaQNgY/?height=268&theme-id=0&default-tab=result'
+			}]
 		}
 	},
 	render(){
 		return ( <div className="row main">
-							<div className="medium-2 large-2 columns text-right"><h2>Popular Pens</h2></div>
-							<div className="medium-10 large-10 columns">
-							{this.state.pens.map((elem,index) =>{
-								return <div className="medium-6 large-6 columns" key={index}>
-								 <iframe height='268' scrolling='no' src={elem} frameBorder='no' allowTransparency='true' allowFullScreen='true' style={{width: '100%'}} >
+					<div className="medium-2 large-2 columns text-right"><h2>My Popular Pens</h2></div>
+					<div className="medium-10 large-10 columns">
+					{
+						this.state.pens.map((elem,index) => {
+						return <div className="medium-6 large-6 columns" key={elem.id}>
+						 			<iframe height='268' scrolling='no' src={elem.link} frameBorder='no' allowTransparency='true' allowFullScreen='true' style={{width: '100%'}} >
 									</iframe>
-									</div>
-							})}
-							</div>
+								</div>
+						})
+					}
+					</div>
 				 </div>
 			)
 	},
 	componentDidMount(){
-
-		const self = this;
-		superagent.get('http://crossorigin.me/http://codepen.io/jonathanobino/popular/feed/')
+		superagent.get('http://cpv2api.com/pens/popular/jonathanobino')
 		.end((err,result)=>{
-			parser.parseString(result.text, function (err, result) {
+			if(result.body.success){
+				let done = result.body.data.map(elem => {
+					let id = elem.link.split('/').pop();
+					return {
+						id,
+						link:'//codepen.io/jonathanobino/embed/preview/'+id+'/?height=268&theme-id=0&default-tab=result'
+					}
+				})
 
-				if(!err){
-					let done = result.rss.channel[0].item.map(elem=>{
-						return '//codepen.io/jonathanobino/embed/preview/'+elem.link[0].split('/').pop()+'/?height=268&theme-id=0&default-tab=result';
-					}).slice(0,4);
-					self.setState({
-						pens:done
-					})
-				}
-		    });
+				this.setState({
+					pens:done.slice(0,4)
+				});
+			}
 		})
 	}
 })
@@ -114,15 +121,18 @@ const Places = React.createClass({
 			<div className="row main">
 						<div className="medium-2 large-2 columns text-right"><h2>Some places where I've worked</h2></div>
 						<div className="medium-10 large-10 columns">
-								{this.state.places.map((elem,index)=><CareerItem item={elem} key={index}/>)}
+								{
+									this.state.places.map((elem,index)=>
+										<CareerItem item={elem} key={index}/>
+										)
+								}
 						</div>
 					</div>)
 	}
 })
 
 
-const WhatIUse = React.createClass({
-	render(){
+const WhatIUse = ()=>{
 		return (
 			<div className="row main">
 						<div className="medium-2 large-2 columns text-right"><h2>What I use</h2></div>
@@ -139,8 +149,7 @@ const WhatIUse = React.createClass({
 							</ul>
 						</div>
 					</div>)
-	}
-})
+};
 
 const Portfolio = React.createClass({
 	getInitialState(){
@@ -166,14 +175,21 @@ const Portfolio = React.createClass({
 				<div className="medium-2 large-2 columns text-right"><h2>Some work that I've done</h2></div>
 				<div className="medium-10 large-10 columns">
 					<div className="row">
-						{this.state.portfolio.map((elem,index)=>(<div className="medium-4 columns" key={index}><PortfolioItem item={elem}/></div>))}
+						{
+							this.state.portfolio.map((elem,index) =>
+								(
+									<div className="medium-4 columns" key={index}>
+										<PortfolioItem item={elem}/>
+									</div>
+									)
+								)
+						}
 					</div>
 				</div>
 			</div>)
 	}
 })
-const WhoAmI = React.createClass({
-	render: function(){
+const WhoAmI = ()=>{
 		return (
 				<div className="row main">
 					<div className="medium-2 large-2 columns text-right"><h2>About me</h2></div>
@@ -187,29 +203,30 @@ const WhoAmI = React.createClass({
 					</div>
 				</div>
 			)
-	}
-});
+};
 
-const Home = React.createClass({
-	render: function(){
-		return (<div>
-				<Parallax background="url(/images/background.jpg)">
-				<img src="/images/logo.png" alt="logo"/>
-				<GentleScroll target="main"><img src="/images/scroll.svg" className="scroll small" alt="scroll"/></GentleScroll>
-				</Parallax>
-				<main>
-					<Panel background="#F0F0F0">
-						<WhoAmI/>
-						<WhatIUse/>
-						<Portfolio/>
-						<Places/>
-						<Codepen/>
-					</Panel>
-				</main>
-				<ContactForm address="info@jonathanobino.xyz"/>
-				<Footer/>
-				</div>)
-	}
-})
+const Home = ()=>{
+		return (
+				<div>
+					<Parallax background="url(/images/background.jpg)">
+					<img src="/images/logo.png" alt="logo"/>
+					<GentleScroll target="main">
+						<img src="/images/scroll.svg" className="scroll small" alt="scroll"/>
+					</GentleScroll>
+					</Parallax>
+					<main>
+						<Panel background="#F0F0F0">
+							<WhoAmI/>
+							<WhatIUse/>
+							<Portfolio/>
+							<Places/>
+							<Codepen/>
+						</Panel>
+					</main>
+					<ContactForm address="info@jonathanobino.xyz"/>
+					<Footer/>
+				</div>
+				)
+}
 
 export default Home;
