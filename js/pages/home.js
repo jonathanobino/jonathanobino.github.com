@@ -7,6 +7,7 @@ import CareerItem from '../components/careerItem';
 import Footer from '../components/footer';
 import Panel from '../components/panelSection';
 import GentleScroll from '../components/gentleScroll';
+import LazyFrame from '../components/lazyFrame';
 import superagent from 'superagent';
 
 const Codepen = React.createClass({
@@ -34,8 +35,7 @@ const Codepen = React.createClass({
 					{
 						this.state.pens.map((elem,index) => {
 						return <div className="medium-6 large-6 columns" key={elem.id}>
-						 			<iframe height='268' scrolling='no' src={elem.link} frameBorder='no' allowTransparency='true' allowFullScreen='true' style={{width: '100%'}} >
-									</iframe>
+									<LazyFrame key={elem.id} link={elem.link}></LazyFrame>
 								</div>
 						})
 					}

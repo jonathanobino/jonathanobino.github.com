@@ -33,7 +33,6 @@ const Parallax = React.createClass({
 
 		window.addEventListener('scroll',event => {
 			if((height - window.scrollY) > 50){
-				console.log('here');
 				translate = parseInt(window.scrollY/3);	
 				window.requestAnimationFrame(handleScroll);			
 			} 
