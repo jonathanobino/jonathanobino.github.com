@@ -556,6 +556,7 @@ ul.inline-list{
 	position: relative;
 	min-height: 100vh;
 	min-width: 100vw;
+	display: flex;
 	.parallax{
 		height:100vh;
 		width:100vw;
@@ -582,12 +583,15 @@ ul.inline-list{
 		left: 0;
 		height: 100%;
 		width: 100%;
-		background: linear-gradient(to left,rgba($blue,0.3),rgba($green,0.5));
+		// background: linear-gradient(to left,rgba($blue,0.3),rgba($green,0.5));
+		display: flex;
+		justify-content: center;
 		.content{
 			width: 300px;
 			display: block;
 			height: 300px;
-			margin: calc(50vh - 150px) auto;
+			// margin: calc(50vh - 150px) auto;
+			align-self:center;
 			text-align: center;
 			h3{
 				font-family: 'Lato', sans-serif;
