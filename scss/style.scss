@@ -292,6 +292,12 @@ ul.inline-list{
 			font-size: 2rem;
 			font-family: 'Lato', sans-serif;
 			font-weight: 300;
+			transition:all .5s;
+			animation: bounce .75s cubic-bezier(0.5, -0.28, 0.74, 0.05);
+			&.error{
+				animation: bounceError .75s cubic-bezier(0.61, -0.28, 0.74, 0.05);
+				color:rgba(200,100,100,0.8);
+			}
 		}
 		input{
 			width: 100%;
@@ -350,6 +356,41 @@ ul.inline-list{
 				border-color: $blue;
 			}
 		}
+	}
+}
+
+@keyframes bounce {
+	0%{
+		transform:scale(.8,.8);
+	}
+	40%{
+		transform:scale(1.1,1.1);
+		text-shadow:2px 2px rgba(50,50,100,0.8);
+	}
+	70%{
+		transform:scale(0.9,0.9);
+		text-shadow:2px 2px rgba(50,50,100,0.8);
+	}
+	100%{
+		transform: scale(1,1);
+	}
+}
+
+
+@keyframes bounceError {
+	0%{
+		transform:scale(.8,.8);
+	}
+	40%{
+		transform:scale(1.1,1.1);
+		text-shadow:2px 2px rgba(50,50,100,0.8);
+	}
+	70%{
+		transform:scale(0.9,0.9);
+		text-shadow:2px 2px rgba(50,50,100,0.8);
+	}
+	100%{
+		transform: scale(1,1);
 	}
 }
 
