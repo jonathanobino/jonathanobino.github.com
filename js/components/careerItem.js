@@ -6,12 +6,12 @@ const PortfolioItem = ({item}) => {
 		let technology  = item.description.technology ? <p><span className="sans">Technology Involved</span> {item.description.technology}</p>:null;
 		return (
 				<div className="row careerItem">
-					<div className="large-9 medium-8 small-12 columns description">
+					<div className="large-9 medium-8 small-9 columns description">
 						<p><span className="sans">Company</span> <strong>{item.description.company}</strong></p>
 						<p><span className="sans">Role</span> {item.description.role}</p>
 						<p><span className="sans">When</span> {item.description.when}</p>
 					</div>
-					<div className="large-3 medium-4 small-12 columns">
+					<div className="large-3 medium-4 small-3 columns">
 						<a href={item.link} target="_blank">
 							{image}
 						</a>

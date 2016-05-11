@@ -167,6 +167,16 @@ h2{
 
 .careerItem{
 	padding-bottom: 40px;
+	.small-9{
+		@media(max-width: 360px){
+			width: 100%
+		}
+	}
+	.small-3{
+		@media(max-width: 360px){
+			width: 100%
+		}
+	}
 	.imgWrapper{
 		max-height: 50px;
 		max-width: 150px;
@@ -183,7 +193,7 @@ h2{
 			min-height: 40px;
 			min-width: 73px;
 		}
-		@media(max-width: 320px){
+		@media(max-width: 360px){
 			margin-top: 15px;
 			background-position: center center;
 			min-width: 100%;
