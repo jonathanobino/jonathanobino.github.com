@@ -10,6 +10,8 @@ import GentleScroll from '../components/gentleScroll';
 import LazyFrame from '../components/lazyFrame';
 import superagent from 'superagent';
 
+//<img src="/images/scroll.svg" className="scroll small" alt="scroll"/>
+
 const Codepen = React.createClass({
 	getInitialState(){
 		return {
@@ -211,7 +213,10 @@ const Home = ()=>{
 					<Parallax background="url(/images/background.jpg)">
 					<img src="/images/logo.png" alt="logo"/>
 					<GentleScroll target="main">
-						<img src="/images/scroll.svg" className="scroll small" alt="scroll"/>
+						<div className="mouse">
+							<div className="upAndDown">
+							</div>
+						</div>
 					</GentleScroll>
 					</Parallax>
 					<main>
