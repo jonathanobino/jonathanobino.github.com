@@ -228,7 +228,7 @@ const Home = ()=>{
 							<Codepen/>
 						</Panel>
 					</main>
-					<ContactForm address="info@jonathanobino.xyz"/>
+					<ContactForm address="jonobin@gmail.com"/>
 					<Footer/>
 				</div>
 				)

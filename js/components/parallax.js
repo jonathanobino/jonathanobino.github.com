@@ -23,23 +23,25 @@ const Parallax = React.createClass({
 				</div>)
 	},
 	componentDidMount(){
+		window.addEventListener('scroll',this.scrollHandler);
+	},
+	shouldComponentUpdate(nextProps, nextState){
+		return this.state.translate != nextState.translate;
+	},
+	componentWillUnmount(){
+		window.removeEventListener('scroll',this.scrollHandler);
+	},
+	scrollHandler(event){
 		const wrapper = ReactDom.findDOMNode(this);
 		const parallax = wrapper.querySelector('.parallax');
 		const {height} = wrapper.getBoundingClientRect();
 		let translate = 0;
-		const handleScroll = () => {
-				parallax.style.transform = `translate3d(0px,${translate}px,0px)`;
+		if((height - window.scrollY) > 50){
+			translate = parseInt(window.scrollY/3);	
+			window.requestAnimationFrame(()=>{
+				parallax.style.transform = `translate3d(0px,${translate}px,0px)`
+			});
 		}
-
-		window.addEventListener('scroll',event => {
-			if((height - window.scrollY) > 50){
-				translate = parseInt(window.scrollY/3);	
-				window.requestAnimationFrame(handleScroll);			
-			} 
-		})
-	},
-	shouldComponentUpdate(nextProps, nextState){
-		return this.state.translate != nextState.translate;
 	}
 })
 
