@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDom from 'react-dom';
+import ReactDom from 'react-dom'
 
 const LazyFrame = React.createClass({
 	getInitialState(){
@@ -17,13 +17,13 @@ const LazyFrame = React.createClass({
 		const {top} = element.getBoundingClientRect();
 		this.setState({top})
 
-		window.addEventListener('scroll',this.listener)
+		window.addEventListener('scroll',this.listener);
 	},
 	listener(){
 		if(window.scrollY + window.innerWidth + 100 > this.state.top) this.setState({link:this.props.link});
 	},
 	componentWillUnmount(){
-		window.removeEventListener('scroll',this.listener)
+		window.removeEventListener('scroll',this.listener);
 	}
 })
 

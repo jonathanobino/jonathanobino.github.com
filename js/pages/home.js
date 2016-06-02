@@ -1,16 +1,16 @@
-import React from 'react';
-import FullScreen from '../components/fullScreenHeader';
-import ContactForm from '../components/contactForm';
-import Parallax from '../components/parallax';
-import PortfolioItem from '../components/portfolioItem';
-import CareerItem from '../components/careerItem';
-import Footer from '../components/footer';
-import Panel from '../components/panelSection';
-import GentleScroll from '../components/gentleScroll';
-import LazyFrame from '../components/lazyFrame';
-import superagent from 'superagent';
+import React from 'react'
+import FullScreen from '../components/fullScreenHeader'
+import ContactForm from '../components/contactForm'
+import Parallax from '../components/parallax'
+import PortfolioItem from '../components/portfolioItem'
+import CareerItem from '../components/careerItem'
+import Footer from '../components/footer'
+import Panel from '../components/panelSection'
+import GentleScroll from '../components/gentleScroll'
+import LazyFrame from '../components/lazyFrame'
+import superagent from 'superagent'
+import {LazyImage} from '../components/lazyImage'
 
-//<img src="/images/scroll.svg" className="scroll small" alt="scroll"/>
 
 const Codepen = React.createClass({
 	getInitialState(){
@@ -134,20 +134,20 @@ const Places = React.createClass({
 })
 
 
-const WhatIUse = ()=>{
+const WhatIUse = () =>{
 		return (
 			<div className="row main">
 						<div className="medium-2 large-2 columns text-right"><h2>What I use</h2></div>
 						<div className="medium-10 large-10 columns">
 							<ul className="inline-list same-height-child">
-								<li><img src="http://svgporn.com/logos/html-5.svg" alt="HTML5"/></li>
-								<li><img src="http://svgporn.com/logos/sass.svg" alt="SASS"/></li>
-								<li><img src="http://svgporn.com/logos/angular-icon.svg" alt="Angular"/></li>
-								<li><img src="http://svgporn.com/logos/react.svg" alt="React JS"/></li>
-								<li><img src="http://svgporn.com/logos/nodejs-icon.svg" alt="Node JS"/></li>
-								<li><img src="http://svgporn.com/logos/mongodb.svg" alt="Mongo DB"/></li>
-								<li><img src="http://svgporn.com/logos/gulp.svg" alt="Gulp JS"/></li>
-								<li><img src="http://svgporn.com/logos/express.svg" alt="Express"/></li>
+								<li><LazyImage src="http://svgporn.com/logos/html-5.svg" alt="HTML5"/></li>
+								<li><LazyImage src="http://svgporn.com/logos/sass.svg" alt="SASS"/></li>
+								<li><LazyImage src="http://svgporn.com/logos/angular-icon.svg" alt="Angular"/></li>
+								<li><LazyImage src="http://svgporn.com/logos/react.svg" alt="React JS"/></li>
+								<li><LazyImage src="http://svgporn.com/logos/nodejs-icon.svg" alt="Node JS"/></li>
+								<li><LazyImage src="http://svgporn.com/logos/mongodb.svg" alt="Mongo DB"/></li>
+								<li><LazyImage src="http://svgporn.com/logos/gulp.svg" alt="Gulp JS"/></li>
+								<li><LazyImage src="http://svgporn.com/logos/express.svg" alt="Express"/></li>
 							</ul>
 						</div>
 					</div>)
@@ -234,4 +234,4 @@ const Home = ()=>{
 				)
 }
 
-export default Home;
+export default Home
