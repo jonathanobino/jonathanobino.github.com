@@ -19,7 +19,10 @@ const LazyBackgroundImage = React.createClass({
 		window.addEventListener('scroll',this.listener);
 	},
 	listener(){
-		if(window.scrollY + window.innerWidth + 150 > this.state.top) this.setState({link:this.props.link});
+		if(window.scrollY + window.innerWidth + 150 > this.state.top) {
+			this.setState({link:this.props.link});
+			window.removeEventListener('scroll',this.listener);
+		}
 	},
 	componentWillUnmount(){
 		window.removeEventListener('scroll',this.listener)
@@ -45,7 +48,10 @@ const LazyImage = React.createClass({
 		window.addEventListener('scroll',this.listener);
 	},
 	listener(){
-		if(window.scrollY + window.innerWidth + 100 > this.state.top) this.setState({link:this.props.src});
+		if(window.scrollY + window.innerWidth + 100 > this.state.top) {
+			this.setState({link:this.props.src});
+			window.removeEventListener('scroll',this.listener);
+		}
 	},
 	componentWillUnmount(){
 		window.removeEventListener('scroll',this.listener)
