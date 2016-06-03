@@ -1,8 +1,8 @@
 import React from 'react'
-import {LazyBackgroundImage}  from './lazyImage'
+import {LazyBackgroundImage as LazyImage}  from './lazyImage'
 
 const PortfolioItem = ({item}) => {
-		let image = item.imageSrc ? <div></div> : <div className="imgWrapper hide-sm"></div>
+		let image = item.imageSrc ? <LazyImage link={item.imageSrc} className="imgWrapper"></LazyImage> : <div className="imgWrapper hide-sm"></div>
 		let technology  = item.description.technology ? <p><span className="sans">Technology Involved</span> {item.description.technology}</p>:null;
 		return (
 				<div className="row careerItem">
@@ -21,6 +21,3 @@ const PortfolioItem = ({item}) => {
 	}
 
 export default PortfolioItem
-
-
- //<LazyImage className="imgWrapper" link={item.imageSrc}></LazyImage>
