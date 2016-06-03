@@ -2,11 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: [
-      'webpack-dev-server/client?http://0.0.0.0:3000', 
-      'webpack/hot/only-dev-server', 
-      './js/main.js' 
-    ],
+    entry:'./js/main.js' ,
     devtool: 'source-map',
     output: {
         path: path.join(__dirname),
@@ -16,13 +12,12 @@ module.exports = {
         loaders: [
                    {
                        test: /\.js$/,
-                       loaders: ['react-hot','babel'],
+                       loader: 'babel',
                        exclude: /node_modules/
                    }
                ]
     },
      plugins: [
-      new webpack.HotModuleReplacementPlugin(),
       new webpack.optimize.UglifyJsPlugin({minimize: true}),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.optimize.DedupePlugin(),
