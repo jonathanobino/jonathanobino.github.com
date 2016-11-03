@@ -20,7 +20,7 @@ const LazyFrame = React.createClass({
 		window.addEventListener('scroll',this.listener);
 	},
 	listener(){
-		if(window.scrollY + window.innerWidth + 100 > this.state.top) {
+		if(window.scrollY + window.innerHeight + 100 > this.state.top) {
 			this.setState({link:this.props.link});
 			window.removeEventListener('scroll',this.listener);
 		}
