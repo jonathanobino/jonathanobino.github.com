@@ -105,7 +105,7 @@ const Places = React.createClass({
 					when:"03.2015 - 06.2015",
 					technology:"Angular, jQuery, CSS3, HTML5"
 				},
-				imageSrc:'images/fuel.png'
+				imageSrc:'/images/fuel.png'
 			},{
 				link:'http://www.majeeko.com',
 				description:{
@@ -114,7 +114,7 @@ const Places = React.createClass({
 					when:"09.2015 - 12.2015",
 					technology:"Angular, jQuery, CSS3, HTML5, Node JS, Mongo DB, Express"
 				},
-				imageSrc:'images/majeeko.png'
+				imageSrc:'/images/majeeko.png'
 			}]
 		}
 	},
@@ -140,14 +140,14 @@ const WhatIUse = () =>{
 						<div className="medium-2 large-2 columns text-right"><h2>What I use</h2></div>
 						<div className="medium-10 large-10 columns">
 							<ul className="inline-list same-height-child">
-								<li><LazyImage src="http://svgporn.com/logos/html-5.svg" alt="HTML5"/></li>
-								<li><LazyImage src="http://svgporn.com/logos/sass.svg" alt="SASS"/></li>
-								<li><LazyImage src="http://svgporn.com/logos/angular-icon.svg" alt="Angular"/></li>
-								<li><LazyImage src="http://svgporn.com/logos/react.svg" alt="React JS"/></li>
-								<li><LazyImage src="http://svgporn.com/logos/nodejs-icon.svg" alt="Node JS"/></li>
-								<li><LazyImage src="http://svgporn.com/logos/mongodb.svg" alt="Mongo DB"/></li>
-								<li><LazyImage src="http://svgporn.com/logos/gulp.svg" alt="Gulp JS"/></li>
-								<li><LazyImage src="http://svgporn.com/logos/express.svg" alt="Express"/></li>
+								<li><LazyImage src="//svgporn.com/logos/html-5.svg" alt="HTML5"/></li>
+								<li><LazyImage src="//svgporn.com/logos/sass.svg" alt="SASS"/></li>
+								<li><LazyImage src="//svgporn.com/logos/angular-icon.svg" alt="Angular"/></li>
+								<li><LazyImage src="//svgporn.com/logos/react.svg" alt="React JS"/></li>
+								<li><LazyImage src="//svgporn.com/logos/nodejs-icon.svg" alt="Node JS"/></li>
+								<li><LazyImage src="//svgporn.com/logos/mongodb.svg" alt="Mongo DB"/></li>
+								<li><LazyImage src="//svgporn.com/logos/gulp.svg" alt="Gulp JS"/></li>
+								<li><LazyImage src="//svgporn.com/logos/express.svg" alt="Express"/></li>
 							</ul>
 						</div>
 					</div>)
