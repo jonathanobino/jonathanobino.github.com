@@ -1,5 +1,6 @@
 import React from 'react'
-import {LazyBackgroundImage as LazyImage} from './lazyImage'
+import {LazyBackgroundImage as LazyImage} from 'lazy-react' 
+
 
 const PortfolioItem = ({item})=>{
 		return (
@@ -15,5 +16,3 @@ const PortfolioItem = ({item})=>{
 }
 
 export default PortfolioItem
-
-//<LazyBackgroundImage className="squareImage" link={item.imageSrc}></LazyBackgroundImage>

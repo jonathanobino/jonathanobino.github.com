@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-dom'
+import ReactDOM, { render } from 'react-dom'
 import Home from './pages/home'
 import Menu from './pages/navigator'
 

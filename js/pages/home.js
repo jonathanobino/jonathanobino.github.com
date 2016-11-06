@@ -7,10 +7,8 @@ import CareerItem from '../components/careerItem'
 import Footer from '../components/footer'
 import Panel from '../components/panelSection'
 import GentleScroll from '../components/gentleScroll'
-import LazyFrame from '../components/lazyFrame'
 import superagent from 'superagent'
-import {LazyImage} from '../components/lazyImage'
-
+import {LazyImage,LazyFrame}  from 'lazy-react'
 
 const Codepen = React.createClass({
 	getInitialState(){
@@ -37,7 +35,7 @@ const Codepen = React.createClass({
 					{
 						this.state.pens.map((elem,index) => {
 						return <div className="medium-6 large-6 columns" key={elem.id}>
-									<LazyFrame key={elem.id} link={elem.link}></LazyFrame>
+									<LazyFrame key={elem.id} link={elem.link} height={268}></LazyFrame>
 								</div>
 						})
 					}
@@ -105,7 +103,7 @@ const Places = React.createClass({
 					when:"03.2015 - 06.2015",
 					technology:"Angular, jQuery, CSS3, HTML5"
 				},
-				imageSrc:'/images/fuel.png'
+				imageSrc:'images/fuel.png'
 			},{
 				link:'http://www.majeeko.com',
 				description:{
@@ -114,7 +112,7 @@ const Places = React.createClass({
 					when:"09.2015 - 12.2015",
 					technology:"Angular, jQuery, CSS3, HTML5, Node JS, Mongo DB, Express"
 				},
-				imageSrc:'/images/majeeko.png'
+				imageSrc:'images/majeeko.png'
 			}]
 		}
 	},
@@ -140,14 +138,14 @@ const WhatIUse = () =>{
 						<div className="medium-2 large-2 columns text-right"><h2>What I use</h2></div>
 						<div className="medium-10 large-10 columns">
 							<ul className="inline-list same-height-child">
-								<li><LazyImage src="//svgporn.com/logos/html-5.svg" alt="HTML5"/></li>
-								<li><LazyImage src="//svgporn.com/logos/sass.svg" alt="SASS"/></li>
-								<li><LazyImage src="//svgporn.com/logos/angular-icon.svg" alt="Angular"/></li>
-								<li><LazyImage src="//svgporn.com/logos/react.svg" alt="React JS"/></li>
-								<li><LazyImage src="//svgporn.com/logos/nodejs-icon.svg" alt="Node JS"/></li>
-								<li><LazyImage src="//svgporn.com/logos/mongodb.svg" alt="Mongo DB"/></li>
-								<li><LazyImage src="//svgporn.com/logos/gulp.svg" alt="Gulp JS"/></li>
-								<li><LazyImage src="//svgporn.com/logos/express.svg" alt="Express"/></li>
+								<li><LazyImage link="//svgporn.com/logos/html-5.svg" alt="HTML5"/></li>
+								<li><LazyImage link="//svgporn.com/logos/sass.svg" alt="SASS"/></li>
+								<li><LazyImage link="//svgporn.com/logos/angular-icon.svg" alt="Angular"/></li>
+								<li><LazyImage link="//svgporn.com/logos/react.svg" alt="React JS"/></li>
+								<li><LazyImage link="//svgporn.com/logos/nodejs-icon.svg" alt="Node JS"/></li>
+								<li><LazyImage link="//svgporn.com/logos/mongodb.svg" alt="Mongo DB"/></li>
+								<li><LazyImage link="//svgporn.com/logos/gulp.svg" alt="Gulp JS"/></li>
+								<li><LazyImage link="//svgporn.com/logos/express.svg" alt="Express"/></li>
 							</ul>
 						</div>
 					</div>)

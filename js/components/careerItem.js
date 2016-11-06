@@ -1,5 +1,5 @@
 import React from 'react'
-import {LazyBackgroundImage as LazyImage}  from './lazyImage'
+import {LazyBackgroundImage as LazyImage}  from 'lazy-react' 
 
 const PortfolioItem = ({item}) => {
 		let image = item.imageSrc ? <LazyImage link={item.imageSrc} className="imgWrapper"></LazyImage> : <div className="imgWrapper hide-sm"></div>
