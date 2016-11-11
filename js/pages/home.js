@@ -8,6 +8,8 @@ import Footer from '../components/footer'
 import Panel from '../components/panelSection'
 import GentleScroll from '../components/gentleScroll'
 import superagent from 'superagent'
+import Loading from '../components/Loading'
+import GitHub from '../components/githubRepo'
 import {LazyImage,LazyFrame}  from 'lazy-react'
 
 const Codepen = React.createClass({
@@ -120,13 +122,10 @@ const Places = React.createClass({
 		return (
 			<div className="row main">
 						<div className="medium-2 large-2 columns text-right"><h2>Some places where I've worked</h2></div>
-						<div className="medium-10 large-10 columns">
-								{
-									this.state.places.map((elem,index)=>
-										<CareerItem item={elem} key={index}/>
-										)
-								}
-						</div>
+						<div className="medium-10 large-10 columns">{
+							this.state.places.map((elem,index)=>
+								<CareerItem item={elem} key={index}/>)
+						}</div>
 					</div>)
 	}
 })
@@ -174,17 +173,13 @@ const Portfolio = React.createClass({
 			<div className="row main">
 				<div className="medium-2 large-2 columns text-right"><h2>Some work that I've done</h2></div>
 				<div className="medium-10 large-10 columns">
-					<div className="row">
-						{
-							this.state.portfolio.map((elem,index) =>
-								(
-									<div className="medium-4 columns" key={index}>
-										<PortfolioItem item={elem}/>
-									</div>
-									)
-								)
-						}
-					</div>
+					<div className="row">{
+						this.state.portfolio.map((elem,index) =>(
+							<div className="medium-4 columns" key={index}>
+								<PortfolioItem item={elem}/>
+							</div>)
+						)
+					}</div>
 				</div>
 			</div>)
 	}
@@ -205,17 +200,54 @@ const WhoAmI = ()=>{
 			)
 };
 
+class OpenSource extends React.Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			projects:[{
+				endpoint:'https://api.github.com/repos/jonathanobino/react-lazy'
+			},{
+				endpoint:'https://api.github.com/repos/jonathanobino/rately'
+			}],
+			results:[]
+		}
+	}
+	render() {
+		return <div className="row main">
+			<div className="medium-2 large-2 columns text-right"><h2>Open Source Projects</h2></div>
+			<div className="medium-10 large-10 columns spaceBetween">
+				{this.state.results.length === 0 ? <Loading/> : this.state.results.map(elem => <GitHub {...elem}/>)}
+			</div>
+		</div>
+	}
+	componentDidMount() {
+		Promise.all(this.state.projects.map(elem => superagent(elem.endpoint)))
+		.then(values => {
+			this.setState({
+				results:values.map(elem => JSON.parse(elem.text))
+			})
+		})
+		/*superagent(this.state.projects[0].endpoint)
+		.then( values => {
+			this.state.results.push(JSON.parse(values.text))
+			this.setState({result:this.state.results})
+		})*/
+	}
+}
+
+
+
 const Home = ()=>{
 		return (
 				<div>
 					<Parallax background="url(/images/background.jpg)">
-					<img src="/images/logo.png" alt="logo"/>
-					<GentleScroll target="main">
-						<div className="mouse">
-							<div className="upAndDown">
+						<img src="/images/logo.png" alt="logo"/>
+						<GentleScroll target="main">
+							<div className="mouse">
+								<div className="upAndDown">
+								</div>
 							</div>
-						</div>
-					</GentleScroll>
+						</GentleScroll>
 					</Parallax>
 					<main>
 						<Panel background="#F0F0F0">
@@ -223,6 +255,7 @@ const Home = ()=>{
 							<WhatIUse/>
 							<Portfolio/>
 							<Places/>
+							<OpenSource/>
 							<Codepen/>
 						</Panel>
 					</main>

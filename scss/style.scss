@@ -1,6 +1,6 @@
 @import '_normalize.scss';
 @import '_foundation.min.scss';
-@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
 @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400);
@@ -593,6 +593,46 @@ ul.inline-list{
 	}
 }
 
+.repo {
+	min-width: 200px;
+	min-height: 200px;
+	max-width: 250px;
+	max-height: 300px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+	padding: 10px;
+	display: flex;
+	background: rgba(white,0.7);
+	flex-direction: column;
+	justify-content:space-between;
+	h4{
+		text-align: center;
+		a{
+			margin-right: 20px;
+		}
+	}
+	small{
+		font-size: .7rem;
+		color:#aaa;
+	}
+	p{
+		margin-bottom: 0;
+	}
+	img{
+		max-width: 50px;
+		max-height: 50px;
+	}
+}
+
+.spaceBetween {
+	display: flex;
+	justify-content: space-around;
+}
+
+.bottom{
+	align-self:flex-end;
+}
 .mouse{
 	width: 30px;
 	height: 50px;
