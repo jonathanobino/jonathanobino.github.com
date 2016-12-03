@@ -137,14 +137,14 @@ const WhatIUse = () =>{
 						<div className="medium-2 large-2 columns text-right"><h2>What I use</h2></div>
 						<div className="medium-10 large-10 columns">
 							<ul className="inline-list same-height-child">
-								<li><LazyImage link="//svgporn.com/logos/html-5.svg" alt="HTML5"/></li>
-								<li><LazyImage link="//svgporn.com/logos/sass.svg" alt="SASS"/></li>
-								<li><LazyImage link="//svgporn.com/logos/angular-icon.svg" alt="Angular"/></li>
-								<li><LazyImage link="//svgporn.com/logos/react.svg" alt="React JS"/></li>
-								<li><LazyImage link="//svgporn.com/logos/nodejs-icon.svg" alt="Node JS"/></li>
-								<li><LazyImage link="//svgporn.com/logos/mongodb.svg" alt="Mongo DB"/></li>
-								<li><LazyImage link="//svgporn.com/logos/gulp.svg" alt="Gulp JS"/></li>
-								<li><LazyImage link="//svgporn.com/logos/express.svg" alt="Express"/></li>
+								<li><LazyImage link="//s3-us-west-2.amazonaws.com/svgporn.com/logos/html-5.svg" alt="HTML5"/></li>
+								<li><LazyImage link="//s3-us-west-2.amazonaws.com/svgporn.com/logos/sass.svg" alt="SASS"/></li>
+								<li><LazyImage link="//s3-us-west-2.amazonaws.com/svgporn.com/logos/angular-icon.svg" alt="Angular"/></li>
+								<li><LazyImage link="//s3-us-west-2.amazonaws.com/svgporn.com/logos/react.svg" alt="React JS"/></li>
+								<li><LazyImage link="//s3-us-west-2.amazonaws.com/svgporn.com/logos/nodejs-icon.svg" alt="Node JS"/></li>
+								<li><LazyImage link="//s3-us-west-2.amazonaws.com/svgporn.com/logos/mongodb.svg" alt="Mongo DB"/></li>
+								<li><LazyImage link="//s3-us-west-2.amazonaws.com/svgporn.com/logos/gulp.svg" alt="Gulp JS"/></li>
+								<li><LazyImage link="//s3-us-west-2.amazonaws.com/svgporn.com/logos/express.svg" alt="Express"/></li>
 							</ul>
 						</div>
 					</div>)
@@ -227,11 +227,6 @@ class OpenSource extends React.Component {
 				results:values.map(elem => JSON.parse(elem.text))
 			})
 		})
-		/*superagent(this.state.projects[0].endpoint)
-		.then( values => {
-			this.state.results.push(JSON.parse(values.text))
-			this.setState({result:this.state.results})
-		})*/
 	}
 }
 
