@@ -1,15 +1,15 @@
-import React from 'react';
+import React, {Component} from 'react';
+import getSVGIcon from '../API/getSVGIcon'
 
-const Footer = React.createClass({
-	getInitialState:function(){
-		let thisYear = new Date().getFullYear();
-		return{
-			year: thisYear
+class Footer extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			year: new Date().getFullYear()
 		}
-	},
-	render: function(){
-		return (
-			<div className="footer">
+	}
+	render() {
+		return <div className="footer">
 			<ul className="inline-list">
 				<li><a href="https://twitter.com/jonathanobino" target="_blank"><i className="fa fa-twitter fa-2x"></i></a></li>
 				<li><a href="https://github.com/jonathanobino" target="_blank"><i className="fa fa-github fa-2x"></i></a></li>
@@ -22,10 +22,9 @@ const Footer = React.createClass({
 			<br/>
 				P.IVA: 01771730932
 			</p>
-			<p className="text-center credits">Made with <span className="fa fa-heart heart"></span> and <img src="http://svgporn.com/logos/react.svg" alt="React JS"/></p>
-			</div>
-			)
+			<p className="text-center credits">Made with <span className="fa fa-heart heart"></span> and <img src={getSVGIcon('react')} alt="React JS"/></p>
+		</div>
 	}
-})
+}
 
-export default Footer;
+export default Footer

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import FullScreen from '../components/fullScreenHeader'
 import ContactForm from '../components/contactForm'
 import Parallax from '../components/parallax'
@@ -7,14 +7,16 @@ import CareerItem from '../components/careerItem'
 import Footer from '../components/footer'
 import Panel from '../components/panelSection'
 import GentleScroll from '../components/gentleScroll'
-import superagent from 'superagent'
+import axios from 'axios'
 import Loading from '../components/Loading'
 import GitHub from '../components/githubRepo'
-import {LazyImage,LazyFrame}  from 'lazy-react'
+import getSVGIcon from '../API/getSVGIcon'
+import {LazyImage, LazyFrame}  from 'lazy-react'
 
-const Codepen = React.createClass({
-	getInitialState(){
-		return {
+class Codepen extends Component {
+	constructor(props){
+		super(props)
+		this.state = {
 			pens: [{
 				id: 'obwBEz1',
 				link: '//codepen.io/jonathanobino/embed/preview/obwBEz/?height=500&theme-id=0&default-tab=result'
@@ -29,67 +31,63 @@ const Codepen = React.createClass({
 				link: '//codepen.io/jonathanobino/embed/preview/MaQNgY/?height=268&theme-id=0&default-tab=result'
 			}]
 		}
-	},
-	render(){
-		return ( <div className="row main">
-					<div className="medium-2 large-2 columns text-right"><h2>My Popular Pens</h2></div>
-					<div className="medium-10 large-10 columns">
-					{
-						this.state.pens.map((elem,index) => {
-						return <div className="medium-6 large-6 columns" key={elem.id}>
-									<LazyFrame key={elem.id} link={elem.link} height={268}></LazyFrame>
-								</div>
-						})
-					}
-					</div>
-				 </div>
-			)
-	},
+	}
+
+	render() {
+		return <div className="row main">
+			<div className="medium-2 large-2 columns text-right"><h2>My Popular Pens</h2></div>
+			<div className="medium-10 large-10 columns">{
+				this.state.pens.map((elem,index) => {
+				return <div className="medium-6 large-6 columns" key={elem.id}>
+							<LazyFrame key={elem.id} link={elem.link} height={268}></LazyFrame>
+						</div>
+				})}
+			</div>
+		</div>
+	}
 	componentDidMount(){
-		superagent.get('http://cpv2api.com/pens/popular/jonathanobino')
-		.end((err,result)=>{
-			if(result.body.success){
-				let done = result.body.data.map(elem => {
+		axios.get('http://cpv2api.com/pens/popular/jonathanobino')
+		.then(result => {
+			if(result.data.success){
+				let done = result.data.data.map(elem => {
 					let id = elem.link.split('/').pop();
 					return {
 						id,
 						link:'//codepen.io/jonathanobino/embed/preview/'+id+'/?height=268&theme-id=0&default-tab=result'
 					}
 				})
-
 				this.setState({
 					pens:done.slice(0,4)
 				});
 			}
 		})
 	}
-})
+}
 
 
-const Medium = React.createClass({
-	getInitialState(){
-		return {
+class Medium extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
 			posts:[]
 		}
-	},
-	render(){
-		return (
-				<div className="row main">
-						<div className="medium-2 large-2 columns text-right"><h2>Last blog posts</h2></div>
-						<div className="medium-6 large-6 columns m-story">
-							<a className="m-story" data-collapsed="true" href="https://medium.com/@threobin/do-you-really-need-global-npm-packages-a3f21dc2396f">Do you really need global NPM packages?</a>
-						</div>
-						<div className="medium-6 large-6 columns"></div>
-						
-				</div>
-			)
 	}
-})
 
+	render(){
+		return <div className="row main">
+				<div className="medium-2 large-2 columns text-right"><h2>Last blog posts</h2></div>
+				<div className="medium-6 large-6 columns m-story">
+					<a className="m-story" data-collapsed="true" href="https://medium.com/@threobin/do-you-really-need-global-npm-packages-a3f21dc2396f">Do you really need global NPM packages?</a>
+				</div>
+				<div className="medium-6 large-6 columns"></div>
+		</div>
+	}
+}
 
-const Places = React.createClass({
-	getInitialState(){
-		return {
+class Places extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
 			places:[{
 				description:{
 					company:"Freelance",
@@ -117,42 +115,42 @@ const Places = React.createClass({
 				imageSrc:'images/majeeko.png'
 			}]
 		}
-	},
-	render(){
-		return (
-			<div className="row main">
-						<div className="medium-2 large-2 columns text-right"><h2>Some places where I've worked</h2></div>
-						<div className="medium-10 large-10 columns">{
-							this.state.places.map((elem,index)=>
-								<CareerItem item={elem} key={index}/>)
-						}</div>
-					</div>)
 	}
-})
+
+	render(){
+		return <div className="row main">
+			<div className="medium-2 large-2 columns text-right"><h2>Some places where I've worked</h2></div>
+			<div className="medium-10 large-10 columns">{
+				this.state.places.map((elem,index)=>
+					<CareerItem item={elem} key={index}/>)
+			}</div>
+		</div>
+	}
+}
 
 
 const WhatIUse = () =>{
-		return (
-			<div className="row main">
-						<div className="medium-2 large-2 columns text-right"><h2>What I use</h2></div>
-						<div className="medium-10 large-10 columns">
-							<ul className="inline-list same-height-child">
-								<li><LazyImage link="//s3-us-west-2.amazonaws.com/svgporn.com/logos/html-5.svg" alt="HTML5"/></li>
-								<li><LazyImage link="//s3-us-west-2.amazonaws.com/svgporn.com/logos/sass.svg" alt="SASS"/></li>
-								<li><LazyImage link="//s3-us-west-2.amazonaws.com/svgporn.com/logos/angular-icon.svg" alt="Angular"/></li>
-								<li><LazyImage link="//s3-us-west-2.amazonaws.com/svgporn.com/logos/react.svg" alt="React JS"/></li>
-								<li><LazyImage link="//s3-us-west-2.amazonaws.com/svgporn.com/logos/nodejs-icon.svg" alt="Node JS"/></li>
-								<li><LazyImage link="//s3-us-west-2.amazonaws.com/svgporn.com/logos/mongodb.svg" alt="Mongo DB"/></li>
-								<li><LazyImage link="//s3-us-west-2.amazonaws.com/svgporn.com/logos/gulp.svg" alt="Gulp JS"/></li>
-								<li><LazyImage link="//s3-us-west-2.amazonaws.com/svgporn.com/logos/express.svg" alt="Express"/></li>
-							</ul>
-						</div>
-					</div>)
+		return <div className="row main">
+			<div className="medium-2 large-2 columns text-right"><h2>What I use</h2></div>
+			<div className="medium-10 large-10 columns">
+				<ul className="inline-list same-height-child">
+					<li><LazyImage link={getSVGIcon('html')} alt="HTML5"/></li>
+					<li><LazyImage link={getSVGIcon('sass')} alt="SASS"/></li>
+					<li><LazyImage link={getSVGIcon('angular')} alt="Angular"/></li>
+					<li><LazyImage link={getSVGIcon('react')} alt="React JS"/></li>
+					<li><LazyImage link={getSVGIcon('nodejs')} alt="Node JS"/></li>
+					<li><LazyImage link={getSVGIcon('mongodb')} alt="Mongo DB"/></li>
+					<li><LazyImage link={getSVGIcon('gulp')} alt="Gulp JS"/></li>
+					<li><LazyImage link={getSVGIcon('express')} alt="Express"/></li>
+				</ul>
+			</div>
+		</div>
 };
 
-const Portfolio = React.createClass({
-	getInitialState(){
-		return {
+class Portfolio extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
 			portfolio:[{
 				link:'http://ratemyc.herokuapp.com',
 				description:'Rate My Customer',
@@ -167,23 +165,24 @@ const Portfolio = React.createClass({
 				imageSrc:'/images/digigraf.png'
 			}]
 		}
-	},
-	render(){
-		return (
-			<div className="row main">
-				<div className="medium-2 large-2 columns text-right"><h2>Some work that I've done</h2></div>
-				<div className="medium-10 large-10 columns">
-					<div className="row">{
-						this.state.portfolio.map((elem,index) =>(
-							<div className="medium-4 columns" key={index}>
-								<PortfolioItem item={elem}/>
-							</div>)
-						)
-					}</div>
-				</div>
-			</div>)
 	}
-})
+
+	render() {
+		return <div className="row main">
+			<div className="medium-2 large-2 columns text-right"><h2>Some work that I've done</h2></div>
+			<div className="medium-10 large-10 columns">
+				<div className="row">{
+					this.state.portfolio.map((elem,index) =>(
+						<div className="medium-4 columns" key={index}>
+							<PortfolioItem item={elem}/>
+						</div>)
+					)
+				}</div>
+			</div>
+		</div>
+	}
+}
+
 const WhoAmI = ()=>{
 		return (
 				<div className="row main">
@@ -200,7 +199,7 @@ const WhoAmI = ()=>{
 			)
 };
 
-class OpenSource extends React.Component {
+class OpenSource extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -221,43 +220,41 @@ class OpenSource extends React.Component {
 		</div>
 	}
 	componentDidMount() {
-		Promise.all(this.state.projects.map(elem => superagent(elem.endpoint)))
+		Promise.all(this.state.projects.map(elem => axios.get(elem.endpoint)))
 		.then(values => {
 			this.setState({
-				results:values.map(elem => JSON.parse(elem.text))
+				results:values.map(elem => elem.data)
 			})
 		})
 	}
 }
 
-
-
 const Home = ()=>{
 		return (
-				<div>
-					<Parallax background="url(/images/background.jpg)">
-						<img src="/images/logo.png" alt="logo"/>
-						<GentleScroll target="main">
-							<div className="mouse">
-								<div className="upAndDown">
-								</div>
+			<div>
+				<Parallax background="url(/images/background.jpg)">
+					<img src="/images/logo.png" alt="logo"/>
+					<GentleScroll target="main">
+						<div className="mouse">
+							<div className="upAndDown">
 							</div>
-						</GentleScroll>
-					</Parallax>
-					<main>
-						<Panel background="#F0F0F0">
-							<WhoAmI/>
-							<WhatIUse/>
-							<Portfolio/>
-							<Places/>
-							<OpenSource/>
-							<Codepen/>
-						</Panel>
-					</main>
-					<ContactForm address="jonobin@gmail.com"/>
-					<Footer/>
-				</div>
-				)
+						</div>
+					</GentleScroll>
+				</Parallax>
+				<main>
+					<Panel background="#F0F0F0">
+						<WhoAmI/>
+						<WhatIUse/>
+						<Portfolio/>
+						<Places/>
+						<OpenSource/>
+						<Codepen/>
+					</Panel>
+				</main>
+				<ContactForm address="jonobin@gmail.com"/>
+				<Footer/>
+			</div>
+		)
 }
 
 export default Home

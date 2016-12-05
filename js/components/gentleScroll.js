@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 import jQuery from 'jQuery';
 const $ = jQuery;
 
-const GentleScroll = React.createClass({
-	render:function(){
+class GentleScroll extends Component {
+	constructor(props) {
+		super(props)
+		this.clickHandler = this.clickHandler.bind(this)
+	}
+	render() {
 		return <div onClick={this.clickHandler}>{this.props.children}</div>
-	},
-	clickHandler:function(){
-		
+	}
+
+	clickHandler(){
 		const targetPosition = $(this.props.target).offset().top +1;
 		if( typeof this.props.beforeScroll == 'function'){
 			this.props.beforeScroll()
@@ -22,6 +26,6 @@ const GentleScroll = React.createClass({
 			},this.props.timing || 1000)
 		}
 	}
-})
+}
 
 export default GentleScroll
