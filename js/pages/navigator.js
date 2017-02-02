@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Footer from '../components/footer';
-const $ = require('jquery');
 
 /*menu
 
@@ -30,7 +29,7 @@ const Menu = React.createClass({
 	},
 	clickHandler: function(event){
 		const element = ReactDom.findDOMNode(this);
-		$(element).children('.offCanvas').toggleClass('show');
+		// $(element).children('.offCanvas').toggleClass('show');
 		// $(element).children('.mainWrapper').toggleClass('show');
 	}
 })

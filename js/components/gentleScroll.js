@@ -1,6 +1,5 @@
-import React, {Component} from 'react';
-import jQuery from 'jQuery';
-const $ = jQuery;
+import React, {Component} from 'react'
+import Velocity from 'velocity-animate'
 
 class GentleScroll extends Component {
 	constructor(props) {
@@ -12,18 +11,19 @@ class GentleScroll extends Component {
 	}
 
 	clickHandler(){
-		const targetPosition = $(this.props.target).offset().top +1;
+		const target = document.querySelector(this.props.target)
+		const targetPosition = target.getBoundingClientRect().top +1;
 		if( typeof this.props.beforeScroll == 'function'){
 			this.props.beforeScroll()
 			.then(()=>{
-				$('html,body').animate({
-					scrollTop:targetPosition
-				},this.props.timing || 1000)
+				Velocity(target,'scroll',{
+					duration: this.props.timing || 1000
+				})
 			})
 		} else {
-			$('html,body').animate({
-				scrollTop:targetPosition
-			},this.props.timing || 1000)
+			Velocity(target,'scroll',{
+				duration: this.props.timing || 1000
+			})
 		}
 	}
 }
