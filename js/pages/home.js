@@ -215,7 +215,7 @@ class OpenSource extends Component {
 		return <div className="row main">
 			<div className="medium-2 large-2 columns text-right"><h2>Open Source Projects</h2></div>
 			<div className="medium-10 large-10 columns spaceBetween">
-				{this.state.results.length === 0 ? <Loading/> : this.state.results.map(elem => <GitHub {...elem}/>)}
+				{this.state.results.length === 0 ? <Loading/> : this.state.results.map((elem, index) => <GitHub {...elem} key={index}/>)}
 			</div>
 		</div>
 	}
