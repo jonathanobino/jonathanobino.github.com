@@ -642,6 +642,7 @@ ul.inline-list{
 	position: absolute;
 	bottom: -100px;
 	left: calc(50% - 15px);
+	cursor: pointer;
 	@media (max-height: 570px){
 					    bottom: -40px;
 					}
