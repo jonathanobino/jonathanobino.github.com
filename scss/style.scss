@@ -375,16 +375,19 @@ ul.inline-list{
 			border-radius: 2px;
 			font-size: 1.5rem;
 			font-weight: 400;
-			color: $blue;
+			//color: $blue;
+			color: $green;
 			background-color: transparent;
 			transition: .5s all;
 			&:disabled{
 				cursor:not-allowed;
 			}
 			&:hover{
-				color: darken($green,10);
-				background-color: rgba(darken($blue,15),0.9);
-				border-color: $blue;
+				//color: darken($green,10);
+				color: white;
+				//background-color: rgba(darken($blue,15),0.9);
+				background-color: rgba($green,0.9);
+				//border-color: $blue;
 			}
 		}
 	}
