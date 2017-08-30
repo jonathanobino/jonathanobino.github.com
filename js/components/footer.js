@@ -19,8 +19,6 @@ class Footer extends Component {
 			</ul>
 			<p className="text-center">
 				Jonathan Obino © {this.state.year}
-			<br/>
-				P.IVA: 01771730932
 			</p>
 			<p className="text-center credits">Made with <span className="fa fa-heart heart"></span> and <img src={getSVGIcon('react')} alt="React JS"/></p>
 		</div>
