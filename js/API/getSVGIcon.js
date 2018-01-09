@@ -15,7 +15,8 @@ const getLanguageIcon = (language) => {
 			break
 	}
 	
-	return `//s3-us-west-2.amazonaws.com/svgporn.com/logos/${language}.svg`
+	//return `//s3-us-west-2.amazonaws.com/svgporn.com/logos/${language}.svg`
+	return `//cdn.svgporn.com/logos/${language}.svg`
 }
 
 export default getLanguageIcon
