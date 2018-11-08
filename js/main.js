@@ -4,5 +4,4 @@ import Home from './pages/home'
 import Menu from './pages/navigator'
 
 render(<Home/>,document.getElementById('app'))
-// render(<Menu><Home/></Menu>,document.getElementById('app'))
 
