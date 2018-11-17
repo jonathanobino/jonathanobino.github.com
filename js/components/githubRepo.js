@@ -3,7 +3,7 @@ import {LazyImage} from 'lazy-react'
 import getSVGIcon from '../API/getSVGIcon'
 
 const getLanguageIcon = (language) => {
-	return (<LazyImage link={getSVGIcon(language)}/>)
+	return (<LazyImage link={getSVGIcon(language)} alt={language}/>)
 }
 
 const GitHubRepo = ({name,html_url,stargazers_count,language,description,owner}) => <div className="repo">

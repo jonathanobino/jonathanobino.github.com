@@ -46,7 +46,7 @@ class Codepen extends Component {
 		</div>
 	}
 	componentDidMount(){
-		axios.get('http://cpv2api.com/pens/popular/jonathanobino')
+		axios.get('https://cpv2api.com/pens/popular/jonathanobino')
 		.then(result => {
 			if(result.data.success){
 				let done = result.data.data.map(elem => {
