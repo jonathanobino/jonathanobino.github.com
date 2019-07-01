@@ -20,27 +20,31 @@ module.exports = {
       exclude: /node_modules/
     }]
   },
-   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      comments: false
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: Infinity,
-      filename: '[name].[hash].js',
-    }),
-    new webpack.DefinePlugin({
+  optimization:{
+
+  },
+  plugins: [
+      new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, './rawIndex.html'),
       filename: 'index.html'
     }),
-    new PreloadWebpackPlugin({
-      rel: 'preload',
-      as: 'script',
-      include: 'all'
-    })
+    // new PreloadWebpackPlugin()
   ]
+  //  plugins: [
+  //   new webpack.DefinePlugin({
+  //     'process.env.NODE_ENV': '"production"'
+  //   }),
+  //   new HtmlWebpackPlugin({
+  //     template: path.join(__dirname, './rawIndex.html'),
+  //     filename: 'index.html'
+  //   }),
+  //   new PreloadWebpackPlugin({
+  //     rel: 'preload',
+  //     as: 'script',
+  //     include: 'all'
+  //   })
+  // ]
 };
