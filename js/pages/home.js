@@ -35,7 +35,7 @@ class Codepen extends Component {
 			<div className="medium-10 large-10 columns">{
 				this.state.pens.map((elem,index) => {
 				return <div className="medium-6 large-6 columns" key={elem.id}>
-							<LazyFrame key={elem.id} link={elem.link} height={268}></LazyFrame>
+							<LazyFrame key={elem.id} link={elem.link} height={268} style={{maxWidth:'100%'}}></LazyFrame>
 						</div>
 				})}
 			</div>
