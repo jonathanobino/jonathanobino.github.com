@@ -12,25 +12,21 @@ import Loading from '../components/Loading'
 import GitHub from '../components/githubRepo'
 import getSVGIcon from '../API/getSVGIcon'
 import {LazyImage, LazyFrame}  from 'lazy-react'
+import { throws } from 'assert';
 
 class Codepen extends Component {
 	constructor(props){
 		super(props)
+		this.mapIdsToFrame = this.mapIdsToFrame.bind(this)
 		this.state = {
-			pens: [{
-				id: 'obwBEz1',
-				link: '//codepen.io/jonathanobino/embed/preview/obwBEz/?height=500&theme-id=0&default-tab=result'
-			}, {
-				id: 'MaQNgY1',
-				link: '//codepen.io/jonathanobino/embed/preview/MaQNgY/?height=500&theme-id=0&default-tab=result'
-			}, {
-				id: 'obwBEz2',
-				link: '//codepen.io/jonathanobino/embed/preview/obwBEz/?height=500&theme-id=0&default-tab=result'
-			}, {
-				id: 'MaQNgY2',
-				link: '//codepen.io/jonathanobino/embed/preview/MaQNgY/?height=268&theme-id=0&default-tab=result'
-			}]
+			pens: this.mapIdsToFrame([
+				'VedwMz', // product card
+				'yeqgvr', // music ui
+				'ZWpjzR', // weather dashboard
+				'obwBEz',// twitter hearth animation
+			])
 		}
+		
 	}
 
 	render() {
@@ -45,22 +41,33 @@ class Codepen extends Component {
 			</div>
 		</div>
 	}
+
+	mapIdsToFrame(array){
+		return array.map(elem => ({
+			id:elem,
+			link: '//codepen.io/jonathanobino/embed/preview/' + elem + '/?height=268&theme-id=0&default-tab=result'
+		}))
+	}
+
 	componentDidMount(){
-		axios.get('https://cpv2api.com/pens/popular/jonathanobino')
-		.then(result => {
-			if(result.data.success){
-				let done = result.data.data.map(elem => {
-					let id = elem.link.split('/').pop();
-					return {
-						id,
-						link:'//codepen.io/jonathanobino/embed/preview/'+id+'/?height=268&theme-id=0&default-tab=result'
-					}
-				})
-				this.setState({
-					pens:done.slice(0,4)
-				});
-			}
-		})
+		// api is down for the moment
+		// axios.get('https://cpv2api.com/pens/popular/jonathanobino')
+		// .then(result => {
+		// 	console.log(result)
+		// 	if(result.data.success){
+		// 		let done = result.data.data.map(elem => {
+		// 			let id = elem.link.split('/').pop();
+		// 			return {
+		// 				id,
+		// 				link:'//codepen.io/jonathanobino/embed/preview/'+id+'/?height=268&theme-id=0&default-tab=result'
+		// 			}
+		// 		})
+		// 		this.setState({
+		// 			pens:done.slice(0,4)
+		// 		});
+		// 	}
+		// })
+		// .catch(err => console.log(err))
 	}
 }
 
