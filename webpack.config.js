@@ -4,14 +4,10 @@ const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
+  mode: 'production',
   entry: {
     app:'./js/main.js',
     vendor: ['react', 'react-dom','axios','velocity-animate']
-  },
-  devtool: 'cheap-module-source-map',
-  output: {
-    path: path.join(__dirname),
-    filename: '[name].[hash].js'
   },
   module: {
     rules: [{
@@ -24,27 +20,12 @@ module.exports = {
 
   },
   plugins: [
-      new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"production"'
-    }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, './rawIndex.html'),
+      template: path.join(__dirname, './templates/indexTemplate.html'),
       filename: 'index.html'
     }),
-    // new PreloadWebpackPlugin()
-  ]
-  //  plugins: [
-  //   new webpack.DefinePlugin({
-  //     'process.env.NODE_ENV': '"production"'
-  //   }),
-  //   new HtmlWebpackPlugin({
-  //     template: path.join(__dirname, './rawIndex.html'),
-  //     filename: 'index.html'
-  //   }),
-  //   new PreloadWebpackPlugin({
-  //     rel: 'preload',
-  //     as: 'script',
-  //     include: 'all'
-  //   })
-  // ]
+  ],
+  output: {
+    path: path.resolve(__dirname, 'docs')
+  }
 };

@@ -4,9 +4,9 @@ var autoprefix = require('gulp-autoprefixer');
 var cleanCss = require('gulp-clean-css');
 var path = require('path');
 
-gulp.task('sass',function(){
+gulp.task('default',function(){
 	var src = path.join(__dirname,'scss/*.scss');
-	var dest = path.join(__dirname,'css/');
+	var dest = path.join(__dirname,'./docs');
 	return gulp.src(src)
 	.pipe(sass().on('error',sass.logError))
 	.pipe(autoprefix())

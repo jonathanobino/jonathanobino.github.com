@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import FullScreen from '../components/fullScreenHeader'
 import ContactForm from '../components/contactForm'
 import Parallax from '../components/parallax'
 import PortfolioItem from '../components/portfolioItem'
@@ -12,7 +11,6 @@ import Loading from '../components/Loading'
 import GitHub from '../components/githubRepo'
 import getSVGIcon from '../API/getSVGIcon'
 import {LazyImage, LazyFrame}  from 'lazy-react'
-import { throws } from 'assert';
 
 class Codepen extends Component {
 	constructor(props){
