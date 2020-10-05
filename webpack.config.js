@@ -7,7 +7,7 @@ module.exports = {
   mode: 'production',
   entry: {
     app:'./js/main.js',
-    vendor: ['react', 'react-dom','axios','velocity-animate']
+    vendor: ['react', 'react-dom', 'axios', 'velocity-animate','lazy-react']
   },
   module: {
     rules: [{

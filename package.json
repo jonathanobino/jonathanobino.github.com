@@ -26,27 +26,27 @@
   },
   "homepage": "https://github.com/jonathanobino/jonathanobino.github.com#readme",
   "dependencies": {
-    "axios": ">=0.18.1",
+    "axios": "^0.20.0",
     "lazy-react": "^2.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "velocity-animate": "^1.4.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.0.6",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.2.0",
     "gulp-sass": "^4.0.2",
-    "html-webpack-plugin": "^4.3.0",
+    "html-webpack-plugin": "^4.5.0",
     "preload-webpack-plugin": "^2.3.0",
-    "sass": "^1.26.5",
+    "sass": "^1.26.11",
     "sass-loader": "^8.0.2",
-    "webpack": "^4.2.0",
-    "webpack-cli": "^3.3.5",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": ">=3.1.11"
   }
 }
