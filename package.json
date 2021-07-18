@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/jonathanobino/jonathanobino.github.com#readme",
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "lazy-react": "^2.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -40,13 +40,13 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.2.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.0.0",
     "html-webpack-plugin": "^4.5.0",
     "preload-webpack-plugin": "^2.3.0",
     "sass": "^1.26.11",
     "sass-loader": "^8.0.2",
-    "webpack": "^4.44.2",
+    "webpack": "^5.45.1",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": ">=3.1.11"
+    "webpack-dev-server": "^3.11.2"
   }
 }
