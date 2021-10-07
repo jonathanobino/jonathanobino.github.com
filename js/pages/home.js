@@ -24,7 +24,7 @@ class Codepen extends Component {
 				'obwBEz',// twitter hearth animation
 			])
 		}
-		
+
 	}
 
 	render() {
@@ -122,7 +122,7 @@ class Places extends Component {
 				description:{
 					company:"MV labs",
 					role:"Full Stack Developer - collaborator",
-					when:"2016",
+					when:"2016,2018,2019",
 					technology:"React, jQuery, Node JS, HTML5"
 				},
 				imageSrc:'images/mv.jpg'

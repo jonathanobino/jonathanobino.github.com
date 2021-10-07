@@ -1,13 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
   mode: 'production',
   entry: {
-    app:'./js/main.js',
-    vendor: ['react', 'react-dom', 'axios', 'velocity-animate','lazy-react']
+    app: { import: './js/main.js', dependOn: ['react','plugins'] },
+    plugins: { import: ['lazy-react','axios', 'velocity-animate'], dependOn:'react'},
+    react: ['react', 'react-dom',],
   },
   module: {
     rules: [{
@@ -17,7 +17,7 @@ module.exports = {
     }]
   },
   optimization:{
-
+    minimize:true,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -27,5 +27,10 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, './')
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, './'),
+    },
   }
 };
