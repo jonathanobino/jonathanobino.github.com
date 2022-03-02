@@ -7,7 +7,8 @@
     "build": "webpack && gulp",
     "development": "webpack-dev-server",
     "watch:scss": "gulp watch:sass",
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "prettier": "prettier ./js/*/*.js ./js/*.js -w --single-quote"
   },
   "repository": {
     "type": "git",
@@ -43,6 +44,7 @@
     "gulp-sass": "^5.0.0",
     "html-webpack-plugin": "^5.3.2",
     "preload-webpack-plugin": "^2.3.0",
+    "prettier": "^2.5.1",
     "sass": "^1.42.1",
     "sass-loader": "^12.1.0",
     "webpack": "^5.45.1",
