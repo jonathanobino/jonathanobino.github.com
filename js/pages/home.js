@@ -201,10 +201,10 @@ const WhatIUse = () => {
             <LazyImage link={getSVGIcon('react')} alt="React JS" />
           </li>
           <li>
-            <LazyImage link={getSVGIcon('babel')} alt="React JS" />
+            <LazyImage link={getSVGIcon('typescript')} alt="typescript" />
           </li>
           <li>
-            <LazyImage link={getSVGIcon('webpack')} alt="Gulp JS" />
+            <LazyImage link={getSVGIcon('webpack')} alt="webpack" />
           </li>
           <li>
             <LazyImage link={getSVGIcon('nodejs')} alt="Node JS" />
@@ -214,41 +214,6 @@ const WhatIUse = () => {
           </li>
           <li>
             <LazyImage link={getSVGIcon('mongodb')} alt="Mongo DB" />
-          </li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const WhatImExperimentingWith = () => {
-  return (
-    <div className="row main">
-      <div className="medium-2 large-2 columns text-right">
-        <h2>What I'm experimenting with</h2>
-      </div>
-      <div className="medium-10 large-10 columns">
-        <ul className="inline-list same-height-child">
-          <li>
-            <LazyImage link={getSVGIcon('html')} alt="HTML5" />
-          </li>
-          <li>
-            <LazyImage link={getSVGIcon('sass')} alt="SASS" />
-          </li>
-          <li>
-            <LazyImage link={getSVGIcon('react')} alt="React JS" />
-          </li>
-          <li>
-            <LazyImage link={getSVGIcon('nodejs')} alt="Node JS" />
-          </li>
-          <li>
-            <LazyImage link={getSVGIcon('mongodb')} alt="Mongo DB" />
-          </li>
-          <li>
-            <LazyImage link={getSVGIcon('webpack')} alt="Gulp JS" />
-          </li>
-          <li>
-            <LazyImage link={getSVGIcon('express')} alt="Express" />
           </li>
         </ul>
       </div>
@@ -357,6 +322,17 @@ class OpenSource extends Component {
       results: [],
     };
   }
+
+  componentDidMount() {
+    Promise.all(
+      this.state.projects.map((elem) => axios.get(elem.endpoint))
+    ).then((values) => {
+      this.setState({
+        results: values.map((elem) => elem.data),
+      });
+    });
+  }
+
   render() {
     return (
       <div className="row main">
@@ -375,15 +351,6 @@ class OpenSource extends Component {
       </div>
     );
   }
-  componentDidMount() {
-    Promise.all(
-      this.state.projects.map((elem) => axios.get(elem.endpoint))
-    ).then((values) => {
-      this.setState({
-        results: values.map((elem) => elem.data),
-      });
-    });
-  }
 }
 
 const Home = () => {
@@ -401,7 +368,6 @@ const Home = () => {
         <Panel background="#F0F0F0">
           <WhoAmI />
           <WhatIUse />
-          <Portfolio />
           <Places />
           <OpenSource />
           <Codepen />

@@ -4,8 +4,8 @@
   "description": "Website development with react",
   "main": "index.html",
   "scripts": {
+    "start": "webpack-dev-server",
     "build": "webpack && gulp",
-    "development": "webpack-dev-server",
     "watch:scss": "gulp watch:sass",
     "gulp": "gulp",
     "prettier": "prettier ./js/*/*.js ./js/*.js -w --single-quote"
@@ -28,7 +28,7 @@
   "homepage": "https://github.com/jonathanobino/jonathanobino.github.com#readme",
   "dependencies": {
     "axios": "^0.22.0",
-    "lazy-react": "^2.0.0",
+    "lazy-react": "^3.0.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "velocity-animate": "^1.4.2"
