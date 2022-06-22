@@ -120,7 +120,7 @@ class Places extends Component {
           description: {
             company: 'Freelance',
             role: 'Full Stack Developer',
-            when: '01.2015 - now',
+            when: '2015 - 2022',
           },
         },
         {
@@ -159,7 +159,7 @@ class Places extends Component {
           description: {
             company: 'Lynx SPA',
             role: 'Senior Frontend Developer',
-            when: '2022',
+            when: '2022 - current',
           },
           imageSrc: 'images/lynx.png',
         },
