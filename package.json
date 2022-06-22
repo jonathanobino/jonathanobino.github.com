@@ -5,9 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack && gulp",
-    "watch:scss": "gulp watch:sass",
-    "gulp": "gulp",
+    "build": "webpack",
     "prettier": "prettier ./js/*/*.js ./js/*.js -w --single-quote"
   },
   "repository": {
@@ -38,15 +36,13 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.0.6",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-sass": "^5.0.0",
+    "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.3.2",
     "preload-webpack-plugin": "^2.3.0",
     "prettier": "^2.5.1",
     "sass": "^1.42.1",
     "sass-loader": "^12.1.0",
+    "style-loader": "^3.3.1",
     "webpack": "^5.45.1",
     "webpack-cli": "^4.9.0",
     "webpack-dev-server": "^4.3.1"
