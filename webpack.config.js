@@ -5,7 +5,7 @@ const webpack = require('webpack');
 module.exports = {
   mode: 'production',
   entry: {
-    app: { import: './js/main.js', dependOn: ['react','plugins'] },
+    app: { import: './src/main.js', dependOn: ['react','plugins'] },
     plugins: { import: ['lazy-react','axios', 'velocity-animate'], dependOn:'react'},
     react: ['react', 'react-dom',],
   },
@@ -33,11 +33,11 @@ module.exports = {
     }),
   ],
   output: {
-    path: path.resolve(__dirname, './')
+    path: path.resolve(__dirname, './docs')
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, './'),
+      directory: path.join(__dirname, './docs'),
     },
   }
 };
