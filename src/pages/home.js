@@ -355,7 +355,7 @@ class OpenSource extends Component {
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Parallax background="url(/images/background.jpg)">
         <img src="/images/logo.png" alt="logo" />
         <GentleScroll target="main">
@@ -375,7 +375,7 @@ const Home = () => {
       </main>
       <ContactForm address="jonobin@gmail.com" />
       <Footer />
-    </div>
+    </>
   );
 };
 
