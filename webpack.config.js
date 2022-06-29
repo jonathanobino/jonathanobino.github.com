@@ -6,8 +6,8 @@ module.exports = {
   mode: 'production',
   entry: {
     app: { import: './src/main.js', dependOn: ['react','plugins'] },
-    plugins: { import: ['lazy-react','axios', 'velocity-animate'], dependOn:'react'},
-    react: ['react', 'react-dom',],
+    plugins: { import: ['lazy-react', 'axios'], dependOn:'react'},
+    react: ['react', 'react-dom'],
   },
   module: {
     rules: [{
