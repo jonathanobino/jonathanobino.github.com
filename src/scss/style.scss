@@ -545,7 +545,7 @@ ul.inline-list{
 		background-position: center center !important;
 		top: 0;
 		transition: transform 0.01s ease-out;
-		transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0) scale(1.1,1.1);
 		// transition: transform 0.01s ease, filter 0.3s linear;
 		// filter:blur(0px);
 		// &.first{
@@ -672,7 +672,7 @@ ul.inline-list{
 		transform: translateY(0);
 	}
 	75%{
-		transform: translateY(10px);	
+		transform: translateY(10px);
 	}
 	to{
 		transform: translateY(0);
