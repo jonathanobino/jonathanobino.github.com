@@ -1,30 +1,23 @@
-import React, { Component } from 'react';
-import Velocity from 'velocity-animate';
+import React from 'react';
 
-class GentleScroll extends Component {
-  constructor(props) {
-    super(props);
-    this.clickHandler = this.clickHandler.bind(this);
-  }
-  render() {
-    return <div onClick={this.clickHandler}>{this.props.children}</div>;
-  }
+export default function ({ children, beforeScroll, target }) {
 
-  clickHandler() {
-    const target = document.querySelector(this.props.target);
-    const targetPosition = target.getBoundingClientRect().top + 1;
-    if (typeof this.props.beforeScroll == 'function') {
-      this.props.beforeScroll().then(() => {
-        Velocity(target, 'scroll', {
-          duration: this.props.timing || 1000,
-        });
+  function clickHandler() {
+    const targetPosition = document.querySelector(target).getBoundingClientRect().top + 1;
+    if (typeof beforeScroll == 'function') {
+      beforeScroll().then(() => {
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth',
+        })
       });
     } else {
-      Velocity(target, 'scroll', {
-        duration: this.props.timing || 1000,
-      });
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth',
+      })
     }
   }
-}
 
-export default GentleScroll;
+  return <div onClick={clickHandler}>{children}</div>;
+}
