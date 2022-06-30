@@ -5,7 +5,7 @@ const webpack = require('webpack');
 module.exports = {
   mode: 'production',
   entry: {
-    app: { import: './src/main.js', dependOn: ['react','plugins'] },
+    app: { import: './src/index.js', dependOn: ['react','plugins'] },
     plugins: { import: ['lazy-react', 'axios'], dependOn:'react'},
     react: ['react', 'react-dom'],
   },
@@ -28,8 +28,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, './templates/indexTemplate.html'),
-      filename: 'index.html'
+      template: path.join(__dirname, './templates/index.html'),
     }),
   ],
   output: {
