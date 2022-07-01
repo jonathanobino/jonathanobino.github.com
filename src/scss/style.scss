@@ -119,10 +119,7 @@ h2 {
     margin: 0 auto 30px;
     width: 390px;
     @media (max-width: 406px) {
-      width: 370px;
-    }
-    @media (max-width: 321px) {
-      width: 300px;
+      width: 100%;
     }
     display: flex;
     justify-content: space-between;
@@ -157,12 +154,6 @@ h2 {
     }
   }
 }
-
-// .m-story{
-// 	iframe{
-// 		margin: 0 auto;
-// 	}
-// }
 
 .careerItem {
   padding-bottom: 40px;
@@ -599,7 +590,7 @@ ul.inline-list {
   min-height: 200px;
   max-width: 250px;
   max-height: 300px;
-  border: 1px solid #ccc;
+  // border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
   padding: 10px;
@@ -607,6 +598,9 @@ ul.inline-list {
   background: rgba(white, 0.7);
   flex-direction: column;
   justify-content: space-between;
+  @media (max-width:425px) {
+    margin-bottom: 10px;
+  }
   h4 {
     text-align: center;
     a {
@@ -629,6 +623,10 @@ ul.inline-list {
 .spaceBetween {
   display: flex;
   justify-content: space-around;
+  @media (max-width:425px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .bottom {
