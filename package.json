@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/jonathanobino/jonathanobino.github.com#readme",
   "dependencies": {
-    "axios": "^0.22.0",
     "lazy-react": "^3.0.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"

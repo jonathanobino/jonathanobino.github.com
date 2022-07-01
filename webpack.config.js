@@ -6,7 +6,7 @@ module.exports = {
   mode: 'production',
   entry: {
     app: { import: './src/index.js', dependOn: ['react','plugins'] },
-    plugins: { import: ['lazy-react', 'axios'], dependOn:'react'},
+    plugins: { import: ['lazy-react'], dependOn:'react'},
     react: ['react', 'react-dom'],
   },
   module: {
