@@ -1,41 +1,45 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState, useRef } from 'react';
 
-export default function useFetch(url, options = { method:'GET'}, deferred = false){
+export default function useFetch(
+  url,
+  options = { method: 'GET' },
+  deferred = false
+) {
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState(undefined);
   const [error, setError] = useState(undefined);
   const [load, setLoad] = useState(!deferred);
 
-  let cachedOptions = options;
+  let cachedOptions = useRef(options);
 
   function updateOptions(nextOptions) {
-    cachedOptions = {
-      ...cachedOptions,
+    cachedOptions.current = {
+      ...cachedOptions.current,
       ...nextOptions,
     };
   }
 
-  function send(){
+  function send() {
     setLoad(true);
   }
 
-  const fetchData = function(){
+  const fetchData = function () {
     setIsLoading(true);
     return fetch(url, {
-      ...cachedOptions,
-    }).then((res) =>  res.json())
-    .then(res => setResult(res))
-    .catch(err => setError(err))
+      ...cachedOptions.current,
+    })
+      .then((res) => res.json())
+      .then((res) => setResult(res))
+      .catch((err) => setError(err))
       .finally(() => {
-        setIsLoading(false)
+        setIsLoading(false);
         setLoad(false);
       });
-  }
+  };
 
-  useEffect(()=> {
-    if(load)
-      fetchData();
-  }, [load])
+  useEffect(() => {
+    if (load) fetchData();
+  }, [load]);
 
   return [result, isLoading, error, send, updateOptions];
 }
