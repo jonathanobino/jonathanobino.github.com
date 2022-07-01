@@ -622,7 +622,7 @@ ul.inline-list {
 
 .spaceBetween {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   @media (max-width:425px) {
     flex-direction: column;
     align-items: center;
