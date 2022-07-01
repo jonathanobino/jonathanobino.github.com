@@ -6,7 +6,6 @@ import CareerItem from '../components/careerItem';
 import Footer from '../components/footer';
 import Panel from '../components/panelSection';
 import GentleScroll from '../components/gentleScroll';
-import axios from 'axios';
 import Loading from '../components/Loading';
 import GitHub from '../components/githubRepo';
 import getSVGIcon from '../API/getSVGIcon';
@@ -325,10 +324,12 @@ class OpenSource extends Component {
 
   componentDidMount() {
     Promise.all(
-      this.state.projects.map((elem) => axios.get(elem.endpoint))
+      this.state.projects.map((elem) => {
+        return fetch(elem.endpoint).then(res => res.json())
+      })
     ).then((values) => {
       this.setState({
-        results: values.map((elem) => elem.data),
+        results: values,
       });
     });
   }
@@ -373,7 +374,7 @@ const Home = () => {
           <Codepen />
         </Panel>
       </main>
-      <ContactForm address="jonobin@gmail.com" />
+      <ContactForm />
       <Footer />
     </>
   );
