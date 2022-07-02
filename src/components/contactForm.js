@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import useFetch from '../API/useFetch';
 import { emailValidator } from '../utils';
+import Loading from './Loading';
 
 export default function () {
   const [result, isSending, error, send, updateOptions] = useFetch(
@@ -49,7 +50,7 @@ export default function () {
     <div className="contactFormWrapper">
       <div className={`message ${isSending || result || error ? 'show' : ''}`}>
         {isSending && (
-          <img src="http://samherbert.net/svg-loaders/svg-loaders/three-dots.svg" />
+          <Loading/>
         )}
         {/*message error from api*/}
         {!isSending && result && (
@@ -81,7 +82,6 @@ export default function () {
             <h2 className={formMessage.isError ? 'error' : ''}>
               {formMessage.message}
             </h2>
-            {/*cantSend form validation*/}
           </div>
         </div>
         <div className="row">
