@@ -6,8 +6,7 @@ import CareerItem from '../components/careerItem';
 import Footer from '../components/footer';
 import Panel from '../components/panelSection';
 import GentleScroll from '../components/gentleScroll';
-import Loading from '../components/Loading';
-import GitHub from '../components/githubRepo';
+import OpenSource from '../components/openSource';
 import getSVGIcon from '../API/getSVGIcon';
 import { LazyImage, LazyFrame } from 'lazy-react';
 
@@ -31,17 +30,15 @@ class Codepen extends Component {
         <div className="medium-2 large-2 columns text-right">
           <h2>My Popular Pens</h2>
         </div>
-        <div className="medium-10 large-10 columns">
+        <div className="medium-10 large-10 columns spaceBetween">
           {this.state.pens.map((elem, index) => {
             return (
-              <div className="medium-6 large-6 columns" key={elem.id}>
                 <LazyFrame
                   key={elem.id}
                   link={elem.link}
                   height={268}
-                  style={{ maxWidth: '100%' }}
-                ></LazyFrame>
-              </div>
+                  style={{ maxWidth: '100%', marginBottom: '10px' }}
+                />
             );
           })}
         </div>
@@ -305,54 +302,6 @@ const WhoAmI = () => {
     </div>
   );
 };
-
-class OpenSource extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      projects: [
-        {
-          endpoint: 'https://api.github.com/repos/jonathanobino/react-lazy',
-        },
-        {
-          endpoint: 'https://api.github.com/repos/jonathanobino/rately',
-        },
-      ],
-      results: [],
-    };
-  }
-
-  componentDidMount() {
-    Promise.all(
-      this.state.projects.map((elem) => {
-        return fetch(elem.endpoint).then(res => res.json())
-      })
-    ).then((values) => {
-      this.setState({
-        results: values,
-      });
-    });
-  }
-
-  render() {
-    return (
-      <div className="row main">
-        <div className="medium-2 large-2 columns text-right">
-          <h2>Open Source Projects</h2>
-        </div>
-        <div className="medium-10 large-10 columns spaceBetween">
-          {this.state.results.length === 0 ? (
-            <Loading />
-          ) : (
-            this.state.results.map((elem, index) => (
-              <GitHub {...elem} key={index} />
-            ))
-          )}
-        </div>
-      </div>
-    );
-  }
-}
 
 const Home = () => {
   return (
