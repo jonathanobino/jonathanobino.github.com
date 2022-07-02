@@ -3,7 +3,7 @@ import { LazyBackgroundImage as LazyImage } from 'lazy-react';
 
 const PortfolioItem = ({ item }) => {
   let image = item.imageSrc ? (
-    <LazyImage link={item.imageSrc} className="imgWrapper"></LazyImage>
+    <LazyImage link={item.imageSrc} className="imgWrapper" offset={200}/>
   ) : (
     <div className="imgWrapper hide-sm"></div>
   );

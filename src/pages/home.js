@@ -38,6 +38,7 @@ class Codepen extends Component {
                   link={elem.link}
                   height={268}
                   style={{ maxWidth: '100%', marginBottom: '10px' }}
+                  offset={200}
                 />
             );
           })}
