@@ -27,12 +27,11 @@ const WhoAmI = () => {
           I like to stay up-to-date with the new technology and to experiment
           with them as soon they are available.
           <br />
-          As you can see on my github
+          As you can see on my github{' '}
           <a
             href="https://github.com/jonathanobino/jonathanobino.github.com"
             target="_blank"
           >
-            {' '}
             this website is built using React
           </a>
           , bundled with WebPack and written in ES6. <br />

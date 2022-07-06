@@ -1,5 +1,5 @@
-import React, { Component, useState, useEffect } from 'react'
-import useIsInViewport from 'lazy-react'
+import React, { useState, useEffect } from 'react';
+import useIsInViewport from 'lazy-react';
 import Loading from '../components/Loading';
 import GitHub from '../components/githubRepo';
 
@@ -10,23 +10,22 @@ const projects = [
   {
     endpoint: 'https://api.github.com/repos/jonathanobino/rately',
   },
-]
+];
 
 export default function OpenSource() {
-
   const [results, setResults] = useState([]);
 
-  const [setRef, link, isVisible] = useIsInViewport({link:'', offset: 200})
+  const [setRef, link, isVisible] = useIsInViewport({ link: '', offset: 200 });
 
-  useEffect(()=>{
-    if(isVisible){
+  useEffect(() => {
+    if (isVisible) {
       Promise.all(
-      projects.map((elem) => {
-        return fetch(elem.endpoint).then(res => res.json())
-      })
-    ).then((values) => {
-      setResults(values);
-    });
+        projects.map((elem) => {
+          return fetch(elem.endpoint).then((res) => res.json());
+        })
+      ).then((values) => {
+        setResults(values);
+      });
     }
   }, [isVisible]);
 
@@ -39,9 +38,7 @@ export default function OpenSource() {
         {results.length === 0 ? (
           <Loading />
         ) : (
-          results.map((elem, index) => (
-            <GitHub {...elem} key={index} />
-          ))
+          results.map((elem, index) => <GitHub {...elem} key={index} />)
         )}
       </div>
     </div>

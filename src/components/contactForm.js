@@ -26,7 +26,6 @@ export default function () {
       data.email !== '' &&
       emailValidator(data.email) &&
       data.message !== ''
-
     );
   }
 
@@ -49,9 +48,7 @@ export default function () {
   return (
     <div className="contactFormWrapper">
       <div className={`message ${isSending || result || error ? 'show' : ''}`}>
-        {isSending && (
-          <Loading/>
-        )}
+        {isSending && <Loading />}
         {/*message error from api*/}
         {!isSending && result && (
           <h2>

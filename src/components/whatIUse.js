@@ -1,5 +1,5 @@
 import React from 'react';
-import getSVGIcon  from '../API/getSVGIcon'
+import getSVGIcon from '../API/getSVGIcon';
 import { LazyImage } from 'lazy-react';
 
 const WhatIUse = () => {

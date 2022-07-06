@@ -6,7 +6,7 @@ const pens = [
   'yeqgvr', // music ui
   'ZWpjzR', // weather dashboard
   'obwBEz', // twitter hearth animation
-]
+];
 
 function mapIdsToFrame(array) {
   return array.map((elem) => ({
@@ -19,10 +19,9 @@ function mapIdsToFrame(array) {
 }
 
 export default function () {
-
   const mapped = useMemo(() => {
-    return mapIdsToFrame(pens)
-  }, [pens])
+    return mapIdsToFrame(pens);
+  }, [pens]);
 
   return (
     <div className="row main">

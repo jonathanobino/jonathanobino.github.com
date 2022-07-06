@@ -25,8 +25,7 @@ const places = [
       company: 'Majeeko',
       role: 'Full Stack Developer',
       when: '09.2015 - 12.2015',
-      technology:
-        'Angular, jQuery, CSS3, HTML5, Node JS, Mongo DB, Express',
+      technology: 'Angular, jQuery, CSS3, HTML5, Node JS, Mongo DB, Express',
     },
     imageSrc: 'images/majeeko.png',
   },
@@ -51,7 +50,6 @@ const places = [
   },
 ];
 
-
 export default function () {
   return (
     <div className="row main">
@@ -66,4 +64,3 @@ export default function () {
     </div>
   );
 }
-
