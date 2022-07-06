@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 
-export default function ({ children, background }) {
+export default function ({ children, background, speed = 3 }) {
   const wrapper = useRef(undefined);
   const scrollHandler = (wrapper) => {
     const parallax = wrapper.querySelector('.parallax');
     return () => {
       const { height, top, bottom } = wrapper.getBoundingClientRect();
-      let translate = parseInt((top * -1) / 3);
+      let translate = parseInt((top * -1) / speed);
       window.requestAnimationFrame(() => {
         parallax.style.transform = `translate3d(0px,${translate}px,0px) scale(1.1,1.1)`;
       });
