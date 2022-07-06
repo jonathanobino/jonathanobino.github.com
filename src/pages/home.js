@@ -13,7 +13,7 @@ import WhoAmI from '../components/whoAmI';
 const Home = () => {
   return (
     <>
-      <Parallax background="url(/images/background.jpg)">
+      <Parallax background="url(/images/background.jpg)" speed={5}>
         <img src="/images/logo.png" alt="logo" />
         <GentleScroll target="main">
           <div className="mouse">
