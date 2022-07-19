@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 
 export default function useFetch(
   url,
@@ -12,18 +12,18 @@ export default function useFetch(
 
   let cachedOptions = useRef(options);
 
-  function updateOptions(nextOptions) {
+  const updateOptions = useCallback(function (nextOptions) {
     cachedOptions.current = {
       ...cachedOptions.current,
       ...nextOptions,
     };
-  }
+  }, [])
 
-  function send() {
+  const send = useCallback(function () {
     setLoad(true);
-  }
+  }, []);
 
-  const fetchData = function () {
+  const fetchData = useCallback(function () {
     setIsLoading(true);
     return fetch(url, {
       ...cachedOptions.current,
@@ -35,7 +35,7 @@ export default function useFetch(
         setIsLoading(false);
         setLoad(false);
       });
-  };
+  }, []);
 
   useEffect(() => {
     if (load) fetchData();
