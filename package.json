@@ -5,8 +5,9 @@
   "source": "templates/index.html",
   "scripts": {
     "prettier": "prettier ./src/*/*.js ./src/*.js ./src/scss/style.scss -w --single-quote",
-    "build": "parcel build --dist-dir ./docs --no-content-hash",
-    "start": "parcel serve --dist-dir ./docs"
+    "build": "npm run clean && parcel build --dist-dir ./docs --no-content-hash",
+    "start": "npm run clean && parcel serve --dist-dir ./docs",
+    "clean": "rm -rf docs && mkdir docs"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
     "@babel/core": "^7.18.9",
     "@parcel/transformer-sass": "^2.6.2",
     "parcel": "^2.6.2",
+    "parcel-reporter-static-files-copy": "^1.3.4",
     "prettier": "^2.5.1",
     "process": "^0.11.10"
   }
