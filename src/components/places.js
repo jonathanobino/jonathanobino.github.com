@@ -27,7 +27,7 @@ const places = [
       when: '09.2015 - 12.2015',
       technology: 'Angular, jQuery, CSS3, HTML5, Node JS, Mongo DB, Express',
     },
-    imageSrc: 'images/majeeko.png',
+    imageSrc: '/images/majeeko.png',
   },
   {
     link: 'https://www.mvlabs.it',
@@ -37,7 +37,7 @@ const places = [
       when: '2016,2019',
       technology: 'React, jQuery, Node JS, HTML5',
     },
-    imageSrc: 'images/mv.jpg',
+    imageSrc: '/images/mv.jpg',
   },
   {
     link: 'https://www.lynxspa.com/',
@@ -46,7 +46,7 @@ const places = [
       role: 'Senior Frontend Developer',
       when: '2022 - current',
     },
-    imageSrc: 'images/lynx.png',
+    imageSrc: '/images/lynx.png',
   },
 ];
 
