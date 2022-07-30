@@ -5,9 +5,10 @@
   "source": "templates/index.html",
   "scripts": {
     "prettier": "prettier ./src/*/*.js ./src/*.js ./src/scss/style.scss -w --single-quote",
-    "build": "npm run clean && parcel build --dist-dir ./docs --no-content-hash",
-    "start": "npm run clean && parcel serve --dist-dir ./docs",
-    "clean": "rm -rf docs && mkdir docs"
+    "build": "npm run clean-docs && parcel build --dist-dir ./docs --no-content-hash",
+    "start": "npm run clean-dist && parcel serve",
+    "clean-docs": "rm -rf docs",
+    "clean-dist": "rm -rf dist"
   },
   "repository": {
     "type": "git",
