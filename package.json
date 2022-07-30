@@ -3,11 +3,6 @@
   "version": "0.1.0",
   "description": "Website development with react",
   "source": "templates/index.html",
-  "targets": {
-    "main": {
-      "optimize": true
-    }
-  },
   "scripts": {
     "prettier": "prettier ./src/*/*.js ./src/*.js ./src/scss/style.scss -w --single-quote",
     "build": "parcel build --dist-dir ./docs",
