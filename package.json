@@ -5,7 +5,7 @@
   "source": "templates/index.html",
   "scripts": {
     "prettier": "prettier ./src/*/*.js ./src/*.js ./src/scss/style.scss -w --single-quote",
-    "build": "parcel build --dist-dir ./docs",
+    "build": "parcel build --dist-dir ./docs --no-content-hash",
     "start": "parcel serve --dist-dir ./docs"
   },
   "repository": {
