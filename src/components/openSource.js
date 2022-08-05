@@ -15,7 +15,7 @@ const projects = [
 export default function OpenSource() {
   const [results, setResults] = useState([]);
 
-  const [setRef, link, isVisible] = useIsInViewport({ link: '', offset: 200 });
+  const [setRef, link, isVisible] = useIsInViewport({ offset: 200 });
 
   useEffect(() => {
     if (isVisible) {
