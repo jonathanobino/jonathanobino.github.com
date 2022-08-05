@@ -1,14 +1,15 @@
-import React from 'react';
-import ContactForm from '../components/contactForm';
+import React, { lazy, Suspense } from 'react';
 import Parallax from '../components/parallax';
-import Footer from '../components/footer';
 import Panel from '../components/panelSection';
 import GentleScroll from '../components/gentleScroll';
-import OpenSource from '../components/openSource';
-import Codepen from '../components/codepen';
-import Places from '../components/places';
-import WhatIUse from '../components/whatIUse';
-import WhoAmI from '../components/whoAmI';
+import Loading from '../components/Loading';
+const OpenSource = lazy(() => import('../components/openSource'))
+const Codepen = lazy(()=> import ('../components/codepen'))
+const Places = lazy(()=> import ('../components/places'))
+const WhatIUse = lazy(()=> import ('../components/whatIUse'))
+const WhoAmI = lazy(()=> import ('../components/whoAmI'))
+const Footer = lazy(() => import('../components/footer'))
+const ContactForm = lazy(() => import('../components/contactForm'));
 
 const Home = () => {
   return (
@@ -23,15 +24,19 @@ const Home = () => {
       </Parallax>
       <main>
         <Panel background="#F0F0F0">
-          <WhoAmI />
-          <WhatIUse />
-          <Places />
-          <OpenSource />
-          <Codepen />
+          <Suspense fallback={<Loading/>}>
+            <WhoAmI />
+            <WhatIUse />
+            <Places />
+            <OpenSource />
+            <Codepen />
+          </Suspense>
         </Panel>
       </main>
-      <ContactForm />
-      <Footer />
+      <Suspense fallback={<Loading/>}>
+        <ContactForm />
+        <Footer />
+      </Suspense>
     </>
   );
 };
