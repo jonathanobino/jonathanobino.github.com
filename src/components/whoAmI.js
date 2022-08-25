@@ -34,7 +34,7 @@ const WhoAmI = () => {
           >
             this website is built using React
           </a>
-          , bundled with WebPack and written in ES6. <br />
+          , bundled with <s>WebPack</s> Parcel and written in ES6. <br />
         </p>
       </div>
     </div>
