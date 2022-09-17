@@ -46,7 +46,7 @@ const places = [
       role: 'Senior Frontend Developer',
       when: '2022 - current',
     },
-    imageSrc: '/images/lynx.png',
+    imageSrc: '/images/lynx.svg',
   },
 ];
 
