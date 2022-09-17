@@ -6,9 +6,10 @@
   "scripts": {
     "prettier": "prettier ./src/*/*.js ./src/*.js ./src/scss/style.scss -w --single-quote",
     "build": "npm run clean-docs && parcel build --dist-dir ./docs --no-content-hash",
-    "start": "npm run clean-dist && parcel serve",
+    "start": "npm run clean-dist && npm run clean-cache && parcel serve",
     "clean-docs": "rm -rf docs",
-    "clean-dist": "rm -rf dist"
+    "clean-dist": "rm -rf dist",
+    "clean-cache": "rm -rf .parcel-cache"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,7 @@
   },
   "homepage": "https://github.com/jonathanobino/jonathanobino.github.com#readme",
   "dependencies": {
-    "lazy-react": "^3.4.0",
+    "lazy-react": "^3.5.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
