@@ -16,7 +16,7 @@ const Home = () => {
 		<>
 			<Parallax background="url(/images/background.jpg)" speed={5}>
 				<img src="/images/logo.png" alt="logo" />
-				<GentleScroll target="main" beforeScroll={new Promise(() => {})}>
+				<GentleScroll target="main">
 					<div className="mouse">
 						<div className="upAndDown"></div>
 					</div>

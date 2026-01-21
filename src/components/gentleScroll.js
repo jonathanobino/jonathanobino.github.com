@@ -15,7 +15,7 @@ export default function ({ children, target }) {
 		//     behavior: 'smooth',
 		//   });
 		// }
-		window.scrollTo({
+		window.scrollBy({
 			top: targetPosition,
 			behavior: 'smooth',
 		});
