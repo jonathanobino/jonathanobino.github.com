@@ -1,6 +1,6 @@
 import getSVGIcon from '../API/getSVGIcon';
 
-export default function () {
+export default function FooterLinks() {
 	return (
 		<div className="footer">
 			<ul className="inline-list">
@@ -33,7 +33,7 @@ export default function () {
 				</li>
 				<li>
 					<a
-						href="https://medium.com/@threobin"
+						href="https://medium.com/@j.obino"
 						target="_blank"
 						rel="noreferrer"
 					>
@@ -41,11 +41,20 @@ export default function () {
 					</a>
 				</li>
 			</ul>
+		</div>
+	);
+}
+
+export function Footer() {
+	return (
+		<div className='footer' style={{
+			marginTop:'50px',
+		}}>
 			<p className="text-center">Jonathan Obino © {new Date().getFullYear()}</p>
 			<p className="text-center credits">
 				Made with <span className="fa fa-heart heart"></span> and{' '}
 				<img src={getSVGIcon('react')} alt="React JS" />
-			</p>
+			</p>{' '}
 		</div>
 	);
 }

@@ -1,33 +1,27 @@
-import { LazyImage } from 'lazy-react';
-import getSVGIcon from '../API/getSVGIcon';
+// import { LazyImage } from 'lazy-react';
+// import getSVGIcon from '../API/getSVGIcon';
 
-const getLanguageIcon = (language) => {
-	return <LazyImage link={getSVGIcon(language)} alt={language} />;
-};
+// const getLanguageIcon = (language) => {
+// 	return <LazyImage link={getSVGIcon(language)} alt={language} />;
+// };
 
 const GitHubRepo = ({
 	name,
 	html_url,
 	stargazers_count,
-	language,
+	// language,
 	description,
 	// owner,
 }) => (
 	<div className="repo">
-		<h4>
-			<a href={html_url} alt={name} target="_blank">
+		<h3>
 				{name}
-			</a>{' '}
-			{stargazers_count} <i className="fa fa-star"></i>
-		</h4>
-		<div>
-			<small>Description:</small>
+			{' '}
+			<span className='stars'>{stargazers_count} <i className="fa fa-star"></i></span>
+		</h3>
+			{/* <small>Description:</small> */}
 			<p>{description}</p>
-		</div>
-		<div>
-			<small>Languagues:</small>
-			<div className="spaceBetween">{getLanguageIcon(language)}</div>
-		</div>
+			<p><a href={html_url} target='_blank'>View on Github -></a></p>
 	</div>
 );
 

@@ -1,40 +1,34 @@
-import { LazyBackgroundImage } from 'lazy-react';
+import markdownParser from '../API/markdownParser';
+import TechStack from './techStack';
 
 const PortfolioItem = ({ item }) => {
-	const image = item.imageSrc ? (
-		<LazyBackgroundImage
-			link={item.imageSrc}
-			className="imgWrapper"
-			offset={200}
-		/>
-	) : (
-		<div className="imgWrapper hide-sm"></div>
-	);
-	// let technology = item.description.technology ? (
-	//   <p>
-	//     <span className="sans">Technology Involved</span>{' '}
-	//     {item.description.technology}
-	//   </p>
-	// ) : null;
 	return (
-		<div className="row careerItem">
-			<div className="large-9 medium-8 small-9 columns description">
-				<p>
-					<span className="sans">Company</span>{' '}
-					<strong>{item.description.company}</strong>
-				</p>
-				<p>
-					<span className="sans">Role</span> {item.description.role}
-				</p>
-				<p>
-					<span className="sans">When</span> {item.description.when}
-				</p>
-			</div>
-			<div className="large-3 medium-4 small-3 columns">
-				<a href={item.link} target="_blank">
-					{image}
-				</a>
-			</div>
+		<div className="row careerItem" >
+			<a href={item.link} target="_blank" style={{
+			cursor: `${item.link ? 'pointer' : 'initial'}`,
+		}}>
+			{item.link && <span className='go'>-></span>}
+				<div className="columns">
+					<p className="monoFont">{item.description.when}</p>
+					<p>
+						<strong>{item.description.role}</strong>
+					</p>
+					<p>
+						{/* <a href={item.link} target="_blank">
+							@ {item.description.company}
+						</a> */}
+						<span className="location">@ {item.description.company}</span>
+					</p>
+					{/** biome-ignore lint/security/noDangerouslySetInnerHtml: needed for markdown parser */}
+					<p className="description" dangerouslySetInnerHTML={{
+							__html: markdownParser(item.description.text),
+						}}
+					></p>
+					<p>
+						<TechStack techStack={item.description.technology || []} />
+					</p>
+				</div>
+			</a>
 		</div>
 	);
 };

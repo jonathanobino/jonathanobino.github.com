@@ -1,9 +1,19 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useContext, useEffect } from 'react';
+import { ActiveSectionContext } from '../API/ActiveSectionContext';
+import useIsInViewport from '../API/useIsInViewport';
 import useFetch from '../API/useFetch';
 import { emailValidator } from '../utils';
 import Loading from './Loading';
 
 export default function () {
+
+	const { setActiveSection } = useContext(ActiveSectionContext);
+		const [setRef, isVisible] = useIsInViewport();
+		useEffect(() => {
+				if (isVisible) setActiveSection('contactMe');
+			}, [isVisible, setActiveSection]);
+
+
 	const [result, isSending, error, send, updateOptions] = useFetch(
 		'https://formspree.io/f/xyyojjyj',
 		{
@@ -46,7 +56,7 @@ export default function () {
 	}
 
 	return (
-		<div className="contactFormWrapper">
+		<div className="contactFormWrapper" ref={(node) => setRef(node)} id='contactMe'>
 			<div className={`message ${isSending || result || error ? 'show' : ''}`}>
 				{isSending && <Loading />}
 				{/*message error from api*/}

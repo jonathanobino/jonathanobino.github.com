@@ -26,7 +26,7 @@ export default function () {
 	return (
 		<div className="row main">
 			<div className="medium-2 large-2 columns text-right">
-				<h2>My Popular Pens</h2>
+				<h2>My most popular Pens</h2>
 			</div>
 			<div className="medium-10 large-10 columns spaceBetween">
 				{mapped.map((elem) => {

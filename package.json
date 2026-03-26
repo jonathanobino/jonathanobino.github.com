@@ -7,6 +7,7 @@
     "prettier": "prettier ./src/*/*.js ./src/*.js ./src/scss/style.scss -w --single-quote",
     "build": "npm run clean-docs && parcel build --dist-dir ./docs --no-content-hash",
     "start": "npm run clean-dist && npm run clean-cache && parcel serve",
+    "dev:network": "parcel serve --host 0.0.0.0",
     "clean-docs": "rm -rf docs",
     "clean-dist": "rm -rf dist",
     "clean-cache": "rm -rf .parcel-cache",
@@ -20,9 +21,10 @@
   },
   "keywords": [
     "react",
-    "webpack",
+    "parcel",
     "es6",
-    "modulized"
+    "modulized",
+    "catpuccin"
   ],
   "author": "Jonathan Obino",
   "license": "ISC",
@@ -31,7 +33,7 @@
   },
   "homepage": "https://github.com/jonathanobino/jonathanobino.github.com#readme",
   "dependencies": {
-    "lazy-react": "^3.6.2",
+    "lazy-react": "^3.6.3",
     "react": "^18.3.0",
     "react-dom": "^18.3.0"
   },

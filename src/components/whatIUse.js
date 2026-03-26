@@ -1,38 +1,30 @@
 import getSVGIcon from '../API/getSVGIcon';
 import { LazyImage } from 'lazy-react';
 
+const technologies = [
+	'react',
+	'typescript-icon',
+	'redux',
+	'sass',
+	'webpack',
+	// 'parcel-icon',
+	'vitejs',
+	'nodejs',
+	'mongodb-icon',
+	// 'express',
+];
+
 const WhatIUse = () => {
 	return (
 		<div className="row main">
-			<div className="medium-2 large-2 columns text-right">
-				<h2>What I use</h2>
-			</div>
-			<div className="medium-10 large-10 columns">
+			<div className="columns">
+				<h3>Some of the technologies I've worked with:</h3>
 				<ul className="inline-list same-height-child">
-					<li>
-						<LazyImage link={getSVGIcon('html')} alt="HTML5" />
-					</li>
-					<li>
-						<LazyImage link={getSVGIcon('sass')} alt="SASS" />
-					</li>
-					<li>
-						<LazyImage link={getSVGIcon('react')} alt="React JS" />
-					</li>
-					<li>
-						<LazyImage link={getSVGIcon('typescript')} alt="typescript" />
-					</li>
-					<li>
-						<LazyImage link={getSVGIcon('webpack')} alt="webpack" />
-					</li>
-					<li>
-						<LazyImage link={getSVGIcon('nodejs')} alt="Node JS" />
-					</li>
-					<li>
-						<LazyImage link={getSVGIcon('express')} alt="Express" />
-					</li>
-					<li>
-						<LazyImage link={getSVGIcon('mongodb')} alt="Mongo DB" />
-					</li>
+					{technologies.map((el) => (
+						<li key={el}>
+							<LazyImage link={getSVGIcon(el)} alt={el} title={el} />
+						</li>
+					))}
 				</ul>
 			</div>
 		</div>

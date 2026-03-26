@@ -1,20 +1,10 @@
-export default function ({ children, target }) {
+export default function ({ children, target, callback }) {
 	function clickHandler() {
 		const targetPosition =
 			document.querySelector(target).getBoundingClientRect().top + 1;
-		// if (typeof beforeScroll == 'function') {
-		//   beforeScroll().then(() => {
-		//     window.scrollTo({
-		//       top: targetPosition,
-		//       behavior: 'smooth',
-		//     });
-		//   });
-		// } else {
-		//   window.scrollTo({
-		//     top: targetPosition,
-		//     behavior: 'smooth',
-		//   });
-		// }
+		if (typeof callback === 'function') {
+			callback();
+		}
 		window.scrollBy({
 			top: targetPosition,
 			behavior: 'smooth',
