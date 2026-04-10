@@ -2,48 +2,28 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 @import url(https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display);
-@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans);
 
-$black: #262322;
-// $green: #70b77e;
-$lightgreen: #7abba2;
-$footerGreen: #5bba6f;
-$blue: #1098f7;
-$white: #ffffff;
-$brown: #b89e97;
-$red: #f46036;
-$subtleShadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 
-// nextFonts
 
-@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap);
 
-// Catppuccin Latte Palette - Core
-$base: rgb(239, 241, 245); // Sfondo principale
-$titles: rgb(76, 79, 105); // Testo principale / Titoli
-$subtitle: rgb(92, 95, 119); // Testo secondario
-$text: rgb(108, 111, 133); // Dettagli / Placeholder
+$base: rgb(239, 241, 245);
+$titles: rgb(76, 79, 105);
+$subtitle: rgb(92, 95, 119);
+$text: rgb(108, 111, 133);
 
-// Accenti (Il cuore del tuo brand)
-$tomato: rgb(231, 130, 132); // Catppuccin Red: per ruoli, numeri sezione e hover
-// $green: rgb(64, 160, 43); // Catppuccin Green: per tech stack e success states
-$green: rgb(129, 200, 190); // Catppuccin Green: per tech stack e success states
-$accent: rgb(114, 135, 253); // Catppuccin Lavender: ottimo per link o bordi sottili
+$tomato: rgb(231, 130, 132);
+$green: rgb(129, 200, 190);
+$blue: #1098f7;
 
-// Toni di contrasto per UI (Atelier style)
-$overlay: rgb(156, 160, 176); // Per icone social e linee di separazione
-$surface: rgb(204, 208, 218); // Per sfondi di card o bottoni al passaggio del mouse
+$surface: rgb(204, 208, 218);
 
 // font config
 $serifFont: 'Playfair Display', serif;
 $sansFont: 'Inter', sans-serif;
 $monospaceFont: 'JetBrains Mono', monospace;
 $textSize: 4rem;
-
-
 
 body {
   margin: 0;
@@ -52,37 +32,17 @@ body {
 }
 
 a {
-  // text-decoration: underline;
-  // font-family: 'Lato', sans-serif;
   font-weight: 300;
-  // color: rgba($blue, 0.8);
   color: $tomato;
   transition: all 0.5s;
   display: inline-block;
 
   &:hover {
-    // color: rgba($blue, 0.5);
     color: darken($tomato, 2);
-    // &::after{
-    //   width: 110%;
-    // }
   }
-
-  // &::after{
-  //   transition: all 0.5s;
-  //   content: "";
-  //   position: relative;
-  //   display: block;
-  //   width: 0%;
-  //   top: -2px;
-  //   height: 1px;
-  //   background: #e78284;
-  // }
 }
 
 h2 {
-  // font-size: 2rem;
-  // font-family: 'Lato', sans-serif;
   font-family: $sansFont;
   font-weight: 300;
 }
@@ -91,96 +51,12 @@ h2 {
   display: none;
 }
 
-.portfolioItem {
-  figure {
-    margin: 0;
-    position: relative;
-    overflow: hidden;
-    padding-bottom: 100%;
-
-    @media (max-width: 650px) {
-      padding-bottom: 50%;
-    }
-
-    figcaption {
-      opacity: 0;
-      transition: all 0.8s;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      background: linear-gradient(to left, rgba(white, 0.7), rgba(white, 0.7));
-
-      p {
-        width: 100%;
-        font-size: 1.5rem;
-        top: -200px;
-        position: absolute;
-        text-align: center;
-        transition: all 0.6s;
-      }
-
-      @media (max-width: 650px) {
-        opacity: 1;
-
-        p {
-          top: calc(50% - 0.75rem);
-          font-size: 1.2rem;
-        }
-      }
-    }
-
-    .squareImage {
-      width: 100%;
-      padding-bottom: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      position: absolute;
-      top: 0;
-      transition: all 0.8s;
-      background-position: center center;
-      filter: opacity(20%);
-
-      @media (max-width: 650px) {
-        padding-bottom: 50%;
-        filter: opacity(100%);
-      }
-    }
-
-    &:hover {
-      .squareImage {
-        filter: opacity(100%);
-      }
-
-      figcaption {
-        opacity: 1;
-
-        p {
-          top: calc(50% - 0.75rem);
-        }
-      }
-    }
-  }
-}
-
-.fa-bars {
-  font-size: 3rem;
-  color: $green;
-}
-
 .footer {
-  // min-height: 50vh;
-  // background: $footerGreen;
-  // padding-top: 20vh;
-  // padding-bottom: 10vh;
-  // height: 150px;
-  // align-self: flex-end;
   margin-top: auto;
 
   ul.inline-list {
     margin: 0 auto;
 
-    // width: 390px;
     @media (max-width: 406px) {
       width: 100%;
     }
@@ -212,7 +88,6 @@ h2 {
     transition: 0.5s all;
 
     &:hover {
-      // color: black;
       color: $green;
       filter: drop-shadow(0 0 5px rgba(129, 200, 190, 0.3))
     }
@@ -231,49 +106,9 @@ h2 {
 }
 
 .careerItem {
-  // padding-bottom: 40px;
   border-radius: 5px;
   transition: all .5s;
   box-sizing: content-box;
-  // cursor: pointer;
-
-  .small-9 {
-    @media (max-width: 360px) {
-      width: 100%;
-    }
-  }
-
-  .small-3 {
-    @media (max-width: 360px) {
-      width: 100%;
-    }
-  }
-
-  .imgWrapper {
-    max-height: 50px;
-    max-width: 150px;
-    min-height: 50px;
-    min-width: 150px;
-    background-position: top center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    // filter: grayscale(80%);
-    transition: all 0.7s;
-
-    @media (max-width: 650px) {
-      max-height: 90px;
-      max-width: 90px;
-      min-height: 40px;
-      min-width: 73px;
-    }
-
-    @media (max-width: 360px) {
-      margin-top: 15px;
-      background-position: center center;
-      min-width: 100%;
-      max-width: 100%;
-    }
-  }
 
   p {
     margin-bottom: 0;
@@ -300,38 +135,31 @@ h2 {
     font-size: 1.5rem;
   }
   .description {
-    font-family: 'Inter', sans-serif;
+    font-family: $sansFont;
     font-weight: 300;
     line-height: 1.7;
     color: $subtitle;
     margin-top: 1rem;
 
     strong {
-      // Usa JetBrains Mono per le tech o le architetture
-      font-family: 'JetBrains Mono', monospace;
+      font-family: $monospaceFont;
       font-weight: bold;
       color: $titles;
       font-size: 0.9em;
     }
 
     .highlight {
-      color: $green; // Per le cose "grosse" come SSR o Microfrontends
+      color: $green;
     }
   }
 
   &:hover {
     background: rgba(white, 0.7);
-    // transform: scale(1.01);
     .go{
       opacity: 1;
       right: 20px;
     }
   }
-}
-
-iframe {
-  box-shadow: $subtleShadow;
-  border-radius: 5px;
 }
 
 ul.inline-list {
@@ -367,32 +195,11 @@ ul.inline-list {
       img {
         max-height: 50px;
         margin: auto;
-        // padding-top: 5px;
         filter: grayscale(1);
         transition: all 0.2s;
-        // &:hover {
-        //   filter: grayscale(0.6);
-        // }
       }
     }
   }
-}
-
-.columns.same-min-height {
-  min-height: 300px;
-}
-
-.panel {
-  padding-top: 50px;
-  min-height: 50vh;
-  margin-top: -1px;
-}
-
-.full {
-  height: 100vh;
-  width: 100vw;
-  background-size: cover !important;
-  background-position: center center !important;
 }
 
 .contactFormWrapper {
@@ -428,16 +235,10 @@ ul.inline-list {
   .contactForm {
     min-height: 300px;
     margin: 50px 0;
-    // max-width: 800px;
     display: block;
-    // margin: 0 auto;
     position: relative;
 
     h2 {
-      // color: rgba($white, 0.8);
-      // font-size: 2rem;
-      // font-family: 'Lato', sans-serif;
-      // font-family: $serifFont;
       font-weight: 300;
       transition: all 0.5s;
       animation: bounce 0.75s cubic-bezier(0.5, -0.28, 0.74, 0.05);
@@ -454,10 +255,8 @@ ul.inline-list {
       background: transparent;
       border: 0px solid transparent;
       border-bottom: 2px solid $surface;
-      // border-bottom: 2px solid rgba(255, 255, 255, 0.7);
       font-size: 1.2rem;
       padding: 15px;
-      // font-family: 'Lato', sans-serif;
       font-family: $sansFont;
       font-weight: 100;
       border-radius: 0;
@@ -467,7 +266,6 @@ ul.inline-list {
         outline-color: transparent;
         outline-style: none;
         border-bottom: 2px solid $green;
-        // border-bottom: 2px solid $tomato;
       }
     }
 
@@ -479,11 +277,9 @@ ul.inline-list {
       background: transparent;
       border: 0px solid transparent;
       border-bottom: 2px solid $surface;
-      // border-bottom: 2px solid rgba(255, 255, 255, 0.7);
       font-size: 1.2rem;
       padding: 15px;
       max-width: 100%;
-      // font-family: 'Lato', sans-serif;
       font-family: $sansFont;
       font-weight: 100;
       border-radius: 0;
@@ -492,7 +288,6 @@ ul.inline-list {
       &:active {
         outline-color: transparent;
         outline-style: none;
-        // border-bottom: 2px solid $tomato;
         border-bottom: 2px solid $green;
       }
     }
@@ -502,16 +297,11 @@ ul.inline-list {
       text-align: center;
       display: block;
       margin: 35px auto;
-      // border: 2px solid $green;
-      // border: 2px solid $tomato;
       border: 2px solid $green;
       padding: 10px;
       border-radius: 5px;
       font-size: 1.5rem;
       font-weight: 400;
-      //color: $blue;
-      // color: $green;
-      // color:$tomato;
       color: $green;
       background-color: transparent;
       transition: 0.5s all;
@@ -521,62 +311,9 @@ ul.inline-list {
       }
 
       &:hover {
-        //color: darken($green,10);
         color: white;
-        //background-color: rgba(darken($blue,15),0.9);
         background-color: rgba($green, 0.9);
-        // background-color: rgba($tomato, 0.9);
-        //border-color: $blue;
       }
-    }
-  }
-}
-
-.columns.fullwidth {
-  padding: 0px !important;
-  margin: 0px !important;
-  height: 120px;
-}
-
-.offCanvas {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  top: -100%;
-  min-height: 100vh;
-  width: 100%;
-  transition: opacity 0.3s linear 0s, top 0s linear 0.3s;
-  background: rgba(white, 0.8);
-  opacity: 0;
-  z-index: 10;
-  justify-content: center;
-  align-items: center;
-
-  * {
-    transition: all 0.3s;
-    transform: translateY(-40%);
-  }
-
-  &.show {
-    transition: opacity 0.3s linear 0.1s, top 0s linear 0s;
-    top: 0;
-    opacity: 1;
-
-    * {
-      transform: translateY(0%);
-    }
-  }
-
-  ul {
-    list-style: none;
-    margin-left: 0;
-
-    li {
-      color: black;
-      font-family: 'Lato', sans-serif;
-      font-weight: 200;
-      font-size: 2rem;
-      color: #555;
     }
   }
 }
@@ -589,9 +326,6 @@ ul.inline-list {
   }
 
   h2 {
-    // font-family: 'Playfair Display', serif;
-    // font-weight: 300;
-    // color: #aaa;
     line-height: 0.9;
 
     @media (max-width: 640px) {
@@ -616,145 +350,7 @@ ul.inline-list {
 
     p {
       line-height: 1.9rem;
-      // color: #555;
     }
-  }
-}
-
-// .mainWrapper{
-// 	transition:.3s all;
-// 	right: 0px;
-// 	position: relative;
-// 	overflow-y:hidden;
-// 	&.show{
-// 		right: 500px;
-// 		position: relative;
-// 	}
-// }
-
-.mainWrapper {
-  transition: 0.5s all;
-  right: 0px;
-  position: relative;
-  overflow-y: hidden;
-
-  .flexFloating {
-    align-self: center;
-    position: absolute;
-    z-index: 3;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    animation: linear 0.5s slideIn;
-  }
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateY(-20px);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
-.blogpost {
-  height: 100%;
-  background-size: cover;
-  background-position: center center;
-
-  .content {
-    opacity: 0;
-    height: 100%;
-    width: 100%;
-    transition: 0.5s ease;
-  }
-
-  &:hover {
-    .content {
-      opacity: 1;
-    }
-  }
-}
-
-.hide-sm {
-  display: inherit;
-
-  @media (max-height: 640px) {
-    display: none;
-  }
-}
-
-.wrapper {
-  overflow: hidden;
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-
-  .parallax {
-    height: 100vh;
-    width: 100vw;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-position: center center !important;
-    top: 0;
-    transition: transform 0.01s ease-out;
-    transform: translate3d(0, 0, 0) scale(1.1, 1.1);
-    // transition: transform 0.01s ease, filter 0.3s linear;
-    // filter:blur(0px);
-    // &.first{
-    // 	filter:blur(3px);
-    // }
-    // &.second{
-    // 	filter:blur(6px);
-    // }
-  }
-
-  .container {
-    position: absolute !important;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    // background: linear-gradient(to left,rgba($blue,0.3),rgba($green,0.5));
-    display: flex;
-    justify-content: center;
-
-    .content {
-      width: 300px;
-      display: block;
-      height: 300px;
-      align-self: center;
-      text-align: center;
-
-      h3 {
-        font-family: 'Lato', sans-serif;
-      }
-
-      img {
-        width: 300px;
-        margin: auto;
-
-        &.small.scroll {
-          width: 20px;
-          bottom: -100px;
-          left: calc(50% - 10px);
-          position: absolute;
-          color: $green;
-
-          @media (max-height: 550px) {
-            bottom: -50px;
-          }
-        }
-      }
-    }
-  }
-
-  *:not(.parallax) {
-    position: relative;
   }
 }
 
@@ -766,57 +362,6 @@ ul.inline-list {
   @media (max-width: 425px) {
     flex-direction: column;
     align-items: center;
-  }
-}
-
-.bottom {
-  align-self: flex-end;
-}
-
-.mouse {
-  width: 30px;
-  height: 50px;
-  border-radius: 20px;
-  border: 2px solid white;
-  display: block;
-  position: absolute;
-  bottom: -100px;
-  left: calc(50% - 15px);
-  cursor: pointer;
-
-  @media (max-height: 570px) {
-    bottom: -40px;
-  }
-
-  @media (max-height: 481px) {
-    bottom: -35px;
-  }
-
-  // mix-blend-mode: overlay;
-  .upAndDown {
-    height: 8px;
-    width: 0px;
-    border: 3px solid white;
-    position: absolute;
-    left: calc(50% - 3px);
-    top: 10px;
-    border-radius: 5px;
-    box-sizing: border-box;
-    animation: scroll 2s infinite ease-in-out;
-  }
-}
-
-@keyframes scroll {
-  from {
-    transform: translateY(0);
-  }
-
-  75% {
-    transform: translateY(10px);
-  }
-
-  to {
-    transform: translateY(0);
   }
 }
 
@@ -934,8 +479,6 @@ ul.inline-list {
   }
 }
 
-// redesign
-
 .skeletonContainer {
   width: 100vw;
   display: flex;
@@ -954,8 +497,6 @@ ul.inline-list {
       margin-top: 0;
       margin-bottom: 0;
       font-family: $serifFont;
-      // font-family: 'Playfair Display', serif;
-      // font-size: 3.7rem;
       font-size: $textSize;
 
       @media screen and (max-height:900) {
@@ -965,7 +506,6 @@ ul.inline-list {
       color: $titles;
       font-weight: bold;
 
-      // background-color: tomato;
       @media screen and (max-width:1000px) {
         font-size: 3.5rem;
       }
@@ -973,10 +513,8 @@ ul.inline-list {
 
     h2 {
       font-family: $sansFont;
-      // font-family: 'Lato', sans-serif;
       color: $subtitle;
-      // font-size: 2.2rem;
-      font-size: $textSize * 0, 55;
+      font-size: $textSize * 0.55;
 
       @media screen and (max-width:1000px) {
         font-size: 2rem;
@@ -984,10 +522,8 @@ ul.inline-list {
     }
 
     h3 {
-      // font-family: 'Lato', sans-serif;
       font-family: $sansFont;
-      // font-size: 1.5rem;
-      font-size: $textSize * 0, 375;
+      font-size: $textSize * 0.375;
       font-weight: 300;
       color: $subtitle;
     }
@@ -1019,7 +555,6 @@ ul.inline-list {
 
           &.active,
           div:hover {
-            // fix for this hover
             font-weight: bold;
 
             .spacer {
@@ -1042,10 +577,9 @@ ul.inline-list {
     flex-basis: 60%;
     padding: 100px 50px;
 
-    // flex: auto;
     h2 {
       padding-bottom: 2rem;
-      font-family: 'Playfair Display', serif;
+      font-family: $serifFont;
       color: $subtitle;
 
       @media screen and (max-width: 1000px) {
@@ -1058,25 +592,10 @@ ul.inline-list {
     }
 
     h3 {
-      font-family: 'Playfair Display', serif;
+      font-family: $serifFont;
       color: $subtitle;
       padding-bottom: 1rem;
-      // margin-bottom: 2rem;
-      // &::after {
-      //     // Un piccolo dettaglio "Atelier"
-      //     content: '';
-      //     display: inline-block;
-      //     width: 40px;
-      //     height: 1px;
-      //     background: $tomato;
-      //     margin-left: 10px;
-      //     vertical-align: middle;
-      //   }
     }
-
-    // strong {
-    //   font-family: $monospaceFont;
-    // }
   }
 
   @media screen and (max-width: 1000px) {
@@ -1122,17 +641,11 @@ ul.inline-list {
     display: flex;
     padding: 5px;
 
-    @media screen and (max-width:730px) {
-      // margin-bottom: 10px;
-    }
-
     &::before {
       content: '';
       height: 5px;
       width: 5px;
       border-radius: 5px;
-      // background-color: $tomato;
-      // background-color: $green;
       background-color: $text;
       position: relative;
       top: 9px;
@@ -1143,9 +656,6 @@ ul.inline-list {
       padding-left: 0px;
     }
 
-    // &:last-of-type::after{
-    //   content: none;
-    // }
     &:first-of-type::before {
       content: none;
     }
@@ -1153,17 +663,10 @@ ul.inline-list {
 
   .techStackLabel {
     font-family: monospace;
-    // background: $surface;
-    // padding: 5px;
     margin-right: 5px;
-    // margin-right: 10px;
     border-radius: 5px;
     flex: 2;
     font-size: 0.9rem;
-    // box-shadow: $subtleShadow;
-    // &:first-of-type{
-    //   padding-left: 0px;
-    // }
   }
 }
 
@@ -1173,7 +676,6 @@ ul.inline-list {
 
 p {
   font-family: $sansFont;
-  // font-family: 'Lato', sans-serif;
   font-size: 1.1rem;
   font-weight: 300;
   color: $text;
@@ -1182,19 +684,13 @@ p {
 
 .repo {
   min-width: 160px;
-  // min-height: 150px;
-  // max-width: 250px;
-  // border: 1px solid #ccc;
   border-radius: 5px;
-  // background: $surface;
   background: rgba(white, 0.7);
   box-sizing: border-box;
   padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  // box-shadow: $subtleShadow;
   @media (max-width: 425px) {
     margin-bottom: 10px;
   }
@@ -1202,12 +698,6 @@ p {
   h3 {
     text-align: left;
     font-family: $monospaceFont;
-    // color: $base;
-  }
-
-  small {
-    font-size: 0.7rem;
-    color: #aaa;
   }
 
   p {
@@ -1227,37 +717,3 @@ p {
     float: right;
   }
 }
-
-// @media (prefers-color-scheme: dark) { //   body {
-//     background-color: $text;
-//   }
-
-//   .footer{
-//     color: $base;
-//     .fa {
-//       color: $base;
-//     }
-//   }
-//   .skeletonContainer{
-//     .skeletonLeft {
-//         h1,
-//         h2,
-//         h3,
-//         nav ul,
-//         p {
-//           color: $base;
-//         }
-
-//         nav ul li .spacer{
-//           background: $base;
-//         }
-//       }
-//       .skeletonRight {
-//         h2,h3,p {
-//           color: $base;
-//         }
-//       }
-//   }
-
-// }
-
