@@ -8,7 +8,7 @@ const technologies = [
 	'sass',
 	'webpack',
 	// 'parcel-icon',
-	'vitejs',
+	'vite-icon-dark',
 	'nodejs',
 	'mongodb-icon',
 	// 'express',
