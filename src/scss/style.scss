@@ -729,6 +729,7 @@ ul.inline-list {
 
   .techStackLabel {
     font-family: monospace;
+    color: $subtitle;
     margin-right: 5px;
     border-radius: 5px;
     flex: 2;
@@ -875,6 +876,10 @@ p {
   }
 
   .careerItem {
+    .techStackLabel {
+      color: #aeb9cd;
+    }
+
     .location {
       color: #f4a5a7;
     }
