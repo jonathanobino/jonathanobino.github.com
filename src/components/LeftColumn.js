@@ -1,5 +1,6 @@
 import Navigation from './Navigation';
 import FooterLinks from './FooterLinks';
+import ThemeToggle from './ThemeToggle';
 
 export default function LeftColumn() {
 	return (
@@ -10,6 +11,7 @@ export default function LeftColumn() {
 				I architect and build large-scale enterprise applications with a focus
 				on high-performance architecture and clean software engineering.
 			</h3>
+			<ThemeToggle />
 			<Navigation />
 			<FooterLinks />
 		</>

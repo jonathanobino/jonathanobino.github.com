@@ -24,9 +24,9 @@ const PortfolioItem = ({ item }) => {
 							__html: markdownParser(item.description.text),
 						}}
 					></p>
-					<p>
+					<div className="techStackWrapper">
 						<TechStack techStack={item.description.technology || []} />
-					</p>
+					</div>
 				</div>
 			</a>
 		</div>

@@ -32,7 +32,6 @@ export default function OpenSource() {
           return fetch(elem.endpoint).then((res) => res.json());
         }),
       ).then((values) => {
-        console.log("values", values);
         setResults(values);
       });
     }
