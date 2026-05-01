@@ -5,15 +5,19 @@
   "source": "templates/index.html",
   "scripts": {
     "prettier": "prettier ./src/*/*.js ./src/*.js ./src/scss/style.scss -w --single-quote",
-    "build": "npm run clean-docs && parcel build --dist-dir ./docs --no-content-hash",
-    "start": "npm run clean-dist && npm run clean-cache && parcel serve",
+    "build": "npm run clean-docs && npm run clean-prerender && parcel build --dist-dir ./docs --no-content-hash && npm run prerender:bundle && npm run prerender:inject",
+    "start": "npm run clean-dist && npm run clean-cache && NODE_ENV=DEV parcel serve ",
     "dev:network": "parcel serve --host 0.0.0.0",
     "clean-docs": "rm -rf docs",
+    "clean-prerender": "rm -rf .prerender",
     "clean-dist": "rm -rf dist",
     "clean-cache": "rm -rf .parcel-cache",
     "server": "parcel build server.js --dist-dir ./server",
+    "prerender:bundle": "parcel build server.js --dist-dir ./.prerender --no-content-hash",
+    "prerender:inject": "node ./scripts/inject-prerender.mjs",
     "lint": "biome lint src/* src/*/*",
-    "format": "biome format --write ./src/*/*.js ./src/*.js"
+    "format": "biome format --write ./src/*/*.js ./src/*.js",
+    "preview": "npx serve docs -l 4173"
   },
   "repository": {
     "type": "git",
