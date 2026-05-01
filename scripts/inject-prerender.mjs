@@ -2,7 +2,7 @@ import { execFileSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 
 const DOCS_INDEX_PATH = './docs/index.html';
-const SSR_BUNDLE_PATH = './.prerender/server.js';
+const SSR_BUNDLE_PATH = './.prerender/prerender-entry.js';
 
 function findTagEnd(html, startIndex) {
 	const tagEnd = html.indexOf('>', startIndex);
