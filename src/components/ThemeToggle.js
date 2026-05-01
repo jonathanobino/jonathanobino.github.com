@@ -46,7 +46,7 @@ export default function ThemeToggle() {
 		>
 			<span className="themeToggleTrack" aria-hidden="true">
 				<span className="themeToggleThumb">
-					{theme === DARK_THEME ? '☀️' : '🌙'}
+					{theme === DARK_THEME ? '🌙' : '☀️'}
 				</span>
 			</span>
 		</button>
