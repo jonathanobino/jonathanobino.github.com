@@ -1,40 +1,42 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
+function isElementInViewport(node) {
+	const coordinates = node.getBoundingClientRect();
+
+	return coordinates.top < window.innerHeight && coordinates.bottom > 0;
+}
 
 export default function useIsInViewport() {
 	const [visible, setVisible] = useState(false);
 	const [ref, setRef] = useState(null);
 
-	const getRef = useCallback((node) => {
-		if (node !== null) setRef(node);
-	}, []);
-
 	useEffect(() => {
-		const handler = (e) => {
-			if (ref) {
-				const coordinates = ref.getBoundingClientRect();
-				if (e.wheelDelta < 0) {
-					if (coordinates.top > 0 && coordinates.top < window.innerHeight) {
-						setVisible(true);
-					} else {
-						setVisible(false);
-					}
-				}
-				if (e.wheelDelta > 0) {
-					if (
-						coordinates.bottom > 0 &&
-						coordinates.bottom < window.innerHeight
-					) {
-						setVisible(true);
-					} else {
-						setVisible(false);
-					}
-				}
-			}
+		if (!ref || typeof window === 'undefined') {
+			return undefined;
+		}
+
+		if (typeof IntersectionObserver === 'function') {
+			const observer = new IntersectionObserver(([entry]) => {
+				setVisible(entry.isIntersecting);
+			});
+
+			observer.observe(ref);
+			return () => observer.disconnect();
+		}
+
+		const updateVisibility = () => {
+			setVisible(isElementInViewport(ref));
 		};
 
-		window.addEventListener('wheel', handler);
-		return () => window.removeEventListener('wheel', handler);
+		updateVisibility();
+		window.addEventListener('scroll', updateVisibility, { passive: true });
+		window.addEventListener('resize', updateVisibility);
+
+		return () => {
+			window.removeEventListener('scroll', updateVisibility);
+			window.removeEventListener('resize', updateVisibility);
+		};
 	}, [ref]);
 
-	return [getRef, visible];
+	return [setRef, visible];
 }
