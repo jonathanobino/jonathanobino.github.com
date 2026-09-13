@@ -24,7 +24,7 @@ const places = [
 		imageSrc: '/images/lynx.svg',
 	},
 	{
-		link: 'https://www.mvlabs.it',
+		link: 'https://mvlabs.it',
 		description: {
 			company: 'MV labs',
 			role: 'Full Stack Developer - Contractor',

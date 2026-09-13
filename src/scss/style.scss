@@ -270,33 +270,6 @@ ul.inline-list {
 
 .contactFormWrapper {
   position: relative;
-  overflow: hidden;
-
-  .message {
-    position: absolute;
-    transition: all 2s, width 1s 3s, height 1s 3s, padding 0.7s 1.5s;
-    z-index: 9;
-    bottom: -100%;
-    left: calc(50% - 150px);
-    background-color: $blue;
-    border-radius: 100%;
-    text-align: center;
-    padding-top: 130px;
-
-    h2 {
-      color: white;
-    }
-
-    &.show {
-      width: 100%;
-      height: 100%;
-      padding-top: 250px;
-      border-radius: 0;
-      bottom: 0;
-      left: 0;
-      animation: bounceIn 1.5s cubic-bezier(0.6, -0.28, 0.74, 0.05) 0s 1;
-    }
-  }
 
   .contactForm {
     min-height: 300px;
@@ -306,56 +279,81 @@ ul.inline-list {
 
     h2 {
       font-weight: 300;
-      transition: all 0.5s;
-      animation: bounce 0.75s cubic-bezier(0.5, -0.28, 0.74, 0.05);
-
-      &.error {
-        animation: bounceError 0.75s cubic-bezier(0.61, -0.28, 0.74, 0.05);
-        color: rgba(200, 100, 100, 0.8);
-      }
     }
 
-    input {
+    .formField { margin-bottom: 1.25rem; }
+
+    .fieldControl {
+      position: relative;
+      padding-top: 0.8rem;
+    }
+
+    input,
+    textarea {
       width: 100%;
       color: $text;
       background: transparent;
-      border: 0px solid transparent;
+      border: 0 solid transparent;
       border-bottom: 2px solid $surface;
       font-size: 1.2rem;
-      padding: 15px;
+      padding: 0.5rem 0;
       font-family: $sansFont;
       font-weight: 100;
       border-radius: 0;
+      transition: border-color 0.2s ease;
 
       &:focus,
       &:active {
-        outline-color: transparent;
-        outline-style: none;
+        outline: none;
         border-bottom: 2px solid $green;
       }
     }
 
     textarea {
-      width: 100%;
       display: block;
-      margin: 10px auto;
-      color: $text;
-      background: transparent;
-      border: 0px solid transparent;
-      border-bottom: 2px solid $surface;
-      font-size: 1.2rem;
-      padding: 15px;
       max-width: 100%;
-      font-family: $sansFont;
-      font-weight: 100;
-      border-radius: 0;
+      resize: vertical;
+    }
 
-      &:focus,
-      &:active {
-        outline-color: transparent;
-        outline-style: none;
-        border-bottom: 2px solid $green;
-      }
+    label {
+      position: absolute;
+      top: 1.35rem;
+      left: 0;
+      color: $subtitle;
+      font-family: $sansFont;
+      font-size: 1.1rem;
+      font-weight: 300;
+      pointer-events: none;
+      transform-origin: left top;
+      transition: transform 0.18s ease, color 0.18s ease;
+    }
+
+    input:focus + label,
+    input:not(:placeholder-shown) + label,
+    textarea:focus + label,
+    textarea:not(:placeholder-shown) + label {
+      color: $green;
+      transform: translateY(calc(-0.95rem - 6px)) scale(0.78);
+    }
+
+    .hasError {
+      input,
+      textarea { border-bottom-color: $tomato; }
+      label { color: $tomato; }
+    }
+
+    .fieldError,
+    .formRequestError {
+      color: darken($tomato, 8);
+      font-family: $sansFont;
+      font-size: 0.85rem;
+      font-weight: 400;
+      line-height: 1.35;
+    }
+
+    .fieldError {
+      display: block;
+      padding-top: 0.45rem;
     }
 
     .sendForm {
@@ -370,7 +368,8 @@ ul.inline-list {
       font-weight: 400;
       color: $green;
       background-color: transparent;
-      transition: 0.5s all;
+      min-height: 3.35rem;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 
       &:disabled {
         cursor: not-allowed;
@@ -380,7 +379,74 @@ ul.inline-list {
         color: white;
         background-color: rgba($green, 0.9);
       }
+
+      .buttonSpinner {
+        display: inline-block;
+        width: 0.9rem;
+        height: 0.9rem;
+        margin-right: 0.5rem;
+        border: 2px solid currentColor;
+        border-right-color: transparent;
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+        vertical-align: -0.08rem;
+      }
     }
+  }
+
+  .formSuccess {
+    min-height: 300px;
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: formReveal 0.35s ease-out;
+
+    h2 { margin: 1rem 0 0.25rem; }
+    p { margin: 0; }
+  }
+
+  .formSuccessCheck {
+    width: 3rem;
+    height: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $green;
+    border-radius: 50%;
+    color: $green;
+    font-size: 1.65rem;
+    animation: checkPop 0.35s ease-out;
+  }
+
+  .sendAnother {
+    margin-top: 1.5rem;
+    border: 0;
+    border-bottom: 1px solid currentColor;
+    background: transparent;
+    color: $green;
+    cursor: pointer;
+    font-family: $sansFont;
+    font-size: 1rem;
+    padding: 0 0 0.15rem;
+  }
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes formReveal { from { opacity: 0; transform: translateY(8px); } }
+@keyframes checkPop { from { opacity: 0; transform: scale(0.7); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .contactFormWrapper,
+  .contactFormWrapper *,
+  .contactFormWrapper *::before,
+  .contactFormWrapper *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

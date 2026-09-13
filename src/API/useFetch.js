@@ -23,12 +23,24 @@ export default function useFetch(
 		setLoad(true);
 	}, []);
 
+	const reset = useCallback(() => {
+		setResult(undefined);
+		setError(undefined);
+		setLoad(false);
+	}, []);
+
 	const fetchData = useCallback(() => {
 		setIsLoading(true);
+		setResult(undefined);
+		setError(undefined);
 		return fetch(url, {
 			...cachedOptions.current,
 		})
-			.then((res) => res.json())
+			.then((res) => {
+				if (!res.ok)
+					throw new Error(`Request failed with status ${res.status}`);
+				return res.json();
+			})
 			.then((res) => setResult(res))
 			.catch((err) => setError(err))
 			.finally(() => {
@@ -41,5 +53,5 @@ export default function useFetch(
 		if (load) fetchData();
 	}, [load, fetchData]);
 
-	return [result, isLoading, error, send, updateOptions];
+	return [result, isLoading, error, send, updateOptions, reset];
 }
