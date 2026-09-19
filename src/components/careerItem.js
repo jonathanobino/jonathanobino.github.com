@@ -7,7 +7,7 @@ const PortfolioItem = ({ item }) => {
 			<a href={item.link} target="_blank" style={{
 			cursor: `${item.link ? 'pointer' : 'initial'}`,
 		}}>
-			{item.link && <span className='go'>-></span>}
+			{item.link && <span className='go'>-&gt;</span>}
 				<div className="columns">
 					<p className="monoFont">{item.description.when}</p>
 					<p>
