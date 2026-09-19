@@ -21,7 +21,7 @@ const GitHubRepo = ({
 		</h3>
 			{/* <small>Description:</small> */}
 			<p>{description}</p>
-			<p><a href={html_url} target='_blank'>View on Github -></a></p>
+			<p><a href={html_url} target="_blank" rel="noreferrer">View on Github -&gt;</a></p>
 	</div>
 );
 

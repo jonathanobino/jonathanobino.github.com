@@ -18,7 +18,7 @@ function mapIdsToFrame(array) {
 	}));
 }
 
-export default function () {
+export default function Codepen() {
 	const mapped = useMemo(() => {
 		return mapIdsToFrame(pens);
 	}, []);

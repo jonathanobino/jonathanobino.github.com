@@ -4,7 +4,7 @@ import TechStack from './techStack';
 const PortfolioItem = ({ item }) => {
 	return (
 		<div className="row careerItem" >
-			<a href={item.link} target="_blank" style={{
+			<a href={item.link} target="_blank" rel="noreferrer" style={{
 			cursor: `${item.link ? 'pointer' : 'initial'}`,
 		}}>
 			{item.link && <span className='go'>-&gt;</span>}

@@ -42,7 +42,7 @@ function findMatchingDivClose(html, openTagStart) {
 }
 
 function injectPrerenderMarkup(html, appMarkup) {
-	const appOpenMatch = html.match(/<div\s+id=["']app["'][^>]*>/i);
+	const appOpenMatch = html.match(/<div\b[^>]*\bid\s*=\s*(?:"app"|'app'|app)(?=\s|>)[^>]*>/i);
 	if (!appOpenMatch || appOpenMatch.index === undefined) {
 		throw new Error('Could not find #app root in docs/index.html.');
 	}
@@ -66,7 +66,7 @@ function main() {
 
 	const docsHtml = readFileSync(DOCS_INDEX_PATH, 'utf8');
 	const result = injectPrerenderMarkup(docsHtml, appMarkup);
-	writeFileSync(DOCS_INDEX_PATH, result);
+	writeFileSync(DOCS_INDEX_PATH, `${result.trimEnd()}\n`);
 	console.log('Injected pre-rendered markup into docs/index.html');
 }
 

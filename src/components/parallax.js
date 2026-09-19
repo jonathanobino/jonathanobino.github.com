@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export default function ({ children, background, speed = 3 }) {
+export default function Parallax({ children, background, speed = 3 }) {
 	const wrapper = useRef(undefined);
 	const rafId = useRef(null);
 
